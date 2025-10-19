@@ -1,0 +1,34 @@
+\usepackage[utf8]{inputenc}
+\usepackage{kotex}
+\usepackage{fontspec}
+
+% \setmainhangulfont{Gowun Batang}[
+%   BoldFont = {Gowun Batang Bold}
+% ]
+% \setsanshangulfont{Gowun Batang}[
+%   BoldFont = {Gowun Batang Bold}
+% ]
+% \setmonohangulfont{Gowun Batang}[
+%   BoldFont = {Gowun Batang Bold}
+% ]
+
+\setmainhangulfont[
+  ItalicFont = {Gowun Batang},
+  ItalicFeatures = {FakeSlant=0.2}
+]{Gowun Batang}
+\setsanshangulfont[
+  ItalicFont = {Gowun Batang},
+  ItalicFeatures = {FakeSlant=0.2}
+]{Gowun Batang}
+\setmonohangulfont[
+  ItalicFont = {Gowun Batang},
+  ItalicFeatures = {FakeSlant=0.2}
+]{Gowun Batang}
+
+
+\newfontfamily\BatangBold[
+  FakeBold=2.0,        % Simulate a bold weight
+  Renderer=Basic,      % (Often needed with XeLaTeX)
+]{Batang}
+
+\newcommand{\BatangBoldText}[1]{{\BatangBold #1}}

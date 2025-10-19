@@ -1,0 +1,818 @@
+\usepackage{datatool} %For loading and fetching values from .csv
+\usepackage{graphicx} %For Inserting Images
+\usepackage{tabto, pifont} %For symbols
+\usepackage{array, multicol, multirow, ltablex, longtable, tabularx, tabularray} %Packages for tables
+\usepackage[margin = 1 in]{geometry} %For setting page margins
+\usepackage{amssymb, varwidth, calc, amsmath} %For various math symbols
+\usepackage{fancyhdr, lastpage, refcount}
+\usepackage{changepage} %For automatic pagebreaks after sections or subsections
+\usepackage{parskip} %For controlling spacing between paragraphs
+\usepackage{xparse}
+\usepackage{titlesec} %For Formatting Section and Subsection Headers
+\usepackage{etoolbox} 
+\usepackage{xstring} 
+\usepackage{graphicx} 
+\usepackage{tikz} %For Arrows & Nodes
+\usepackage{tcolorbox} %tcolorbox for arrow and box diagram
+\usepackage[inline]{enumitem} %For structed lists (vlist, hlist, tablist)
+\usepackage{hyperref} %For Dynamic references and table of contents
+\usepackage{comment}
+\usepackage{fontspec}
+\usepackage{makecell}
+\usepackage{mdframed}
+\usepackage[normalem]{ulem}
+\usepackage[table]{xcolor}
+\usepackage{xpatch}
+\usepackage{nicefrac}
+\usepackage{afterpage}
+\usepackage{atbegshi}
+\usepackage{pgffor}
+\usepackage{paracol}
+\usepackage{unicode-math}
+\setmainfont{STIX Two Text}
+\setmathfont{STIX Two Math}
+
+% \usepackage[column=0]{cellspace} 
+% \usepackage{CJKutf8}
+% \usepackage[normalem]{ulem}
+% \usepackage{marvosym}
+% \fontsize{12}{12}\selectfont
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor = blue,
+    pdfborder={1 1 1},            % Set border width: 1 point border on x and y axes
+    pdfborderstyle={/S/S/W 1},    % Solid box around links with width of 1 point
+    linkbordercolor={0 0 0},
+    urlcolor=blue,
+    bookmarksopen=true,     % Open bookmarks in the PDF
+    bookmarksnumbered=true, % Numbered bookmarks
+    pdfpagemode=UseOutlines, % Show bookmarks on the sidebar when opened
+}
+
+\usepackage{xcolor} %For coloring \endhead 
+
+\definecolor{darkgray}{rgb}{0.3, 0.3, 0.3}
+\definecolor{lightgray}{rgb}{0.4, 0.4, 0.4}
+% \definecolor{LIGHTGRAY}{rgb}{0.4, 0.4, 0.4}
+
+\titleformat{\subsection}{\raggedright\Large\bfseries}{\thesubsection}{1em}{}
+
+\newcommand{\subsectionmarkright}[1]{
+  \subsection*{#1}
+  \markright{\raggedleft~#1} % Set right-aligned header for subsections
+}
+
+\newcommand{\sectionbreak}{\clearpage}
+\newcommand{\subsectionbreak}{\clearpage}
+
+\setlist[enumerate]{ %For structured lists
+    label=\makebox[1.5em][l]{$\square_{\arabic*}$}, %Checkbox with automated coding
+    start = 1, %Coding start value
+    itemsep=.5em, %Space between response items
+    topsep=.5em, %Space between questions and response items
+    left=0em, %alignment
+    labelsep=.25em, %Space between question number and question
+    align = left %justification
+    } 
+
+\newcommand{\letteredlist}{\begin{enumerate}[ %For lettered sublists
+label = \alph*., 
+start = 1, 
+itemsep= .75em, 
+topsep =.5em, 
+labelsep = .25em,   
+align = left]
+}
+
+
+\newcommand{\ra}{$\rightarrow$\hspace * {.25 cm}} %right arrow
+\newcommand{\x}{\hspace*{.075 cm}\rule{.6 cm}{.20 mm}\hspace*{.075cm}} %Blank for digits
+\newcommand{\dbox}{\framebox[1.5em][c]{\rule{0pt}{1em}}}
+\newcommand{\phone}{(\x\x\x) \x\x\x - \x\x\x\x} %Phone Number
+\renewcommand{\hrulefill}{\leavevmode\leaders\hrule height .75pt\hfill\kern0pt} %Fill in the Blank
+\newcommand{\labeltwo}{\makebox[1.5em][l]{$\square_{\arabic*}$}}
+
+\newcommand{\ice}{\item[]}
+
+\newcommand{\vsublist}{\begin{enumerate}[left = 1 em]}
+\newcommand{\tabsublist}{\begin{enumerate}[left = .5 em]}
+\newcommand{\hsublist}{%
+  \IfBilingual{%
+  \vsublist}{%
+  \vspace{.75em}\begin{enumerate*}[label = \hspace{.4em}\arabox, labelsep=.25 em, start = 1, topsep=.75em, align = parleft, itemjoin=\hspace{1.1em}]
+  }
+ }
+\newcommand{\hsublistend}{%
+  \IfBilingual{
+    \vsublistend}{%
+  \end{enumerate*}}}
+\newcommand{\vsublistend}{\end{enumerate}}
+
+\newcommand{\hlistend}{\end{enumerate}\emp\vspace{.75em}}
+\newcommand{\vlistend}{\end{enumerate}\end{minipage}\vspace{.75 em}}
+
+\newcommand{\listend}{\end{enumerate}} %deprecate
+\newcommand{\pop}{\hsublistend\end{enumerate}\emp\vspace{.75em}}%deprecate
+
+\newcommand{\gray}[1]{\textcolor{gray}{#1}}
+
+\newcommand{\rrr}{\raggedright\arraybackslash}
+\newcommand{\llslash}{\raggedleft\arraybackslash}
+\newcommand{\ccc}{\centering\arraybackslash}
+
+\newcommand{\vlist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1]} %vertical lists
+\newcommand{\tablist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1, labelsep = .25em, left = 0em, align = left]} %indented vertical and horizontal lists
+\newcommand{\hlist}[1]{
+\bmp
+\begin{enumerate}[label =#1]
+\raggedright
+\raggedbottom} 
+
+\newcommand{\bmp}{\begin{minipage}{\textwidth}}
+\newcommand{\emp}{\end{minipage}}
+
+\newcommand{\tikzbmp}{\begin{minipage}{\textwidth}} %For toggling tikz on and off
+\newcommand{\tikzemp}{\end{minipage}} %For toggling tikz on and off
+
+\newcommand{\arabox}{\makebox[2em][r]{$\square_{\arabic*}$}} %cmd needed to produce labels for horizontal lists
+
+\newcommand{\halt}{\listend\end{minipage}\vspace{.75 em}}
+\newcommand{\hax}{\end{enumerate}\halt}
+
+\newcommand{\setc}{\setcounter{enumii}}
+\newcommand{\setch}{\setcounter{enumi}}
+
+
+\newcommand{\lucky}{\begin{enumerate}[label = \alph*., start = 1, itemsep= .75em, topsep =.5em, labelsep = .25em, align = left]}
+\newcommand{\charms}{\end{enumerate}}
+
+
+\newcommand{\fetch}[1]{\protect\raggedright\DTLfetch{mydata}{LABEL}{#1}{QUESTION}}
+\newcommand{\notch}[1]{\protect\DTLfetch{mydata}{LABEL}{#1}{NUMBER}.}
+\newcommand{\catch}[1]{\raggedright\protect\DTLfetch{mydata}{LABEL}{#1}{NUMBER}}
+\newcommand{\grab}[1]{\protect\raggedright\DTLfetch{mydata}{LABEL}{#1}{QUESTION}}
+\newcommand{\grasp}[1]{\raggedright\protect{\DTLfetch{mydata}{LABEL}{#1}{SKIP}}}
+
+% \newcommand{\jump}[1]{
+% 	\ra \textbf{
+% 	\raggedright\DTLfetch{mydata}{LABEL}{SKIPQUESTION}{QUESTION}\ 
+% 	\protect\DTLfetch{mydata}{LABEL}{#1}{NUMBER}
+% 	}
+% }
+% \newcommand{\leap}[1]{
+% 	\ra \textbf{
+% 	\raggedright\DTLfetch{mydata}{LABEL}{SKIPPAGE}{QUESTION}\ 
+% 	\pageref{#1}
+% 	}
+% }
+
+%Short Cuts
+
+\newcommand{\titletwo}{
+\letteredlist
+\item \fetch{CON1.1}
+\end{enumerate}
+\vspace{-1\baselineskip}\begin{tabular}{ p{1.5in} p{1.5in} p{1.5in}}
+\begin{enumerate}[label = $\square$, left = 1em, labelsep = .2em]
+\item \unifetch{CON1.1.1} 
+\item \unifetch{CON1.1.2} 
+\end{enumerate}
+&
+\begin{enumerate}[label = $\square$, left = 1em, labelsep = .2em]
+\item \unifetch{CON1.1.3} 
+\item \unifetch{CON1.1.4} 
+\end{enumerate}
+&
+\begin{enumerate}[label = $\square$, left = 1em, labelsep = .2em]
+\item \unifetch{CON1.1.5} 
+\item \unifetch{CON1.1.6} 
+\end{enumerate}\end{tabular}
+% \vspace{-.5\baselineskip}
+\letteredlist
+\setcounter{enumii}{1}
+\item \hatch{CON1.2} %\hrulefill 
+\item \hatch{CON1.3} %\hrulefill 
+\item \hatch{CON1.4} %\hrulefill 
+\item \hatch{CON1.5} %\hrulefill 
+\end{enumerate}
+\halt}
+
+%Relationship CON2, CON7, CON12
+\newcommand{\relationship}{
+\vspace{-.5\baselineskip}
+\begin{tabular}{ p{3 in} p{3 in}}
+\vsublist
+\item \fetch{CON2.1} 
+\item \fetch{CON2.2} 
+\item \fetch{CON2.3} 
+\vsublistend
+&
+\vsublist
+\setc{3}
+\item \fetch{CON2.4} 
+\item \fetch{CON2.5} 
+\item \fetch{CON2.6}
+\end{enumerate}
+\end{tabular}
+\halt
+}
+ 
+ %Address 
+\newcommand{\address}{
+\letteredlist
+\item \hatch{CON3.1} %\hrulefill
+\item \hatch{CON3.6} %\hrulefill
+\item \hatch{CON3.2} %\hrulefill 
+\item \hatch{CON3.3} %\hrulefill
+\item \hatch{CON3.4} %\hrulefill
+\item \hatch{CON3.5} %\hrulefill
+\end{enumerate}
+\halt}
+
+\newcommand{\personaladdress}{
+\letteredlist %\lucky
+\item \hatch{PER6.1} %\hrulefill
+\item \hatch{PER6.2} %\hrulefill 
+\item \hatch{PER6.3} %\hrulefill
+\item \hatch{PER6.4} %\hrulefill
+\item \hatch{PER6.5} %\hrulefill
+\end{enumerate} %charms
+\halt}
+
+\newcommand{\YN}{\hsublist
+\setcounter{enumii}{0}
+\item \fetch{Yes}
+\setcounter{enumii}{-1}
+\item \fetch{No}
+\hsublistend
+\end{enumerate}\emp\vspace{.75 em}}
+
+\newcommand{\tabYN}{\tabhsublist
+\setcounter{enumii}{0}
+\item \fetch{Yes} 
+\setcounter{enumii}{-1}
+\item \fetch{No}
+\hsublistend
+\end{enumerate}\emp\vspace{.75 em}}
+
+\newcommand{\tabhsublist}{%
+\IfBilingual{\vsublist}{\vspace{.75em}\begin{enumerate*}[label = \hspace{0em}\arabox, labelsep=.25 em, start = 1, topsep=.75em, align = parleft, itemjoin=\hspace{1.1em}]}
+}
+
+\newcommand{\YND}{
+\hsublist
+\setcounter{enumii}{0}
+\item \fetch{Yes} 
+\setcounter{enumii}{-1}
+\item \fetch{No}
+\setcounter{enumii}{98}\item \fetch{Don't know}
+\hsublistend
+\end{enumerate}\emp\vspace{.75 em}}
+
+\newcommand{\yonder}{
+\hsublist
+\setcounter{enumii}{0}
+\item \fetch{Yes} 
+\setcounter{enumii}{-1}
+\item \fetch{No}
+\setcounter{enumii}{98}
+\item \fetch{Don't know/I prefer not to answer}
+\hsublistend\end{enumerate}\emp\vspace{.75 em}}
+
+
+\newcommand{\twobox}{&\makecell[t]{\ $\square$$_{1}$}&\makecell[t]{\ $\square$$_{0}$}\\}
+
+\newcommand{\snode}[1]{\tikz[remember picture, baseline]{\node (start#1) at (0, 0.5 ex) {}; }}
+
+\newcommand{\enode}[1]{\tikz[remember picture, baseline]{\node (end#1)  {}; }
+\begin{tikzpicture}[remember picture, overlay]
+    \draw[->, ultra thick] (start#1) -| (end#1);
+\end{tikzpicture}
+}
+
+\newcommand{\correctmarks}{$\square$\hspace{-.65 em}\raisebox{.1em}{\ding{51}}\ $\square$\hspace{-.725 em}$\blacksquare$}
+\newcommand{\incorrectmarks}{$\square$\hspace{-.7 em}\ding{56}\ $\square$\hspace{-.65 em}\raisebox{.1em}{$\smblkcircle$}}
+
+\newcommand{\MMDDYYYY}{\x\x/\x\x/\x\x\x\x}
+
+\newsavebox{\tempbox}
+\newlength{\stringwidth}
+
+\newcommand{\CondBreak}[2]{%
+  \sbox{\tempbox}{#1#2}% Save the concatenation in a horizontal box to measure its width
+  \setlength{\stringwidth}{\wd\tempbox}%  % Compare measured width to \linewidth
+  \ifdim\stringwidth>\linewidth
+    #1\newline\gray{#2}%
+  \else
+    #1 \gray{#2}%
+  \fi
+}
+
+
+\newsavebox{\tempboxtwo}
+\newlength{\stringwidthtwo}
+
+
+% \newcommand{\HRule}[2]{%
+%   \sbox{\tempbox}{\hbox{\strut #1 #2}}% Measure the width of #2 and #3
+%   \setlength{\stringwidth}{\wd\tempbox}%
+%   \ifdim\stringwidth<\linewidth
+%     \parbox[c]{\linewidth}{#1\hrulefill}\newline #2% If combined width fits, place everything on one line
+%   \else
+%     \parbox[c]{\linewidth}{#1}\newline\parbox[c]{\linewidth}{\hrulefill}\newline #2% #3 on the next line
+%   \fi
+% }
+
+
+\newcommand{\CondLineBreak}[2]{%
+  \sbox{\tempbox}{#1#2}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>\linewidth
+    #1\linebreak\gray{#2}%
+  \else
+    #1  \gray{#2}%
+  \fi
+}
+
+\newcommand{\CondThreeBreak}[3]{%
+  \sbox{\tempbox}{#1#2#3}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>\linewidth
+    #1 #2 \newline\hphantom{#1} \gray{#3}%
+  \else
+    #1 #2 \gray{#3}
+  \fi
+}
+
+\newcommand{\CondFourBreak}[3]{%
+  \sbox{\tempbox}{#1#2}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>\linewidth
+    #2\newline\gray{#3}\newline#1%
+  \else
+    #2 #1 \newline\gray{#3}
+  \fi
+}
+
+\newcommand{\CondFourBreakM}[2]{%
+  \sbox{\tempbox}{#1#2}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>\linewidth
+    #2\newline#1%
+  \else
+    #2 #1
+  \fi
+}
+
+\newcommand{\fullhrule}{\noindent\rule{\linewidth}{0.75pt}} % Full-width horizontal rule
+
+\newcommand{\hhh}[2]{%
+  \sbox{\tempbox}{#1}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>.5\linewidth
+  #1\newline#2\vspace{.25\baselineskip}\newline\fullhrule\vspace{-.25\baselineskip}%
+  \else
+    #1 \hrulefill\newline#2%
+  \fi
+}
+
+\newcommand{\hhhM}[1]{%
+  \sbox{\tempbox}{#1}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>.5\linewidth
+  #1\vspace{.25\baselineskip}\newline\fullhrule\vspace{-.25\baselineskip}%
+  \else
+    #1 \hrulefill
+  \fi
+}
+
+
+
+\newcommand{\hhhcapM}[1]{%
+  \sbox{\tempbox}{#1}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>.5\linewidth
+  #1\vspace{.25\baselineskip}\newline\fullhrule%
+  \else
+    #1 \hrulefill
+  \fi
+}
+
+\newcommand{\hhhcap}[2]{%
+  \sbox{\tempbox}{#1}%
+  \setlength{\stringwidth}{\wd\tempbox}%
+  \ifdim\stringwidth>.5\linewidth
+  #1\newline#2\vspace{.25\baselineskip}\newline\fullhrule%
+  \else
+    #1 \hrulefill\newline#2%
+  \fi
+}
+
+% \let\originaltcolorbox\tcolorbox
+
+\newfontfamily\chinesefont{SimSun}
+
+\errorcontextlines=999
+
+\newcommand{\forcesubsectionmarkright}[1]{%
+  \subsectionmarkright{#1}
+
+  \AtBeginShipoutNext{\AtBeginShipoutDiscard}
+  \clearpage
+  \markright{\raggedleft#1}
+
+  \subsectionmarkright{#1}
+  \addtocounter{page}{-1}
+}
+
+\newcommand{\IfBilingual}[2]{\iftoggle{bilingual}{#1}{#2}}
+
+\newcommand{\print}[1]{\csname #1\endcsname}
+
+
+\renewcommand{\YN}{\hsublist
+\setcounter{enumii}{0}
+\item \FetchText{Yes}\setcounter{enumii}{-1}
+\item \FetchText{No}
+\hsublistend
+\end{enumerate}\emp\vspace{.75 em}}
+
+\renewcommand{\YND}{
+\hsublist
+\setcounter{enumii}{0}
+\item \FetchText{Yes}\setcounter{enumii}{-1}
+\item \FetchText{No}\setcounter{enumii}{98}
+\item \FetchText{Don't know}
+\hsublistend
+\end{enumerate}\emp\vspace{.75 em}}
+
+\renewcommand{\yonder}{
+\hsublist
+\setcounter{enumii}{0}
+\item \FetchText{Yes}\setcounter{enumii}{-1}
+\item \FetchText{No}\setcounter{enumii}{98}
+\item \FetchText{Don't know/I prefer not to answer}
+\hsublistend\end{enumerate}\emp\vspace{.75 em}}
+
+\renewcommand{\tabYN}{\tabhsublist
+\setcounter{enumii}{0}
+\item \FetchText{Yes} \setcounter{enumii}{-1}
+\item \FetchText{No}
+\hsublistend
+\end{enumerate}\emp\vspace{.75 em}}
+
+\renewcommand{\titletwo}{
+\letteredlist
+\item \Text{CON1.1}
+\end{enumerate}
+\vspace{-1\baselineskip}\begin{tabular}{ p{1.5in} p{1.5in} p{1.5in}}
+\begin{enumerate}[label = $\square$, left = 1em, labelsep = .2em]
+\item \Text{CON1.1.1} 
+\item \Text{CON1.1.2} 
+\end{enumerate}
+&
+\begin{enumerate}[label = $\square$, left = 1em, labelsep = .2em]
+\item \Text{CON1.1.3} 
+\item \Text{CON1.1.4} 
+\end{enumerate}
+&
+\begin{enumerate}[label = $\square$, left = 1em, labelsep = .2em]
+\item \Text{CON1.1.5} 
+\item \Text{CON1.1.6} 
+\end{enumerate}\end{tabular}
+% \vspace{-.5\baselineskip}
+\letteredlist
+\setcounter{enumii}{1}
+\item \TextPlusHRuleFill{CON1.2} %\hrulefill 
+\item \TextPlusHRuleFill{CON1.3} %\hrulefill 
+\item \TextPlusHRuleFill{CON1.4} %\hrulefill 
+\item \TextPlusHRuleFill{CON1.5} %\hrulefill 
+\end{enumerate}
+\halt}
+
+%Relationship CON2, CON7, CON12
+\renewcommand{\relationship}{
+\vspace{-.5\baselineskip}
+\begin{tabular}{ p{3 in} p{3 in}}
+\vsublist
+\item \FetchText{CON2.1} 
+\item \FetchText{CON2.2} 
+\item \FetchText{CON2.3} 
+\vsublistend
+&
+\vsublist
+\setc{3}
+\item \FetchText{CON2.4} 
+\item \FetchText{CON2.5} 
+\item \FetchText{CON2.6}
+\end{enumerate}
+\end{tabular}
+\halt
+}
+ 
+ %Address 
+\renewcommand{\address}{
+\letteredlist
+\item \TextPlusHRuleFill{CON3.1} %\hrulefill
+\item \TextPlusHRuleFill{CON3.6} %\hrulefill
+\item \TextPlusHRuleFill{CON3.2} %\hrulefill 
+\item \TextPlusHRuleFill{CON3.3} %\hrulefill
+\item \TextPlusHRuleFill{CON3.4} %\hrulefill
+\item \TextPlusHRuleFill{CON3.5} %\hrulefill
+\end{enumerate}
+\halt}
+
+\renewcommand{\personaladdress}{
+\letteredlist %\lucky
+\item \TextPlusHRuleFill{PER6.1} %\hrulefill
+\item \TextPlusHRuleFill{PER6.2} %\hrulefill 
+\item \TextPlusHRuleFill{PER6.3} %\hrulefill
+\item \TextPlusHRuleFill{PER6.4} %\hrulefill
+\item \TextPlusHRuleFill{PER6.5} %\hrulefill
+\end{enumerate} %charms
+\halt}
+
+
+% \newcommand{\SOO}{\Text{SOO}}
+% \newcommand{\SATA}{\Text{SATA}}
+
+\newcommand{\translatedSOO}{\Text{.SOO}}
+\newcommand{\translatedSATA}{\Text{.SATA}}
+\newcommand{\translatedENDSURVEY}{\Text{.ENDSURVEY}}
+
+\newcommand{\Text}[1]{\csname #1\endcsname}
+
+\newcommand{\setstringwidth}[1]{\sbox{\tempbox}{#1}\setlength{\stringwidth}{\wd\tempbox}}
+
+\newcommand{\FetchText}[1]{%
+  \raggedright%
+  \IfBilingual{%
+  \setstringwidth{\Text{#1}\Text{.#1}}%
+  \ifdim\stringwidth>\linewidth%
+    \Text{.#1}\newline\gray{\Text{#1}}%
+  \else%
+    \Text{.#1} \gray{\Text{#1}}%
+  \fi}{\Text{#1}}}
+
+\newcommand{\FetchTextForHeader}[1]{%
+  \raggedleft%
+  \IfBilingual{%
+  \setstringwidth{\Text{#1}\Text{.#1}}%
+  \ifdim\stringwidth>\linewidth%
+    \Text{.#1}\newline\gray{\Text{#1}}%
+  \else%
+    \Text{.#1} \gray{\Text{#1}}%
+  \fi}{\Text{#1}}}
+
+\newcommand{\FetchTextInline}[1]{%
+  \IfBilingual{%
+  \Text{.#1}\ \gray{\Text{#1}}
+  }{%
+  \Text{#1}}}
+  
+\newcommand{\FetchTranslatedText}[1]{\IfStrEq{\langgg}{ENGLISH}{Text{#1}}{\Text{.#1}\newline\gray{\Text{#1}}}}
+
+\newcommand{\IfNotEnglish}[1]{\IfStrEq{\langgg}{ENGLISH}{}{#1}}
+
+\newcommand{\FetchTitle}[1]{%
+  \raggedright%
+  \setstringwidth{\Large\Text{#1}\Text{.#1}}%
+  \IfBilingual{
+  \ifdim\stringwidth>\linewidth
+    \Text{.#1}\vspace{-.1\baselineskip}\linebreak\gray{\Text{#1}}%
+  \else
+    \Text{.#1} \gray{\Text{#1}}%
+  \fi
+  }{%
+    \Text{#1}
+  }
+}
+
+\newcommand{\FetchTitleWithBreak}[1]{%
+  \raggedright
+  \IfBilingual{
+    \Text{.#1}\vspace{-.1\baselineskip}\linebreak\gray{\Text{#1}}%
+  }{%
+    \Text{#1}
+  }
+}
+
+\newcommand{\FetchTextWithBreak}[1]{%
+  \raggedright
+  \IfBilingual{
+    \Text{.#1}\newline\gray{\Text{#1}}%
+  }{%
+    \Text{#1}
+  }
+}
+
+\newcommand{\FetchEnglish}[1]{\Text{e#1}}
+
+\newcommand{\TextPlusHRuleFill}[1]{%
+  \IfBilingual{%
+  \setstringwidth{\Text{.#1}}%
+  \ifdim\stringwidth>.5\linewidth%
+  \Text{.#1}\newline\gray{\Text{#1}}\vspace{.25\baselineskip}\newline\fullhrule%
+  \else %
+    \Text{.#1} \hrulefill\newline\gray{\Text{#1}}%
+  \fi%
+  }{%
+  \setstringwidth{\Text{#1}}%
+  \ifdim\stringwidth>.5\linewidth%
+   \Text{#1}\vspace{.25\baselineskip}\newline\fullhrule%
+  \else%
+    \Text{#1} \hrulefill%
+  \fi%
+  }
+}
+% \newcommand{\hhhcap}[2]{%
+%   \sbox{\tempbox}{#1}%
+%   \setlength{\stringwidth}{\wd\tempbox}%
+%   \ifdim\stringwidth>.5\linewidth
+%   #1\newline#2\vspace{.25\baselineskip}\newline\fullhrule%
+%   \else
+%     #1 \hrulefill\newline#2%
+%   \fi
+% }
+
+\newcommand{\ElementPlusText}[2]{%
+  \IfBilingual{%
+  \setstringwidth{#1\Text{#2}\Text{.#2}}%
+    \ifdim\stringwidth>\linewidth%
+    #1 \Text{.#2} \newline\hphantom{#1} \gray{\Text{#2}}%
+    \else%
+    #1 \Text{.#2} \gray{\Text{#2}}%
+    \fi%
+  }{%
+    #1 \Text{#2}%
+  }
+}
+
+
+\newcommand{\TextPlusElement}[2]{
+  \setstringwidth{#1\Text{#2}}%
+  \IfBilingual{
+    \ifdim\stringwidth>\linewidth
+    \Text{.#2}\newline\gray{\Text{#2}}\newline#1%
+  \else
+    \Text{.#2} #1 \newline\gray{\Text{#2}}
+  \fi
+  }{
+  \ifdim\stringwidth>\linewidth
+    \Text{#2}\newline#1%
+  \else
+    \Text{#2} #1
+  \fi
+  }
+}
+
+\newcommand{\Jab}[1]{%
+  \IfBilingual{%
+  \blank\parbox[t]{\linewidth}{\raggedright\Text{.#1}}\vspace{.15\baselineskip}\newline\hphantom{\blank}\parbox[t]{\linewidth}{\raggedright\gray{\Text{#1}}}
+  }{%
+  \blank\parbox[t]{\linewidth}{\raggedright\Text{#1}}
+  } 
+}
+
+\renewcommand{\catch}[1]{\Number{#1}}
+
+\newcommand{\FetchTextInsideTable}[1]{%
+  \IfBilingual{%
+    \BoldFont{\Text{.#1}}\\[1.2pt]\textcolor{darkgray}{\Text{#1}}
+  }{%
+    \BoldFont{\Text{#1}}
+  }
+}
+
+\newcommand{\continue}[1]{%
+  \raggedleft%
+  \IfBilingual{%
+  \parbox[r]{\textwidth}{\hfill(\Text{.Continue1}\blankspaceIfTC\Number{#1} \Text{.Continue2})\vspace{.15\baselineskip}\newline\parbox[r]{\textwidth}{\hfill\gray{(\Text{Continue1} \Number{#1} \Text{Continue2})}}}
+  }{%
+  \parbox[r]{\textwidth}{\hfill(\Text{Continue1}\blankspaceIfTC\Number{#1} \Text{Continue2})}
+  }
+}
+
+\newcommand{\blankspaceIfTC}{\IfStrEq{\langgg}{TC}{}{ }}
+\newcommand{\blankspaceIfK}{\IfStrEq{\langgg}{K}{ }{}}
+\newcommand{\BoldFont}{%
+  \IfStrEq{\langgg}{SC}{\boldCJK}{% 
+    \IfStrEq{\langgg}{TC}{\boldCJK}{\textbf}%
+  }%
+}
+\newcommand{\blank}{%
+  \IfStrEq{\langgg}{ENGLISH}{\vspace{-\baselineskip}\x}{% 
+    \IfStrEq{\langgg}{TG}{\vspace{-\baselineskip}\x}{%
+      \IfStrEq{\langgg}{V}{\vspace{-\baselineskip}\x}{}
+    }
+  }
+}
+
+\newcommand{\FetchFooterText}[1]{
+  \IfBilingual{%
+  \Text{.#1}\vspace{.15\baselineskip}\\\gray{\Text{#1}}
+  }{
+  \Text{#1}
+  }
+}
+
+\newcommand{\PerDayStringIfKorean}{\IfStrEq{\langgg}{K}{\Text{perday}}{}}
+
+\newcommand{\ClosedBracketIfChinese}
+
+\newcommand{\Number}[1]{\csname num#1\endcsname}
+\newcommand{\FetchNumber}[1]{\csname num#1\endcsname.}
+
+
+% \newcommand{\endsurvey}{\ra\textbf{\Text{ENDSURVEY}}}
+
+\newcommand{\jump}[1]{~\ra\BoldFont{\Text{SKIPSECTION}\blankspaceIfK\pageref{#1}\Text{SKIPSECTION.2}}}
+\newcommand{\seize}[1]{%
+  \IfBilingual{%
+  ~\ra\BoldFont{\Text{SKIPQUESTION}\Number{#1}}}{%
+  \IfStrEq{\langgg}{K}{%
+    ~\ra\BoldFont{\Number{#1}\Text{SKIPQUESTION}}}{
+    ~\ra\BoldFont{\Text{SKIPQUESTION}\Number{#1}}}
+  }
+}
+
+
+\newcommand{\translatedjump}[1]{~\ra\BoldFont{\Text{.SKIPSECTION}\blankspaceIfK\pageref{#1}\Text{.SKIPSECTION.2}}}
+\newcommand{\translatedseize}[1]{%
+  \IfStrEq{\langgg}{K}{%
+    ~\ra\BoldFont{\Number{#1}\Text{.SKIPQUESTION}}}{
+    ~\ra\BoldFont{\Text{.SKIPQUESTION}\Number{#1}}}
+}
+
+\newcommand{\WriteHeader}[1]{
+  \pagestyle{fancy}
+  \fancyhf{}
+  \fancyhead[R]{\raisebox{1\height}{\parbox[t]{\textwidth}{\raggedleft\IfBilingual{\vspace{-2\baselineskip}}{}\hfill\rightmark}}}
+  \fancyhead[L]{\parbox[b]{1in}{\vspace{-1.5\baselineskip}\includegraphics[width= .88 in, height = .7 in]{/Users/danny/Documents/MOSAAIC/Logos/MOSAAICLogo.png}}}
+  \fancyfoot[L]{#1\IfStrEq{\langgg}{ENGLISH}{}{\_\langgg}\newline \Text{e#1.Version}, \Text{e#1.Date}\IfStrEq{\langgg}{ENGLISH}{}{\newline \langgg: \IfBilingual{\Text{.#1.Date}}{{\Text{#1.Date}}}}}
+  \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+
+% \renewcommand{\forcesubsectionmarkright}[1]{%
+%   \subsectionmarkright{#1}
+
+%   \AtBeginShipoutNext{\AtBeginShipoutDiscard}
+%   \clearpage
+%   \markright{\FetchTextForHeader{#1}}
+
+%   \subsectionmarkright{#1}
+%   \addtocounter{page}{-1}
+% }
+
+\renewcommand{\forcesubsectionmarkright}[1]{%
+  \clearpage
+  \markright{\raggedleft~\FetchTextForHeader{#1}}
+  \subsection*{\FetchText{#1}}
+
+  \AtBeginShipoutNext{\AtBeginShipoutDiscard}
+  \clearpage
+  \markright{\raggedleft\FetchTextForHeader{#1}}
+
+  \subsection*{\FetchText{#1}}
+  \addtocounter{page}{-1}
+}
+
+\newcommand{\forcesubsectionmarkrightwithbreak}[1]{%
+  \clearpage
+  \markright{\raggedleft~\FetchTextForHeader{#1}}
+  \subsectionmarkrightwithbreak{#1}
+
+  \AtBeginShipoutNext{\AtBeginShipoutDiscard}
+  \clearpage
+  \markright{\raggedleft~\FetchTextForHeader{#1}}
+
+  \subsectionmarkrightwithbreak{#1}
+  \addtocounter{page}{-1}
+}
+
+\renewcommand{\subsectionmarkright}[1]{
+  \subsection*{\FetchText{#1}}
+  \markright{\raggedleft~\FetchTextForHeader{#1}} % Set right-aligned header for subsections
+}
+
+\newcommand{\subsectionmarkrightwithbreak}[1]{
+  \subsection*{\FetchTextWithBreak{#1}}
+  \markright{\raggedleft~\FetchTextForHeader{#1}} % Set right-aligned header for subsections
+}
+
+\IfStrEq{\langgg}{V}{\input{Preambles/Vietnamese_Preamble.tex}}{}
+\IfStrEq{\langgg}{K}{\input{Preambles/Korean_Preamble.tex}}{}
+\IfStrEq{\langgg}{TC}{\input{Preambles/Chinese_Preamble.tex}}{}
+\IfStrEq{\langgg}{SC}{\input{Preambles/Chinese_Preamble.tex}}{}
+
+\newtoggle{bilingual}
+\newtoggle{changelog}
+\newtoggle{tikz}
+
+\newcommand{\IfTikz}{\iftoggle{tikz}}{\input{Tex Files/TikzOn.tex}}{\input{Tex Files/TikzOff.tex}}
+
+\hyphenpenalty=10000
