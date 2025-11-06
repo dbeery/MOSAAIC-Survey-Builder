@@ -1,0 +1,253 @@
+\newcommand{\smallskipline}{\smallskip\newline}
+\newcommand{\smallskiphrulefill}{\smallskipline\phantom{}\hrulefill\phantom{}}
+
+\newcommand{\vcounterlist}{\stepcounter{counter}\vlist{\thecounter{}.}}
+\newcommand{\hcounterlist}{\stepcounter{counter}\hlist{\thecounter{}.}}
+
+\NewDocumentCommand{\HospitalName}{o}{%
+\IfNoValueTF{#1}{\vcounterlist}{\vlist{}}
+\item \TextPlusHRuleFill{HOS1.}
+\vlistend
+}
+
+\newcommand{\CityState}{%
+\vsublist
+\item[a.] \TextPlusHRuleFill{HOS2.1}
+\item[b.] \TextPlusHRuleFill{HOS2.2}
+\vsublistend
+}
+
+
+\NewDocumentCommand{\HospitalLocation}{o}{%
+\IfNoValueTF{#1}{\vcounterlist}{\vlist{}}
+\item \FetchText{HOS2.}%
+\CityState
+\vlistend
+}
+
+\newcommand{\HospitalClinicLocation}{%
+\vcounterlist \item What was the location of the hospital/clinic?
+\CityState
+\vlistend
+}
+
+
+\newcommand{\HospitalDate}{%
+\vcounterlist \item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{HOS3.}
+\vlistend
+}
+
+\newcommand{\HospitalDateNoCounter}{%
+\vlist{} \item \TextPlusElement{\MMDDYYYY\smallskipline(MM/DD/YYYY)}{HOS3.}
+\vlistend
+}
+
+\newcommand{\HospitalNameLocationDate}{%
+\HospitalName
+
+\HospitalLocation
+
+\HospitalDate
+}
+
+\newcommand{\HospitalNameLocationDateNoCounter}{%
+\HospitalName[nocounter]
+
+\HospitalLocation[nocounter]
+
+\HospitalDateNoCounter
+}
+
+
+
+\newcommand{\BloodFlowProcedure}{
+\vcounterlist \item What was the name of the hospital/clinic that provided the procedure?\smallskiphrulefill
+\vlistend
+
+\HospitalClinicLocation
+
+\AppointmentDate
+
+\vcounterlist \item What was the last name of the doctor who performed the procedure? \smallskiphrulefill
+\vlistend
+}
+
+\newcommand{\MainCondition}{%
+\vlist{} \item What was the main condition you were hospitalized for? \smallskiphrulefill
+\vlistend
+}
+
+\newcommand{\HospitalTimes}{%
+\vcounterlist \item How many times were you hospitalized for this condition since your in-person MOSAAIC exam?
+\vsublist
+\item[] \x\x times
+\vsublistend
+\vlistend
+}
+
+\newcommand{\HospitalNameLocationDateTimesAdditionalDetailsBox}{%
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+\HospitalNameLocationDate
+
+\HospitalTimes
+
+\HositalizationAdditionalDetails
+\end{tcolorbox}
+}
+
+\newcommand{\HospitalNameLocationDateTimesAdditionalDetailsBoxSpecific}[1]{%
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+
+\HospitalNameLocationDate
+
+\HospitalizedMoreThanOnceFor{#1}
+\end{tcolorbox}
+}
+
+
+
+\newcommand{\ConditionHospitalizationOnly}{%
+\vcounterlist \item Were you hospitalized due to this condition?
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No \ra Date of Diagnosis: \hxdate
+\vsublistend
+\vlistend
+
+\HospitalNameLocationDateTimesAdditionalDetailsBox
+}
+
+\newcommand{\ConditionHospitalizationOnlySpecific}[1]{%
+\vcounterlist \item Were you hospitalized due to \textbf{#1}?
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No \ra Date of Diagnosis: \hxdate
+\vsublistend
+\vlistend
+
+\HospitalNameLocationDateTimesAdditionalDetailsBoxSpecific{#1}
+}
+
+
+
+
+\newcommand{\ClinicDiagnosis}{%
+\vcounterlist \item Were you diagnosed in a clinic (not during a hospitalization)?
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No
+\vsublistend
+\vlistend  
+}
+
+
+
+
+\newcommand{\OutpatientDiagnosis}{%
+\vcounterlist \item Were you diagnosed via an outpatient visit?
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No \ra \textbf{Go to question~\addtocounter{counter}{4}\thecounter\addtocounter{counter}{-4}}
+\vsublistend
+\vlistend  
+}
+
+\newcommand{\HositalizationAdditionalDetails}{%
+\raggedright\textbf{Provide details for additional hospitalizations on the Additional Hospitalizations Form on page~\pageref{Additional Hospitalizations}}.
+}
+
+\newcommand{\AppointmentDate}{%
+\vcounterlist \item What was the date of your appointment?\smallskipline\hxdate
+\vlistend
+}
+
+\newcommand{\HospitalizedMoreThanOnceFor}[1]{%
+\vcounterlist \item Were you hospitalized for \textbf{#1} more than once since your in-person MOSAAIC exam?
+\vsublist
+\item Yes \ra \x more times \ra \textbf{{Provide details on the Additional Hospitalizations Form on page~\pageref{Additional Hospitalizations}}}
+\setc{-1} 
+\item No 
+\vsublistend
+\vlistend
+}
+
+\newcommand{\OutpatientOrHospitalization}[3]{%
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+\vcounterlist \item What was the name of the hospital/clinic that provided the #1? \smallskiphrulefill
+\vlistend
+
+\HospitalClinicLocation
+
+\AppointmentDate
+
+\end{tcolorbox}
+
+\vcounterlist \item Were you hospitalized for this #2?
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No
+\vsublistend
+\vlistend
+
+\HospitalNameLocationDateTimesAdditionalDetailsBox
+}
+
+\newcommand{\OutpatientOrHospitalizationSpecific}[2]{%
+\vcounterlist \item Were you hospitalized for \textbf{#2?}
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No \ra \textbf{Go to question~\addtocounter{counter}{5}\thecounter\addtocounter{counter}{-5}}
+\vsublistend
+\vlistend
+
+\HospitalNameLocationDateTimesAdditionalDetailsBoxSpecific{#2}
+
+\ClinicDiagnosis
+
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+\vcounterlist \item What was the name of the hospital/clinic that provided the #1? \smallskiphrulefill
+\vlistend
+
+\HospitalClinicLocation
+
+\AppointmentDate
+\end{tcolorbox}
+}
+
+\newcommand{\OutpatientOrHospitalizationPulmonary}[2]{%
+\vcounterlist \item Were you hospitalized for \textbf{#2?}
+\vsublist
+\itemnode Yes
+\setc{-1}
+\item No \ra \textbf{Go to page~\pageref{Pulmonary Hosptialization}}
+\vsublistend
+\vlistend
+
+\HospitalNameLocationDateTimesAdditionalDetailsBoxSpecific{#2}
+
+\newpage
+
+\ClinicDiagnosis
+
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\label{Pulmonary Hosptialization}
+\enodetwo
+
+\vcounterlist \item What was the name of the hospital/clinic that provided the #1? \smallskiphrulefill
+\vlistend
+
+\HospitalClinicLocation
+
+\AppointmentDate
+\end{tcolorbox}
+}

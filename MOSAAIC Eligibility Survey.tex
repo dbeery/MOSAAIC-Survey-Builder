@@ -1,0 +1,99 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\input{Tex Files/TikzOn.tex}
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Eligibility Survey}
+
+\begin{document}
+
+\noindent
+\obeylines
+
+\begin{centering}
+    \vspace{-2\baselineskip}
+    \textbf{\LARGE \FetchFooterText{ELG0.1}}
+    \vspace{\baselineskip}
+\end{centering}
+
+\FetchText{ELG0.2}
+
+\vspace{.5\baselineskip}
+
+\hlist{\FetchNumber{ELG1.}}\item \FetchText{ELG1.}
+\YN
+
+\vlist{\FetchNumber{ELG2.}}\item \FetchText{ELG2.}
+\vsublist
+\ice \ElementPlusText{\x\x}{ELG2.1}
+\vsublistend
+\vlistend
+
+\hlist{\FetchNumber{ELG3.}}\item \FetchText{ELG3.}
+\YN
+
+\hlist{\FetchNumber{ELG4.}}\item \FetchText{ELG4.}
+\YN
+
+\hlist{\FetchNumber{ELG5.}}\item \FetchText{ELG5.}
+\YN
+
+\hlist{\FetchNumber{ELG6.}}\item \FetchText{ELG6.}
+\YN
+
+\vlist{\FetchNumber{ELG7.}}\item \TextPlusElement{\x\x\x\x\x}{ELG7.}
+\vlistend
+
+\end{document}
+
+
+
+% \noindent
+% \obeylines
+
+% %HeaderPlaceHolder
+
+% %\tableofcontents
+
+% \begin{centering}
+% \vspace{-2\baselineskip}
+% \textbf{\LARGE \dhop{ELG0.1}}
+% \vspace{\baselineskip}
+% \end{centering}
+
+% %\section{\protect\grab{ELIGIBILITY}}
+
+% \fetch{ELG0.2}
+
+% \vspace{.5\baselineskip}
+
+% \hlist{\notch{ELG1.}}\item \fetch{ELG1.}
+% \YN
+
+% \vlist{\notch{ELG2.}}\item \fetch{ELG2.}
+% \vsublist
+% \ice \triple{\x\x}{ELG2.1}
+% \vsublistend
+% \vlistend
+
+% \hlist{\notch{ELG3.}}\item \fetch{ELG3.}
+% \YN
+
+% \hlist{\notch{ELG4.}}\item \fetch{ELG4.}
+% \YN
+
+% \hlist{\notch{ELG5.}}\item \fetch{ELG5.}
+% \YN
+
+% \hlist{\notch{ELG6.}}\item \fetch{ELG6.}
+% \YN
+
+% \vlist{\notch{ELG7.}}\item \quatro{\x\x\x\x\x}{ELG7.}
+% \vlistend

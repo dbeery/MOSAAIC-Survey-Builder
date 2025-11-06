@@ -1,0 +1,161 @@
+
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+
+\usetikzlibrary{positioning}
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\toggletrue{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Participant Tracking Form}
+
+\newcommand{\hxdate}{\MMDDYYYY~(MM/DD/YYYY)}
+
+\newcommand{\hxdatebox}{%
+\begin{center}
+  \begin{tcolorbox}[colback = white, width = 1.2\datelength]
+  \hxdate
+  \end{tcolorbox}
+\end{center}
+}
+
+\newlength{\datelength}
+\settowidth{\datelength}{\hxdate}
+
+
+\begin{document}
+
+\noindent
+\obeylines
+
+\section*{\FetchTitle{TRK0.}}
+\label{subsec:TRK1}
+\FetchText{TRK0.1}
+
+\hlist{\FetchNumber{TRK24.}}\item \FetchText{TRK24.}\hxdatebox
+\hsublist
+\item \FetchText{TRK24a.}
+\setc{-1}
+\item \FetchText{TRK24b.}
+\hsublistend
+\hlistend
+
+\vlist{\FetchNumber{TRK1.}}\item \FetchText{TRK1.}
+\personaladdress
+
+% \hlist{\FetchNumber{TRK2.}}\item \FetchText{TRK2.}
+% \hsublist
+% \item \FetchText{TRK2.1}
+% \setc{-1}
+% \item \FetchText{TRK2.2}
+% \hsublistend
+% \halt
+
+\vlist{\FetchNumber{TRK2a.}}\item \TextPlusElement{\phone}{TRK2a.}
+\vlistend
+
+\hlist{\FetchNumber{TRK4.}}\item \FetchText{TRK4.}
+\YN
+
+\vlist{\FetchNumber{TRK3.}}\item \FetchText{TRK3.}
+\vsublist
+\item \FetchText{TRK3.1}
+\item \FetchText{TRK3.2}
+\item \FetchText{TRK3.3}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{TRK5.}}\item \TextPlusHRuleFill{TRK5.}
+\vlistend
+
+\newpage
+\bmp
+\FetchText{TRK0.2}
+\label{subsec:TRK2}
+\vspace{\baselineskip}
+
+\vlist{\FetchNumber{TRK6.}}\item \FetchText{TRK6.}
+\titletwo
+\emp
+
+\vlist{\FetchNumber{TRK7.}}\item \FetchText{TRK7.}
+\relationship
+
+\vlist{\FetchNumber{TRK8.}}\item \FetchText{TRK8.}
+\address
+
+\vlist{\FetchNumber{TRK9.}}\item \TextPlusElement{\phone}{TRK9.}
+\vlistend
+
+\vlist{\FetchNumber{TRK10.}}\item \TextPlusHRuleFill{TRK10.}
+\vlistend
+
+\vlist{\FetchNumber{TRK11.}}\item \FetchText{TRK11.}
+\titletwo
+
+\vlist{\FetchNumber{TRK12.}}\item \FetchText{TRK12.}
+\relationship
+
+\vlist{\FetchNumber{TRK13.}}\item \FetchText{TRK13.}
+\address
+
+\vlist{\FetchNumber{TRK14.}}\item \TextPlusElement{\phone}{TRK14.}
+\vlistend
+
+\vlist{\FetchNumber{TRK15.}}\item \TextPlusHRuleFill{TRK15.}
+\vlistend
+
+\vlist{\FetchNumber{TRK16.}}\item \FetchText{TRK16.}
+\titletwo
+
+\vlist{\FetchNumber{TRK17.}}\item \FetchText{TRK17.}
+\relationship
+
+\vlist{\FetchNumber{TRK18.}}\item \FetchText{TRK18.}
+\address
+
+\vlist{\FetchNumber{TRK19.}}\item \TextPlusElement{\phone}{TRK19.}
+\vlistend
+
+\vlist{\FetchNumber{TRK20.}}\item \TextPlusHRuleFill{TRK20.}
+\vlistend
+
+\FetchText{TRK21.}
+
+\vlist{\arabic*., start = \catch{TRK21.1}}
+\item \TextPlusHRuleFill{TRK21.1}
+\item \TextPlusElement{\phone}{TRK21.2}
+\item \TextPlusHRuleFill{TRK21.3} 
+\item \FetchText{TRK21.4}
+\vlistend
+\vspace{-\baselineskip}
+\begin{enumerate}[label = \alph*., start = 1]
+\item \TextPlusHRuleFill{TRK21.4.1} 
+\item \TextPlusHRuleFill{TRK21.4.2}
+\end{enumerate}
+
+\vlist{\FetchNumber{TRK22.}}\item \FetchText{TRK22.}
+\vsublist
+\item \FetchText{TRK22.1}
+\item \FetchText{TRK22.2}
+\item \FetchText{TRK22.3}
+\item \FetchText{TRK22.4}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{TRK23.}}\item \FetchText{TRK23.}
+\vsublist
+\item \FetchText{TRK23.1}
+\item \FetchText{TRK23.2}
+\item \FetchText{TRK23.3}
+\item \FetchText{TRK23.4}
+\item \TextPlusHRuleFill{TRK23.5}
+\vsublistend
+\vlistend\label{myLastPage}
+
+\end{document}

@@ -1,0 +1,45 @@
+\subsectionmarkright{OEY0.}
+\label{subsec:OEY}
+
+\FetchText{OEY0.1}
+
+\hlist{\FetchNumber{OEY1.}}\item \FetchText{OEY1.}
+\hsublist
+\item \FetchText{OEY1.1}\setc{-1}
+\item \FetchText{OEY1.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{OEY1a.}}\item \FetchText{OEY1a.}
+\vsublist
+\item \FetchText{OEY1a.1}\setc{-1}
+\item \FetchText{OEY1a.2}  
+\vsublistend
+\vlistend
+
+% \vlist{\FetchNumber{OEY2.}}\item \FetchText{OEY2.}
+\begin{enumerate}[label = \FetchNumber{OEY2.}]\item \FetchText{OEY2.}
+\vsublist
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.1}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.2}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.3}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.4}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.5}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.6}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.7}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.8}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.9}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.10}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.11}\emp
+\foreach \i in {1,...,11}{%
+\begin{minipage}{.9\textwidth}\item \FetchText{OEY2.\i}\emp
+}
+\begin{minipage}{.9\textwidth}\item \TextPlusHRuleFill{OEY2.12}\emp
+\end{enumerate}
+\end{enumerate}
+
+\vlist{\FetchNumber{OEY3.}}\item \FetchText{OEY3.}
+\vsublist
+\ice \ElementPlusText{\x\x}{OEY3.1} \ElementPlusText{\x\x}{OEY3.2}
+\vsublistend
+\vlistend

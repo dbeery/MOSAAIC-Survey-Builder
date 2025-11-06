@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{ENGLISH}
+\input{Variables.tex}
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\newtoggle{65}
+\togglefalse{65}
+
+\iftoggle{65}{
+\WriteHeader{MOSAAIC Exam Survey (65+)}
+}{%
+\WriteHeader{MOSAAIC Exam Survey}
+}
+
+
+\begin{document}
+
+\input{Tex Files/MOSAAIC Contacts Information.tex}
+\input{Tex Files/MOSAAIC Reproductive Health.tex}
+\input{Tex Files/MOSAAIC Respiratory Symptoms}
+\input{Tex Files/MOSAAIC Employment and Physical Activities.tex}
+\input{Tex Files/MOSAAIC Mental Health.tex}
+\iftoggle{65}{%
+\label{LastPage8}
+\input{Tex Files/MOSAAIC Physical Function.tex}
+% \input{Tex Files/MOSAAIC Activities of Daily Living.tex}
+% \input{Tex Files/MOSAAIC Instrumental Activities of Daily Living.tex}
+\input{Tex Files/MOSAAIC Pain.tex}
+\input{Tex Files/MOSAAIC Memory.tex}
+\input{Tex Files/MOSAAIC Fall.tex}
+\input{Tex Files/MOSAAIC Recent Life Events.tex}
+\input{Tex Files/MOSAAIC Unintentional Weight Loss.tex}
+\label{LastPage9}
+}{
+\input{Tex Files/MOSAAIC Cross-Cutting Assessment.tex}
+\input{Tex Files/MOSAAIC Mental Health Care v2.tex}
+\input{Tex Files/MOSAAIC Substance Use v2.tex}
+\input{Tex Files/MOSAAIC Recent Life Events.tex}
+}
+
+\iftoggle{changelog}{
+\input{Change Logs/CL MOSAAIC Exam Survey.tex}
+}{}
+
+\end{document}
+
+% \documentclass[12pt]{article}
+
+% \newcommand{\langgg}{ENGLISH}
+% \input{Variables.tex}
+% \input{Preambles/Preamble.tex}
+
+% \togglefalse{bilingual}
+% \togglefalse{changelog}
+% \togglefalse{tikz}
+
+% \WriteHeader{MOSAAIC Exam Survey}
+
+% \begin{document}
+
+% \input{Tex Files/MOSAAIC Contacts Information.tex}
+% \input{Tex Files/MOSAAIC Reproductive Health.tex}
+% \input{Tex Files/MOSAAIC Respiratory Symptoms}
+% \input{Tex Files/MOSAAIC Mental Health.tex}
+% \input{Tex Files/MOSAAIC Cross-Cutting Assessment.tex}
+% \input{Tex Files/MOSAAIC Mental Health Care v2.tex}
+% \input{Tex Files/MOSAAIC Substance Use v2.tex}
+% \input{Tex Files/MOSAAIC Recent Life Events.tex}
+
+% \end{document}

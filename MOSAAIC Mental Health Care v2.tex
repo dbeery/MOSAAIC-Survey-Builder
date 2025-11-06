@@ -1,0 +1,31 @@
+
+\clearpage
+\markright{\FetchTextForHeader{MHC0.}}
+\section*{\FetchText{MHC0.}}
+\label{subsec:MHC}
+
+\fancyfoot[R]{Page \thepage \ of \pageref{LastPage8}}
+\markright{\FetchTextForHeader{MHC0.}}
+% \renewcommand{\headrulewidth}{0pt}
+
+\foreach \i in {1,2,3}{%
+\edef\ia{\i a}%
+\vlist{\FetchNumber{MHC\i.}}\item \FetchText{MHC\i.}
+\vsublist
+\item \FetchText{MHC\i.1}\setc{-1}
+\item \FetchText{MHC\i.2}\setc{98}
+\item \FetchText{MHC\i.3}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{MHC\ia.}}\item \FetchText{MHC\ia.}
+\vsublist
+\item \FetchText{MHC\ia.1}\IfStrEq{\i}{1}{\setc{-1}}{}
+\item \FetchText{MHC\ia.2}\IfStrEq{\i}{1}{\setc{1}}{}
+\item \FetchText{MHC\ia.3}\setc{98}
+\item \FetchText{MHC\ia.4}
+\vsublistend
+\vlistend
+}
+
+\label{LastPage3}

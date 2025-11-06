@@ -1,0 +1,74 @@
+
+\markright{\FetchTextForHeader{PFX0.}}
+\forcesubsectionmarkright{PFX0.}
+
+% \subsectionmarkright{PFX0.}
+\label{subsec:PFX}
+
+\setcounter{page}{1}
+\fancyfoot[R]{Page \thepage \ of \pageref{LastPage9}}
+
+\FetchText{PFX0.1} 
+
+\newcommand{\PFXresponses}[2]{%
+\FetchNumber{#1#2.} & \FetchText{#1#2.} &
+\vspace{-\baselineskip}\vsublist
+\setch{-1}
+\item \FetchText{PFX0.3}
+\item \FetchText{PFX0.4}
+\item \FetchText{PFX0.5}
+\item \FetchText{PFX0.6}
+\setch{8}
+\item \FetchText{PFX0.7}
+\vspace{.75\baselineskip}\end{enumerate}\\
+}
+
+\begin{longtable}{@{} >{\rrr}p{.25 cm}>{\rrr} p{8 cm} >{\rrr} p{7 cm}}%
+\multicolumn{3}{@{}l}{\parbox[t]{15.75 cm}{\raggedright \FetchText{PFX0.2}}}\endfirsthead%
+\multicolumn{3}{@{}l}{\parbox[t]{15.75 cm}{\raggedright \textcolor{darkgray}{\FetchText{PFX0.2}}}}\endhead
+\endlastfoot%
+\PFXresponses{FXL}{1}
+\PFXresponses{FXL}{2}
+\PFXresponses{FXL}{3}
+\PFXresponses{FXL}{4}
+\PFXresponses{FXL}{5}
+\PFXresponses{FXL}{6}
+\PFXresponses{ADL}{1}
+\PFXresponses{ADL}{2}
+\PFXresponses{ADL}{3}
+\PFXresponses{ADL}{4}
+\PFXresponses{ADL}{5}
+\PFXresponses{ADL}{6}
+\PFXresponses{IADL}{1}
+\PFXresponses{IADL}{2}
+\PFXresponses{IADL}{3}
+\PFXresponses{IADL}{4}
+\PFXresponses{IADL}{5}
+\PFXresponses{IADL}{6}
+\PFXresponses{IADL}{7}
+\PFXresponses{IADL}{8}
+\PFXresponses{IADL}{9}%
+\end{longtable}%
+\vspace{-3\baselineskip}%
+
+% \newcommand{\PFXSection}[2]{%
+% %   \foreach \i in {1,...,#2}{%
+% %     \bmp
+% %       \begin{minipage}[t]{.50\textwidth}%
+% %         \begin{enumerate}[label=\FetchNumber{#1\i.}]%
+% %           \item \FetchText{#1\i.}%
+% %         \end{enumerate}
+% %       \end{minipage}%
+% %       \hfill%
+% %         \begin{minipage}[t]{.415\textwidth}
+% %             \begin{enumerate}[label=\labeltwo, topsep=0em]%
+% %             \item \FetchText{PFX0.3}
+% %             \item \FetchText{PFX0.4}
+% %             \item \FetchText{PFX0.5}
+% %             \item \FetchText{PFX0.6}
+% %             \setch{8}
+% %             \item \FetchText{PFX0.7}
+% %         \vlistend
+% %     \emp
+% %   }
+% % }

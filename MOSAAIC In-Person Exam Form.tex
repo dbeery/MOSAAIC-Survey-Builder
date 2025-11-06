@@ -1,0 +1,455 @@
+\documentclass[12pt]{article}
+
+\expandafter\def\csname eMOSAAIC In-Person Exam Form.Version\endcsname{v4.1}
+\expandafter\def\csname eMOSAAIC In-Person Exam Form.Date\endcsname{{9/3/25}}
+
+\newcommand{\langgg}{ENGLISH}
+
+\input{Preambles/Preamble.tex}
+
+\WriteHeader{MOSAAIC In-Person Exam Form}
+
+\begin{document}
+
+\newcommand{\y}{\hspace*{.05 cm}\rule{.3 cm}{.25 mm}\hspace*{.05cm}} 
+\renewcommand{\vlist}[1]{\raggedright\raggedbottom\begin{enumerate}[label =#1, start = 1, itemsep=.5em, topsep=.5em, left=0em, labelsep=.25em, align = left]}
+\renewcommand{\hlist}[1]{\bmp\begin{enumerate}[label =#1]\raggedright\raggedbottom} %non-indented horizontal lists
+\renewcommand{\vsublist}{\begin{enumerate}[left = 1em, start = 1, itemsep=.5em, topsep=.5em, left=0em, labelsep=.25em, align = left]}
+\renewcommand{\hsublist}{\vspace{.75em}\begin{enumerate*}[label = \hspace{.4em}\arabox, labelsep=.25 em, start = 1, topsep=.75em, align = parleft, itemjoin=\hspace{1.1em}]}
+\newcommand{\bmptwo}{\bmp
+\setlength{\parskip}{7.25ptplus2.0pt}
+\setlength{\itemsep}{6pt}
+\setlength{\topsep}{6pt}
+\raggedright
+}
+\newcommand{\emptwo}{\emp\vspace{.5em}
+}
+\renewcommand{\sectionbreak}{}
+\renewcommand{\subsectionbreak}{}
+
+\noindent
+
+\renewcommand\arraystretch{1.5}
+\begin{flushright}
+\begin{tabular}{| >{\rrr} p{1 in} | >{\rrr} p{.28 in}  | >{\rrr} p{.28 in}  | >{\rrr} p{.28 in}  | >{\rrr} p{.28 in}  | >{\rrr} p{.28 in}  | >{\rrr} p{.28 in}  |}
+\hline
+Visit Date	&\multicolumn{6}{ p{.5in} |}{\ \newline\y\y/\y\y/\y\y\y\y MM/DD/YYYY}\\
+\hline 
+ID Number	&&&&&&\\
+\hline
+\end{tabular}								
+\end{flushright}
+
+\obeylines
+\vspace{\baselineskip}
+
+\subsection*{General Information and Safety Screening}
+
+\vlist{GIS1.}\item Staff Name: \hrulefill
+\end{enumerate}
+
+\subsubsection*{General Information}
+
+\vlist{GEN\arabic*.}\item Full Name: \hrulefill			
+\item Date of Birth: \x\x/\x\x/\x\x\x\x MM/DD/YYYY		
+\item Preferred Language?
+
+\vsublist
+\item English
+\item Traditional Chinese
+\item Simplified Chinese
+\item Korean 
+\item Tagalog
+\item Vietnamese
+\vsublistend
+
+\item Full consent form signed?
+\hsublist
+\item Yes\setc{-1}
+\item No
+\hsublistend
+
+\item ROI signed?
+\hsublist
+\item Yes\setc{-1}
+\item No
+\hsublistend
+
+\item Survey format?	
+\hsublist 
+\item Paper			 
+\item Electronic
+\hsublistend
+
+\end{enumerate}
+
+\newpage
+
+\newpage
+\subsection*{Medication Inventory}
+
+\vlist{MIN\arabic*.}
+\item Staff Name: \hrulefill
+
+\item Did the participant take any prescription or over the counter medications in the past two weeks?
+\hsublist
+    \item Yes\setc{-1}
+    \item No \ra \textbf{Go to next section}    
+\hsublistend
+
+\item Completed during the visit?
+\vsublist 
+    \item Yes\setc{-1}
+    \item No, plan to follow-up with participant.\setc{1}
+    \item No, no plan to follow-up \ra Provide comments below 
+\vsublistend
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}		
+
+\subsection*{Anthropometrics, Heart Rate, and Blood Pressure}
+
+\vlist{ANT\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\end{enumerate}
+
+\subsubsection*{Height, Weight and Waist Girth}
+
+\vlist{HW\arabic*.}
+\item Completed? 
+
+\vsublist
+    \item Yes \ra \mbox{Time (all measures completed): \x\x:\x\x AM/PM (circle one)}	 
+    \setc{-1}
+    \item No \ra Provide comments below
+\vsublistend
+
+\item Height (cm): \x\x\x\ .\ \x
+\item Weight (kg): \x\x\x\ .\ \x
+\item Waist girth (cm):
+\begin{enumerate}[label = \alph*.]
+\item 1st measure: \x\x\ .\ \x
+\item 2nd measure: \x\x\ .\ \x
+\item 3rd measure*: \x\x\ .\ \x
+\vspace{\baselineskip}
+\par *Record 3rd measure only if 1st and 2nd measure differ by >2 cm.\par
+\end{enumerate}
+\item Hip girth (cm): 
+\begin{enumerate}[label = \alph*.]
+\item 1st measure: \x\x\ .\ \x
+\item 2nd measure: \x\x\ .\ \x
+\item 3rd measure*: \x\x\ .\ \x
+\vspace{\baselineskip}
+\par *Record 3rd measure only if 1st and 2nd measure differ by >2 cm.\par
+\end{enumerate}
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+\subsubsection*{HR and BP Measures}
+
+\vlist{HRBP\arabic*.}
+
+\item Completed?
+\vsublist 
+\item Yes \ra Time (all measures completed): \x\x:\x\x AM/PM (circle one)	
+\setc{-1}	
+\item No \ra Provide comments below
+\vsublistend
+
+\item Arm circumference (cm): \x\x
+
+\item Cuff size:
+
+\vsublist
+\item Small \{17-22 cm, CS19\}
+\item Adult \{22-32 cm, CR19\}
+\item Large \{32-42 cm, CL19\}
+\item X Large \{42-50 cm, CX19\}
+\vsublistend
+
+\item Systolic Blood Pressure (mmHg)/Diastolic Blood Pressure (mmHg)/Pulse (BPM):
+
+\begin{enumerate}[label = \alph*.]
+\item 1st measure: \x\x\x/\x\x\x/\x\x\x
+\item 2nd measure: \x\x\x/\x\x\x/\x\x\x
+\item 3rd measure: \x\x\x/\x\x\x/\x\x\x
+\end{enumerate}
+
+\par[Record the 3rd measurement in the Results Card]
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+
+\subsection*{ECG}
+
+\vlist{ECG\arabic*.} 
+\bmptwo  
+\item Staff Name: \hrulefill
+
+\item Completed?					
+
+\vsublist 
+\item Yes \ra \mbox{Time (all measures completed): \x\x:\x\x AM/PM (circle one)}
+\setc{-1}			 
+\item No \ra Provide comments below
+\vsublistend
+\emptwo
+
+
+\bmptwo
+\item Electrode location measurements (approximated to
+the nearest cm):
+    \begin{enumerate}[label = \alph*.]
+        \item NV Line (cm): \x\x.\ \x 
+        \item Mid-chest (cm): \x\x.\ \x 
+    \end{enumerate}
+\emptwo
+
+\bmptwo
+\item Were any alert conditions noted?
+
+\vsublist
+\item Yes\setc{-1}	
+\item No
+\vsublistend
+\emp
+
+\begin{enumerate}[label = \alph*.]
+\item \textbf{If yes}, specify alert conditions:
+    \vsublist
+        \item Heart rate <40 beats/minute
+        \item Heart rate >120 beats/minute
+        \item Acute myocardial infarction/injury
+        \item Acute myocardial ischemia
+        \item Ventricular tachycardia
+        \item Complete atrioventricular block
+        \item New atrial fibrillation or flutter
+        \item Wolff-Parkinson-White (WPW) Syndrome --- Preexcitation
+    \end{enumerate}
+\bmptwo
+\raggedright
+\item Specify action taken:
+    \vsublist
+        \item Alert checked with a healthcare provider. Participant referred to ER/their physician.
+        \item Alert checked with a healthcare provider and participant was not referred to ER/their physician. Participant reassured.
+        \item Alert was not checked with a healthcare provider. Participant referred to ER/their physician. Explain reason for this action: \hrulefill
+        \hrulefill
+        \hrulefill
+        \item No action taken. Explain reason for this action: \hrulefill
+        \hrulefill
+        \hrulefill
+    \vsublistend
+\emptwo
+\end{enumerate}
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+\subsection*{Spirometry}
+
+\vlist{SPR\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\item Pre-test completed?
+
+\vsublist
+\item Yes \ra Number of trials: \x
+\setc{-1}
+\item No \ra Provide comments below
+\vsublistend
+
+\item Was albuterol administered?
+
+\vsublist 
+\item Yes \ra Number of puffs administered: \x
+\par\hphantom{Yes \ra}Time administered: \x\x:\x\x AM/PM (circle one) 
+\setc{-1}
+\item No \ra Provide comments below
+\vsublistend
+
+\item Post-test completed? 
+\vsublist 
+\item Yes \ra Number of trials: \x
+\setc{-1}
+\item No \ra Provide comments below
+\vsublistend
+
+\bmp
+\item Modification(s) to Protocol: \hrulefill
+\hrulefill 
+\hrulefill
+\emp
+
+\end{enumerate}	
+
+\newpage
+\subsection*{Blood Draw}
+
+\vlist{BLD\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\item Kit ID: \x\x\x\x\x\x\x
+	
+\item Draw attempted?
+\vsublist
+\item Yes \ra Time \x\x:\x\x AM/PM (circle one)
+\setc{-1}  
+\item No
+\vsublistend
+
+\item If no draw attempt, why?		
+\vsublist
+\item Participant declined
+\item Found no acceptable veins for a draw attempt
+\item Health or safety reasons
+\item Other: \hrulefill
+\vsublistend
+
+\end{enumerate}
+
+\subsection*{Specimen Collection}
+
+\subsubsection*{Saliva Collection}
+
+\vlist{SAL\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\item Completed?
+					
+\vsublist 
+\item Yes \ra Time: \x\x:\x\x AM/PM (circle one)	
+\setc{-1}
+\item No \ra Provide comments below
+\vsublistend
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+\subsubsection*{Urine Collection}
+
+\vlist{URN\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\item Completed?
+				
+\vsublist 
+\item Yes \ra Time: \x\x:\x\x AM/PM (circle one)
+\setc{-1}
+\item No \ra Provide comments below
+\vsublistend
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+\subsubsection*{Stool Collection}
+
+\vlist{STL\arabic*.}
+
+\item Was a stool kit collected at the visit, or was a kit provided to take home?
+\vsublist
+\item Yes\setc{-1}		 
+\item No, kit provided to take home\setc{1}
+\item Neither collected nor provided to take home \ra Provide comments below
+\vsublistend
+
+\item Kit ID \x\x\x\x\x
+\item Modification(s) to Protocol: \hrulefill
+\end{enumerate}
+
+\subsection*{Exam Survey}
+  
+\vlist{EXS\arabic*.}
+\item Completed?		
+\hsublist
+\item Yes\setc{-1}
+\item No \ra Write follow-up plan below
+\hsublistend
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+\subsection*{Cognitive Assessment}
+  
+\vlist{COG\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\item Completed?		
+\hsublist
+\item Yes	
+\setc{-1}
+\item No \ra Write follow-up plan below
+\hsublistend
+
+\item Modification(s) to Protocol: \hrulefill
+
+\end{enumerate}
+
+\subsection*{FFQ}
+
+\vlist{FFQ\arabic*.}
+
+\item Staff Name: \hrulefill
+
+\item Completed?		
+\hsublist
+\item Yes\setc{-1}	
+\item No \ra Write follow-up plan below
+\hsublistend
+
+\item Which FFQ?
+\hsublist
+\item MEC 
+\item MASALA/Shared
+\hsublistend
+
+
+\item Modification(s) to Protocol: \hrulefill	
+
+\end{enumerate}
+
+\subsection*{Final Review}
+
+\vlist{FNR\arabic*.} 
+
+\item Safety questions alerts?
+
+\hsublist	
+\item Yes\setc{-1}
+\item No 
+\hsublistend
+
+\item Measurement Alerts?
+\vsublist
+\item Yes, specify: \hrulefill
+\setc{-1}
+\item No 
+\vsublistend
+
+\item Modification(s) to Protocol: \hrulefill
+
+\item Overall Comments: \hrulefill
+\hrulefill
+\hrulefill
+\hrulefill
+
+\end{enumerate}
+
+\label{myLastPage}
+
+\end{document}

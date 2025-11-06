@@ -1,0 +1,341 @@
+
+
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Tex Files/MOSAAIC Hospitalization Preamble v2.tex}
+\input{Preambles/Preamble.tex}
+\usetikzlibrary{positioning}
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\toggletrue{tikz}
+
+\input{Variables.tex}\WriteHeader{MOSAAIC Health Conditions and Procedures Form (Part 2)}
+
+\newcommand{\sboxnode}{\tikz[remember picture, baseline]{\node[anchor=base west,inner sep=0pt](start)at(0ex, 0ex){$\square_{\arabic{enumii}}$};}}
+\newcommand{\itemnode}{\refstepcounter{enumii}\item[\sboxnode]}
+
+\newcommand{\dateofdiagnosis}{\ra Date of event or diagnosis: \hxdate}
+
+\newcommand{\diagnosisdate}{%
+\vspace{-.25\baselineskip}
+\par\begin{flushright}\begin{tcolorbox}[colback = white, width = .95\textwidth]\hspace{-.3cm}\enode%
+\raggedright Date of event or diagnosis: \hxdate
+\end{tcolorbox}\end{flushright}
+}
+
+\renewcommand{\snode}{\tikz[remember picture, baseline]{\node (start) at (0, .5ex) {};}}
+ 
+\renewcommand{\enode}{\tikz[remember picture, baseline]{\node (end) {};}\begin{tikzpicture}[remember picture, overlay]\draw[->, ultra thick] (start) |- (end);\end{tikzpicture}}
+
+\newcommand{\enodetwo}{\tikz[remember picture, baseline]{\node (end) {};}\begin{tikzpicture}[remember picture, overlay]\draw[->, ultra thick] (start) -| (end);\end{tikzpicture}}
+
+\renewcommand{\tablist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1, labelsep = .25em, left = 2em, align = left]} %indented vertical and horizontal lists
+
+\newcommand{\hxdate}{\MMDDYYYY~(MM/DD/YYYY)}
+
+\newcommand{\hxdatebox}{%
+\begin{center}
+  \begin{tcolorbox}[colback = white, width = 1.2\datelength]
+  \hxdate
+  \end{tcolorbox}
+\end{center}
+}
+
+\newlength{\datelength}
+\settowidth{\datelength}{\hxdate}
+
+\begin{document}
+
+\iftoggle{tikz}{\input{Tex Files/TikzOn.tex}}{\input{Tex Files/TikzOff.tex}}
+
+
+\noindent
+\obeylines
+\raggedright
+
+\markright{\FetchTextForHeader{HCP0.2}}
+\section*{\FetchTitle{HCP0.2}}
+\nopagecolor
+
+\label{Health Conditions and Procedures Part 2}
+
+\bmp
+\raggedright
+\FetchText{HCP0.3}
+\hxdatebox
+\vspace{-.5\baselineskip}
+\emp
+
+ %Cancer
+\bmp
+\hlist{\FetchNumber{HCP18.}}\item \FetchText{HCP18.}
+\hsublist
+\item \FetchText{HCP18.1}\setc{-1}
+\item \FetchText{HCP18.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP18a.}}\item \FetchText{HCP18a.}
+\vlistend
+\vspace{-1\baselineskip}\begin{tabular}{ >{\rrr} p{.45cm}@{} >{\rrr} p{2.5in} >{\rrr} p{4in}}
+&
+\vsublist
+\item \FetchText{HCP18a.1}
+\item \FetchText{HCP18a.2} 
+\item \FetchText{HCP18a.3}
+\item \FetchText{HCP18a.4}
+\item \FetchText{HCP18a.5}
+\item \FetchText{HCP18a.6}
+\item \FetchText{HCP18a.7}
+\item \FetchText{HCP18a.8}
+\item \FetchText{HCP18a.9}
+\item \FetchText{HCP18a.10}
+\end{enumerate}
+&
+\vsublist
+\setch{10}
+\item \FetchText{HCP18a.11}
+\item \FetchText{HCP18a.12}
+\item \FetchText{HCP18a.13}
+\item \FetchText{HCP18a.14}
+\item \FetchText{HCP18a.15}
+\item \FetchText{HCP18a.16}
+\item \FetchText{HCP18a.17}
+\item \TextPlusHRuleFill{HCP18a.18}\setch{98}
+\item \FetchText{HCP18a.19}
+\end{enumerate}\end{tabular}
+\emp
+
+\tablist{\FetchNumber{HCP18b.}}\item \FetchText{HCP18b.}
+\YN
+
+\tablist{\FetchNumber{HCP18c.}}\item \FetchText{HCP18c.}
+\YN
+
+\newpage
+\bmp
+
+\bmp
+\FetchText{HCP0.4}
+\label{50}
+\emp
+
+
+\vspace{\baselineskip}
+\hlist{\FetchNumber{HCP21.}}\item \FetchText{HCP21.}
+\YN
+\emp
+
+\vlist{\FetchNumber{HCP22.}}\item \FetchText{HCP22.}
+\vsublist
+\item \FetchText{HCP22.1}
+\item \FetchText{HCP22.2}
+\item \FetchText{HCP22.3}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{HCP23.}}\item \FetchText{HCP23.}
+\vsublist
+\item \FetchText{HCP23.1}
+\item \FetchText{HCP23.2}
+\item \FetchText{HCP23.3}
+\vsublistend
+\vlistend
+
+\newpage
+
+
+\subsection*{\FetchText{OHOS0.}}
+
+\label{Other Hospitalization Form}
+\newcounter{counter}
+\setcounter{counter}{0}
+\vlist{\FetchNumber{OHOS1.}} \item \FetchText{OHOS1.}
+\vsublist
+\itemnode \FetchText{OHOS1.1}
+\setc{-1}
+\item \FetchText{OHOS1.2}
+\vsublistend
+\vlistend
+
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+
+\vlist{}\item \TextPlusHRuleFill{OHOS2.}
+\vlistend
+
+\vlist{}\item \FetchText{OHOS3.}
+\vsublist
+\item[a.] \TextPlusHRuleFill{OHOS3.1}
+\item[b.] \TextPlusHRuleFill{OHOS3.2}
+\vsublistend
+\vlistend
+
+\vlist{}\item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{OHOS4.}
+\vlistend
+
+\vlist{}\item \TextPlusHRuleFill{OHOS5.}
+\vlistend
+
+\vlist{} \item \FetchText{OHOS6.} 
+\vsublist
+\itemnode \FetchText{OHOS6.1}
+\setc{-1}
+\item \FetchText{OHOS6.2}
+\vsublistend
+\vlistend
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+
+\vlist{}\item \TextPlusHRuleFill{OHOS2.}
+\vlistend
+
+\vlist{}\item \FetchText{OHOS3.}
+\vsublist
+\item[a.] \TextPlusHRuleFill{OHOS3.1}
+\item[b.] \TextPlusHRuleFill{OHOS3.2}
+\vsublistend
+\vlistend
+
+\vlist{}\item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{OHOS4.}
+\vlistend
+
+\vlist{}\item \TextPlusHRuleFill{OHOS5.}
+\vlistend
+
+\vlist{} \item \FetchText{OHOS6.} 
+\vsublist
+\item \FetchText{OHOS6.3}
+\setc{-1}
+\item \FetchText{OHOS6.4}
+\vsublistend
+\vlistend
+
+\end{tcolorbox}
+
+\newpage
+
+
+\bmp
+\raggedright 
+\FetchText{HCP0.5}
+\label{ever conditions}
+
+
+\vspace{\baselineskip}
+\hlist{\FetchNumber{HCP1.}}\item \FetchText{HCP1.}
+\hsublist
+\item \FetchText{HCP1.1}\setc{-1}
+\item \FetchText{HCP1.2}
+\hsublistend
+\hlistend
+
+\emp
+
+\tablist{\FetchNumber{HCP1a.}}\item \FetchText{HCP1a.}
+\hsublist
+\item \FetchText{HCP1a.1}\setc{-1}
+\item \FetchText{HCP1a.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP1b.}}\item \FetchText{HCP1b.}
+\hsublist
+\item \FetchText{HCP1b.1}\setc{-1}
+\item \FetchText{HCP1b.2}\setc{1}
+\item \FetchText{HCP1b.3}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP1c.}}\item \FetchText{HCP1c.}
+\hsublist
+\setc{-1}
+\item \FetchText{HCP1c.1}
+\item \FetchText{HCP1c.2}
+\hsublistend
+\hlistend
+
+%Cholesterol
+\hlist{\FetchNumber{HCP2.}}\item \FetchText{HCP2.} 
+\hsublist
+\item \FetchText{HCP2.1}\setc{-1}
+\item \FetchText{HCP2.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP2a.}}\item \FetchText{HCP2a.}
+\YN
+
+\hlist{\FetchNumber{HCP3.}}\item \FetchText{HCP3.}
+\hsublist
+\item \FetchText{HCP3.1}\setc{-1}
+\item \FetchText{HCP3.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP3a.}}\item \FetchText{HCP3a.}
+\hsublist
+\item \FetchText{HCP3a.1}\setc{-1}
+\item \FetchText{HCP3a.2}
+
+\hsublistend
+\halt
+
+
+\tablist{\FetchNumber{HCP3b.}}\item \FetchText{HCP3b.}
+\hsublist
+\item \FetchText{HCP3b.1}\setc{-1}
+\item \FetchText{HCP3b.2}\setc{1}
+\item \FetchText{HCP3b.3}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP3c.}}\item \FetchText{HCP3c.}
+\vsublist
+\setc{-1}
+\item \FetchText{HCP3c.1}
+\item \FetchText{HCP3c.2}
+\item \FetchText{HCP3c.3}
+\vsublistend
+\vlistend
+
+\hlist{\FetchNumber{HCP12.}}\item \FetchText{HCP12.}
+\YN
+
+\hlist{\FetchNumber{HCP14.}}\item \FetchText{HCP14.} 
+\YN
+
+\hlist{\FetchNumber{HCP15.}}\item \FetchText{HCP15.} 
+\hsublist
+\item \FetchText{HCP15.1}\setc{-1}
+\item \FetchText{HCP15.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP15a.}}\item \FetchText{HCP15a.}
+\hsublist
+\item \FetchText{HCP15a.1}\setc{-1}
+\item \FetchText{HCP15a.2}
+\hsublistend
+\hlistend
+
+\hlist{\FetchNumber{HCP16.}}\item \FetchText{HCP16.} 
+\hsublist
+\item \FetchText{HCP16.1}\setc{-1}
+\item \FetchText{HCP16.2}
+\hsublistend
+\hlistend
+
+\tablist{\FetchNumber{HCP16a.}}\item \FetchText{HCP16a.} 
+\YN
+
+\hlist{\FetchNumber{HCP19.}}\item \FetchText{HCP19.}
+\YN
+\label{myLastPage}
+
+\end{document}

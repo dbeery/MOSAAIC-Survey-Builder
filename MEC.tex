@@ -1,0 +1,550 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{ENGLISH}
+
+\input{Preambles/Preamble.tex}
+
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+
+\include{Variables.tex}
+
+\setlist[enumerate]{ %For structured lists
+    label=\makebox[1.5em][l]{$\square_{\arabic*}$}, %Checkbox with automated coding
+    start = 1, %Coding start value
+    itemsep=.25em, %Space between response items
+    topsep=.5em, %Space between questions and response items
+    left=0em, %alignment
+    labelsep=.25em, %Space between question number and question
+    align = left %justification
+    } 
+\renewcommand{\vsublist}{\begin{enumerate}[left = 0 em]}
+\NewDocumentCommand{\red}{d[]}{\textcolor{red}{#1}}
+\NewDocumentCommand{\UnderLine}{d[]}{\underline{red}{#1}}
+% \NewDocumentCommand{\versiontwo}{d||}{\ifbool{v2}{#1}{#2}}
+\def\splitatpipe#1|#2\endpipe{\def\argone{#1}\def\argtwo{#2}}
+\NewDocumentCommand{\versiontwo}{m}{%
+  \splitatpipe#1\endpipe % Split at |
+  \ifbool{v2}{\argone}{\argtwo} % If v2 is true, use first argument; otherwise, use second argument
+}
+\newcommand{\FR}[2]{$\nicefrac{#1}{#2}$}
+
+\newcommand{\averageuse}{%
+\begin{minipage}{\textwidth}
+\vspace{.5\baselineskip}
+\FetchText{MEC0.13}
+\begin{minipage}{\textwidth}
+\begin{minipage}[t]{.25\textwidth}
+\vspace{.5\baselineskip}
+\vsublist
+\item \FetchText{MEC0.15}
+\item \FetchText{MEC0.16}
+\vsublistend
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{.25\textwidth}
+    \vspace{.5\baselineskip}
+\vsublist
+\setch{2}
+\item \FetchText{MEC0.17}
+\item \FetchText{MEC0.18}
+\vsublistend
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{.25\textwidth}
+\vspace{.5\baselineskip}
+\vsublist
+\setch{4}
+\item \FetchText{MEC0.19}
+\item \FetchText{MEC0.20}
+\vsublistend
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{.25\textwidth}
+\vspace{.5\baselineskip}
+\vsublist
+\setch{6}
+\item \FetchText{MEC0.21}
+\item \FetchText{MEC0.22}
+\vsublistend
+\end{minipage}
+\end{minipage}
+\end{minipage}
+}
+
+\begin{document}
+
+
+\newboolean{v2}
+\setboolean{v2}{false}
+
+\noindent
+\obeylines
+
+\FetchText{MEC0.1}
+
+\vsublist
+\item \FetchText{MEC0.3}
+\item \FetchText{MEC0.4}
+\item \FetchText{MEC0.5}
+\vsublistend
+
+\newcommand{\mecblock}[2]{%
+\foreach \i in {#1}{%
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\begin{minipage}{\textwidth}
+\FetchText{MEC\i.}
+\averageuse
+\vspace{.5\baselineskip}
+\FetchText{MEC0.14}
+\begin{minipage}{\textwidth}
+\begin{minipage}[t]{.333\textwidth}
+\vspace{.5\baselineskip}
+\vsublist
+\item \FetchText{MEC#2.1}
+\vsublistend
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{.333\textwidth}
+\vspace{.5\baselineskip}
+\vsublist
+\setc{1}
+\item \FetchText{MEC#2.2}
+\vsublistend
+\end{minipage}%
+\hfill%
+\begin{minipage}[t]{.333\textwidth}
+\vspace{.5\baselineskip}
+\vsublist
+\setc{2}
+\item \FetchText{MEC#2.3}
+\vsublistend
+\end{minipage}
+\end{minipage}
+\end{minipage}
+\end{tcolorbox}
+}}
+
+\newcommand{\mecblocktwo}[2]{%
+\foreach \i in {#1}{%
+\begin{minipage}{\textwidth}
+\FetchText{MEC\i.}
+\averageuse
+\vsublist
+\item \FetchText{MEC#2.1}
+\item \FetchText{MEC#2.2}
+\vsublistend
+\end{minipage}
+}}
+
+\newcommand{\mecblockfive}[2]{%
+\foreach \i in {#1}{%
+\begin{minipage}{\textwidth}
+\FetchText{MEC\i.}
+\averageuse
+\vsublist
+\item \FetchText{MEC#2.1}
+\item \FetchText{MEC#2.2}
+\item \FetchText{MEC#2.3}
+\item \FetchText{MEC#2.4}
+\item \FetchText{MEC#2.5}
+\vsublistend
+\end{minipage}
+}}
+
+% \newpage
+% \newgeometry{%
+%   left=.1in,
+%   right=.1in,
+%   top=1in,
+%   bottom=.1in
+% }
+
+\newgeometry{top=2cm,bottom=2cm,left=1cm,right=1cm}
+
+
+\mecblock{1,...,4}{1}
+\mecblock{5,6,7}{5}
+\mecblock{8,...,13}{8}
+\mecblock{14,15}{14}
+\mecblock{16}{16}
+\mecblock{17,...,20}{17}
+\foreach \x in {21,...,23}{\mecblock{\x}{\x}}
+\mecblock{24,25}{24}
+\foreach \x in {26,...,29}{\mecblock{\x}{\x}}
+\mecblock{30,...,32}{30}
+\foreach \x in {33,...,53}{\mecblock{\x}{\x}}
+\mecblock{40,41}{40}
+\foreach \x in {42,...,59}{\mecblock{\x}{\x}}
+\mecblock{60,61}{60}
+\mecblock{62}{62}
+\mecblock{63}{63}
+\mecblock{64, ..., 66}{64}
+\foreach \x in {67,...,71}{\mecblock{\x}{\x}}
+\mecblock{72,73}{72}
+\foreach \x in {74,...,77}{\mecblock{\x}{\x}}
+\mecblock{78,79,80}{78}
+\mecblock{82,...,87}{82}
+\foreach \x in {88,...,91}{\mecblock{\x}{\x}}
+\mecblock{92,93}{92}
+\foreach \x in {94,...,107}{\mecblock{\x}{\x}}
+\mecblock{108, ..., 111}{108}
+\mecblock{112, ..., 114}{112}
+\mecblock{115}{115}
+\mecblock{116,117}{116}
+\mecblock{118}{118}
+\mecblock{119}{119}
+\mecblock{120,121}{120}
+\mecblock{122,...,126}{122}
+\mecblock{127,...,129}{127}
+\foreach \x in {130,...,132}{\mecblock{\x}{\x}}
+\mecblock{133,...,136}{133}
+\foreach \x in {137,...,143}{\mecblock{\x}{\x}}
+\mecblock{144, 145}{144}
+\mecblock{146}{146}
+\foreach \x in {146,...,158}{\mecblock{\x}{\x}}
+\mecblock{159,160}{159}
+\mecblock{161,162}{161}
+\mecblock{163}{163}
+\mecblock{164}{164}
+%FetchEnglish{MEC2.11}
+\mecblocktwo{166}{166}
+\mecblockfive{167,...,169}{167}
+\mecblocktwo{170,171}{170}
+
+\end{document}
+
+% \btarray{16}{even}
+% \hline
+% \FetchEnglish{MEC172.} & \fetch{MEC172.}
+% &
+% \choices
+% [\FetchEnglish{MEC172.1}]
+% [\FetchEnglish{MEC172.2}]
+% [\FetchEnglish{MEC172.3}]
+% [\FetchEnglish{MEC172.4}]
+% [\FetchEnglish{MEC172.5}]
+% [\FetchEnglish{MEC172.6}]
+% &
+% \choices
+% [\fetch{MEC172.1}]
+% [\fetch{MEC172.2}]
+% [\fetch{MEC172.3}]
+% [\fetch{MEC172.4}]
+% [\fetch{MEC172.5}]
+% [\fetch{MEC172.6}]\\
+% \hline
+% \end{longtblr}
+
+% \begin{longtblr}{
+%   colspec = {| >{\rrr}p{9.5 cm + 1 pt} | >{\rrr}p{9.5 cm + 1 pt} |},
+%   vlines,
+%   cell{odd[3]}{1,2} = {orange!30},
+%   cell{1-2}{1,2} = {cyan!30}
+% }
+% \hline
+% \SetCell[c=2]{l,m}
+% \FetchEnglish{MEC173.}\\
+% \SetCell[c=2]{l,m}
+% \fetch{MEC173.}\\
+% \hline
+% \FetchEnglish{MEC174.}
+% &
+% \fetch{MEC174.}\\
+% \hline
+% \FetchEnglish{MEC175.}
+% &
+% \fetch{MEC175.}\\
+% \hline
+% \FetchEnglish{MEC176.}
+% &
+% \fetch{MEC176.}\\
+% \hline
+% \FetchEnglish{MEC177.}
+% &
+% \fetch{MEC177.}\\
+% \hline
+% \FetchEnglish{MEC178.}
+% &
+% \fetch{MEC178.}\\
+% \hline
+% \FetchEnglish{MEC179.}
+% &
+% \fetch{MEC179.}\\
+% \hline
+% \FetchEnglish{MEC180.}
+% &
+% \fetch{MEC180.}\\
+% \hline
+% \end{longtblr}
+
+% \restoregeometry
+% \newpage
+
+% \newgeometry{
+%   left=.1in,
+%   right=.1in,
+%   top=1in,
+%   bottom=.1in,
+%   includeheadfoot =false
+% }
+
+
+% \begin{longtblr}[caption = {Page 17}]{
+%   colspec = {| >{\rrr}p{9.5 cm + 1 pt} | >{\rrr}p{9.5 cm + 1 pt} |},
+%   vlines,
+%   cell{odd[3]}{1,2} = {orange!30},
+%   cell{1-2}{1,2} = {cyan!30}
+% }
+% \hline
+% \SetCell[c=2]{l,m}\FetchEnglish{MEC181.}\\
+% \SetCell[c=2]{l,m}\fetch{MEC181.}\\
+% \hline
+% \FetchEnglish{MEC182.}
+% &
+% \fetch{MEC182.}\\
+% \hline
+% \FetchEnglish{MEC183.}
+% &
+% \fetch{MEC183.}\\
+% \hline
+% \FetchEnglish{MEC184.}
+% &
+% \fetch{MEC184.}\\
+% \hline
+% \FetchEnglish{MEC185.}
+% &
+% \fetch{MEC185.}\\
+% \hline
+% \end{longtblr}
+
+% \begin{longtblr}{
+%   colspec = {| >{\rrr}p{9.5 cm + 1 pt} | >{\rrr}p{9.5 cm + 1 pt} |},
+%   vlines,
+%   cell{odd[3]}{1,2} = {orange!30},
+%   cell{1-2}{1,2} = {cyan!30}
+% }
+% \hline
+% \SetCell[c=2]{l,m}\FetchEnglish{MEC186.}\\
+% \SetCell[c=2]{l,m}\fetch{MEC186.}\\
+% \hline
+% \FetchEnglish{MEC187.}
+% &
+% \fetch{MEC187.}\\
+% \hline
+% \FetchEnglish{MEC188.}
+% &
+% \fetch{MEC188.}\\
+% \hline
+% \FetchEnglish{MEC189.}
+% &
+% \fetch{MEC189.}\\
+% \hline
+% \FetchEnglish{MEC190.}
+% &
+% \fetch{MEC190.}\\
+% \hline
+% \end{longtblr}
+
+% \begin{longtblr}{
+%   colspec = {| >{\rrr}p{9.5 cm + 1 pt} | >{\rrr}p{9.5 cm + 1 pt} |},
+%   vlines,
+%   cell{odd[3]}{1,2} = {orange!30},
+%   cell{1-2}{1,2} = {cyan!30}
+% }
+% \hline
+% \SetCell[c=2]{l,m}\FetchEnglish{MEC191.}\\
+% \SetCell[c=2]{l,m}\fetch{MEC191.}\\
+% \hline
+% \FetchEnglish{MEC192.}
+% &
+% \fetch{MEC192.}\\
+% \hline
+% \FetchEnglish{MEC193.}
+% &
+% \fetch{MEC193.}\\
+% \hline
+% \FetchEnglish{MEC194.}
+% &
+% \fetch{MEC194.}\\
+% \hline
+% \FetchEnglish{MEC195.}
+% &
+% \fetch{MEC195.}\\
+% \hline
+% \FetchEnglish{MEC196.}
+% & \fetch{MEC196.}\\
+% \hline
+% \FetchEnglish{MEC197.}
+% &
+% \fetch{MEC197.}\\
+% \hline
+% \end{longtblr}
+
+
+% \restoregeometry
+% \newpage
+
+% \newgeometry{
+%   left=.1in,
+%   right=.1in,
+%   top=1in,
+%   bottom=.1in,
+%   includeheadfoot =false
+% }
+ 
+
+% \begin{longtblr}[caption = {Page 18}]{
+%   colspec = {| >{\rrr}p{19 cm/3 + 16pt/6} | >{\rrr}p{19 cm/3 + 16pt/6} | >{\rrr}p{19 cm/3 + 16pt/6} |},
+%   vlines,
+%   cell{1-Z}{2} = {orange!30},
+%   cell{1-2}{1-Z} = {cyan!30}
+% }
+% \hline
+% \SetCell[c=3]{l,m}\FetchEnglish{MEC198.}\\
+% \SetCell[c=3]{l,m}\fetch{MEC198.}\\
+% \hline
+% \FetchEnglish{MEC199.}\newline
+% \choices
+% [\FetchEnglish{MEC199.1}]
+% [\FetchEnglish{MEC199.2}]
+% [\FetchEnglish{MEC199.3}]
+% [\FetchEnglish{MEC199.4}]
+% &
+% \FetchEnglish{MEC200.}\newline
+% \choices
+% [\FetchEnglish{MEC200.1}]
+% [\FetchEnglish{MEC200.2}]
+% [\FetchEnglish{MEC200.3}]
+% [\FetchEnglish{MEC200.4}]
+% &
+% \FetchEnglish{MEC201.}\newline
+% \choices
+% [\FetchEnglish{MEC201.1}]
+% [\FetchEnglish{MEC201.2}]
+% [\FetchEnglish{MEC201.3}]
+% [\FetchEnglish{MEC201.4}]\\
+% \hline
+% \fetch{MEC199.}\newline
+% \choices
+% [\fetch{MEC199.1}]
+% [\fetch{MEC199.2}]
+% [\fetch{MEC199.3}]
+% [\fetch{MEC199.4}]
+% &
+% \fetch{MEC200.}\newline
+% \choices
+% [\fetch{MEC200.1}]
+% [\fetch{MEC200.2}]
+% [\fetch{MEC200.3}]
+% [\fetch{MEC200.4}]
+% &
+% \fetch{MEC201.}\newline
+% \choices
+% [\fetch{MEC201.1}]
+% [\fetch{MEC201.2}]
+% [\fetch{MEC201.3}]
+% [\fetch{MEC201.4}]\\
+% \hline
+% \FetchEnglish{MEC202.}\newline
+% \choices
+% [\FetchEnglish{MEC202.1}]
+% [\FetchEnglish{MEC202.2}]
+% [\FetchEnglish{MEC202.3}]
+% [\FetchEnglish{MEC202.4}]
+% [\FetchEnglish{MEC202.5}]
+% &
+% \FetchEnglish{MEC203.}\newline
+% \choices
+% [\FetchEnglish{MEC203.1}]
+% [\FetchEnglish{MEC203.2}]
+% [\FetchEnglish{MEC203.3}]
+% [\FetchEnglish{MEC203.4}]
+% [\FetchEnglish{MEC203.5}]
+% &
+% \FetchEnglish{MEC204.}\newline
+% \choices
+% [\FetchEnglish{MEC204.1}]
+% [\FetchEnglish{MEC204.2}]
+% [\FetchEnglish{MEC204.3}]
+% [\FetchEnglish{MEC204.4}]
+% [\FetchEnglish{MEC204.5}]
+% [\FetchEnglish{MEC204.6}]\\
+% \hline
+% \fetch{MEC202.}\newline
+% \choices
+% [\fetch{MEC202.1}]
+% [\fetch{MEC202.2}]
+% [\fetch{MEC202.3}]
+% [\fetch{MEC202.4}]
+% [\fetch{MEC202.5}]
+% &
+% \fetch{MEC203.}\newline
+% \choices
+% [\fetch{MEC203.1}]
+% [\fetch{MEC203.2}]
+% [\fetch{MEC203.3}]
+% [\fetch{MEC203.4}]
+% [\fetch{MEC203.5}]
+% &
+% \fetch{MEC204.}\newline
+% \choices
+% [\fetch{MEC204.1}]
+% [\fetch{MEC204.2}]
+% [\fetch{MEC204.3}]
+% [\fetch{MEC204.4}]
+% [\fetch{MEC204.5}]
+% [\fetch{MEC204.6}]\\
+% \hline
+% \end{longtblr}
+
+% \begin{longtblr}{
+%   colspec = {| >{\rrr}p{9.5 cm + 1 pt} | >{\rrr}p{9.5 cm + 1 pt} |},
+%   vlines,
+%   cell{even}{1,2} = {orange!30}
+% }
+% \hline
+% \FetchEnglish{MEC205.}
+% &
+% \fetch{MEC205.}\\
+% \hline
+% \FetchEnglish{MEC206.}
+% &
+% \fetch{MEC206.}\\
+% \hline
+% \end{longtblr}
+
+% \newpage
+
+% \begin{longtblr}{colspec = {>{\rrr}p{16cm}}}
+% \FetchEnglish{MEC207.}\\
+% \fetch{MEC207.}\\
+% \mec{\FetchEnglish{MEC207.1} \newline \fetch{MEC207.1}}\\
+% \mec{\FetchEnglish{MEC207.2} \newline \fetch{MEC207.2}}\\
+% \end{longtblr}
+
+% \begin{longtblr}{colspec = {>{\rrr}p{16cm}}}
+% \FetchEnglish{MEC208.}\\
+% \fetch{MEC208.}\\
+% \end{longtblr}
+
+% \begin{longtblr}{
+%   colspec = {| >{\rrr}p{9.5 cm + 1 pt} | >{\rrr}p{9.5 cm + 1 pt} |},
+%   vlines,
+%   cell{even}{1,2} = {orange!30}
+% }
+% \hline
+% \FetchEnglish{MEC209.} & \fetch{MEC209.}\\
+% \hline
+% 1. &\\
+% \hline
+% 2. &\\
+% \hline
+% 3. &\\
+% \hline
+% 4. &\\
+% \hline
+% \end{longtblr}
+
+

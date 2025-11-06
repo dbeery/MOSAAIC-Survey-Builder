@@ -1,0 +1,95 @@
+
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+\input{Tex Files/MOSAAIC Hospitalization Preamble v2.tex}
+
+\usetikzlibrary{positioning}
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\toggletrue{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Health Conditions and Procedures Form (Part 1) v2}
+
+\newcommand{\sboxnode}{\tikz[remember picture, baseline]{\node[anchor=base west,inner sep=0pt](start)at(0ex, 0ex){$\square_{\arabic{enumii}}$};}}
+\newcommand{\itemnode}{\refstepcounter{enumii}\item[\sboxnode]}
+
+\newcommand{\dateofdiagnosis}{\ra Date of event or diagnosis: \hxdate}
+
+\newcommand{\diagnosisdate}{%
+\vspace{-.25\baselineskip}
+\par\begin{flushright}\begin{tcolorbox}[colback = white, width = .95\textwidth]\hspace{-.3cm}\enode%
+\raggedright Date of event or diagnosis: \hxdate
+\end{tcolorbox}\end{flushright}
+}
+
+\renewcommand{\snode}{\tikz[remember picture, baseline]{\node (start) at (0, .5ex) {};}}
+ 
+\renewcommand{\enode}{\tikz[remember picture, baseline]{\node (end) {};}\begin{tikzpicture}[remember picture, overlay]\draw[->, ultra thick] (start) |- (end);\end{tikzpicture}}
+
+\newcommand{\enodetwo}{\tikz[remember picture, baseline]{\node (end) {};}\begin{tikzpicture}[remember picture, overlay]\draw[->, ultra thick] (start) -| (end);\end{tikzpicture}}
+
+\renewcommand{\tablist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1, labelsep = .25em, left = 2em, align = left]} %indented vertical and horizontal lists
+
+\newcommand{\hxdate}{\MMDDYYYY~(MM/DD/YYYY)}
+
+\newcommand{\hxdatebox}{%
+\begin{center}
+  \begin{tcolorbox}[colback = white, width = 1.2\datelength]
+  \hxdate
+  \end{tcolorbox}
+\end{center}
+}
+
+\newlength{\datelength}
+\settowidth{\datelength}{\hxdate}
+
+
+\begin{document}
+
+\newcounter{counter}
+\setcounter{counter}{0}
+
+\iftoggle{tikz}{\input{Tex Files/TikzOn.tex}}{\input{Tex Files/TikzOff.tex}}
+
+\noindent
+\obeylines
+\raggedright
+
+
+\subsectionmarkright{HCP0.}
+\label{subsec:HCP1}
+\FetchText{HCP0.1}
+\hxdatebox
+
+\vlist{1.} \item \FetchText{HOSP1.}
+\vsublist
+    \item \FetchText{HOSP1.1}
+    \item \FetchText{HOSP1.2}
+    \item \FetchText{HOSP1.3}
+    \item \FetchText{HOSP1.4}
+    \item \FetchText{HOSP1.5}
+    \item \FetchText{HOSP1.6}
+    \item \FetchText{HOSP1.7}
+    \item \FetchText{HOSP1.8}
+\vsublistend
+\vlistend
+
+\vlist{2.} \item \FetchText{HOSP1.9} 
+\vsublist
+    \item \FetchText{HOSP1.10}
+    \item \FetchText{HOSP1.11}
+    \item \FetchText{HOSP1.12}
+    \item \FetchText{HOSP1.13}
+\vsublistend
+\vlistend
+
+\FetchText{HOSP0.2}
+
+\newpage
+\input{Tex Files/MOSAAIC Hospitalization v3.tex}
+
+\end{document}

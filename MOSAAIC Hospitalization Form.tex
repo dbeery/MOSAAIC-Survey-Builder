@@ -1,0 +1,59 @@
+
+
+\noindent
+\obeylines
+
+\subsection*{\FetchTitle{HOS0.}}
+\label{Hospitalization Form}
+
+\definecolor{myblue}{RGB}{230,240,250}
+\pagecolor{myblue}
+
+\bmp
+\raggedright \FetchText{HOS0.1}
+\emp
+
+\foreach \i in {2,...,7}{%
+\FetchText{HOS0.\i}
+
+\vlist{\FetchNumber{HOS1.}} \item \TextPlusHRuleFill{HOS1.}
+\vlistend
+
+\vlist{\FetchNumber{HOS2.}} \item \FetchText{HOS2.}
+\vsublist
+\item[a.] \TextPlusHRuleFill{HOS2.1}
+\item[b.] \TextPlusHRuleFill{HOS2.2}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{HOS3.}} \item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{HOS3.}
+\vlistend
+
+\vlist{\FetchNumber{HOS4.}} \item \FetchText{HOS4.}
+\vsublist
+\item \FetchText{HOS4.1}
+\item \FetchText{HOS4.2}
+\item \FetchText{HOS4.3}
+\item \FetchText{HOS4.4}
+\item \FetchText{HOS4.5}
+\item \FetchText{HOS4.6}
+\item \FetchText{HOS4.7}
+\item \FetchText{HOS4.8}
+\item \FetchText{HOS4.9}
+\item \FetchText{HOS4.10}
+\item \TextPlusHRuleFill{HOS4.11}
+\item \FetchText{HOS4.12}
+\item \FetchText{HOS4.13}
+\item \TextPlusHRuleFill{HOS4.14}\setc{98}
+\item \FetchText{HOS4.15}
+\vsublistend
+\vlistend
+
+\ifnum\i=7
+\else
+\newpage
+\fi
+}
+
+\label{myLastPage}
+

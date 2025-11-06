@@ -1,0 +1,409 @@
+
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+\newtoggle{scripts}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+\togglefalse{scripts}
+
+\newcommand{\timefield}{%
+\parbox[t]{1.5cm}{\x\x\linebreak seconds}.\parbox[t]{1.5cm}{\x\x\linebreak hundredths}
+}
+
+\renewcommand{\tablist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1, labelsep = .25em, left = 2em, align = left]} %indented vertical and horizontal lists
+% \renewcommand{\subsectionbreak}{}
+\renewcommand{\sectionbreak}{}
+
+\newcommand{\skipto}[1]{\ra \textbf{Go to item~#1}}
+
+\WriteHeader{MOSAAIC Physical Performance Form}
+
+\input{Variables.tex}
+
+\begin{document}
+
+\noindent
+\obeylines
+
+
+\begin{center}\textbf{\LARGE \FetchText{PPF0.}}\end{center}
+
+\iftoggle{scripts}{%
+\vlist{}\item \textbf{INSTRUCTIONS TO EXAMINER:} Please read aloud text in bold.
+\vlistend
+}
+
+\markright{\bf A. \FetchTextForHeader{STDB0.}}
+\section*{A. \FetchText{STDB0.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.1}
+\vlistend
+
+\vlist{}\item For the balance tests, begin timing when (s)he lets go of your arm. Stop timing if (s)he takes a step, touches something for support, or reaches 10 seconds.
+\vlistend
+}
+
+\bmp
+\subsubsection*{\large I.~\FetchText{STDB1.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.2}
+\vlistend
+
+\vlist{}\item Allow the participant to hold onto your arm to get balanced.
+\vlistend
+
+\vlist{}\item \FetchText{STDB0.3}
+\vlistend
+
+\vlist{}\item If participant is able to complete the semi tandem stand for 10 seconds, please skip to the tandem stand (item 3).
+\vlistend
+}
+
+\vlist{1.}\item{}
+\vsublist
+\item Participant Refused \skipto{2}
+\item Not attempted, unable \skipto{2}
+\item Unable to attain position or hold for one second \skipto{2}
+\item Holds position $\ge$1 second but less than 10 seconds \ra \timefield \skipto{2}
+\item Holds position for 10 seconds \skipto{3}
+\vsublistend
+\vlistend
+\emp
+
+\bmp
+\subsubsection*{\large II.~\FetchText{STDB2.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.4}
+\vlistend
+}
+
+\vlist{2.}\item{}
+\vsublist
+\item Participant Refused \skipto{7}
+\item Not attempted, unable \skipto{7}
+\item Unable to attain position or hold for one second \skipto{7}
+\item Holds position $\ge$1 second but less than 10 seconds \ra \timefield \skipto{7}
+\item Holds position for 10 seconds \skipto{7}
+\vsublistend
+\vlistend
+\emp
+
+
+\subsubsection*{\large III.~\FetchText{STDB3.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.5}
+\vlistend
+
+\vlist{}\item If participant is able to hold the tandem stand for $\ge$1 second, but less than 10 seconds, encourage them to do a second try.
+\vlistend
+}
+
+\bmp
+\vlist{}\item \textbf{Trial 1}
+\vlistend
+
+\vlist{3.}\item{}
+\vsublist
+\item Participant Refused \skipto{7}
+\item Not attempted, unable \skipto{7}
+\item Unable to attain position or hold for one second \skipto{7}
+\item Holds position $\ge$1 second but less than 10 seconds	\ra \timefield \skipto{4}
+\item Holds position for 10 seconds \skipto{5}
+\vsublistend
+\vlistend
+\emp
+
+\bmp
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.6}
+\vlistend
+}
+
+\vlist{}\item \textbf{Trial 2}
+\vlistend
+
+\vlist{4.}\item{}
+\vsublist
+\item Participant Refused \skipto{7}
+\item Not attempted, unable \skipto{7}
+\item Unable to attain position or hold for one second \skipto{7}
+\item Holds position $\ge$1 second but less than 10 seconds	\ra \timefield \skipto{7}
+\item Holds position for 10 seconds \skipto{5}
+\vsublistend
+\vlistend
+\emp
+
+\subsubsection*{\large IV.~\FetchText{STDB4.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.7}
+\vlistend
+
+\vlist{}\item If participant is able to hold the single leg stand for $\ge$1 second, but less than 10 seconds, encourage them to do a second try.
+\vlistend
+}
+
+\bmp
+\vlist{}\item \textbf{Trial 1}
+\vlistend
+
+
+\vlist{5.}\item{}
+\vsublist
+\item Participant Refused \skipto{7}
+\item Not attempted, unable \skipto{7}
+\item Unable to attain position or hold for one second \skipto{7}
+\item Holds position $\ge$1 second but less than 10 seconds	\ra \timefield \skipto{6}
+\item Holds position for 10 seconds \skipto{7}
+\vsublistend
+\vlistend
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{STDB0.8}
+\vlistend
+}
+
+\vlist{}\item \textbf{Trial 2}
+\vlistend
+
+\vlist{6.}\item{}
+\vsublist
+\item Participant Refused \skipto{7}
+\item Not attempted, unable \skipto{7}
+\item Unable to attain position or hold for one second \skipto{7}
+\item Holds position $\ge$1 second but less than 10 seconds	\ra \timefield \skipto{7}
+\item Holds position for 10 seconds \skipto{7}
+\vsublistend
+\vlistend
+\emp
+
+
+\markright{\bf B.~\FetchTextForHeader{WALK0.}}
+\section*{B.~\FetchText{WALK0.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item Ask participants who arrive with walking aids if they think they can do this short walk without the device. If not, they may use their device for the test (indicate device use below).
+\vlistend
+
+\vlist{}\item \FetchText{WALK0.1}
+\vlistend
+
+\vlist{}\item Walk to the other end of the course at your usual pace, making certain you walk \uline{past} the finish line before slowing or stopping. Start timing with participant's first movement, and stop timing when the first foot \uline{completely} crosses an imaginary plane extending vertically up from the finish line/tape.
+\vlistend
+}
+
+\subsubsection*{\large I.~\FetchText{WALK1.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item\FetchText{WALK0.2}
+\vlistend
+}
+
+\vlist{}\item \textbf{Trial 1}
+\vlistend
+
+\vlist{7.}\item{}
+\vsublist
+\item Participant Refused \skipto{9}
+\item Not attempted, unable to walk \skipto{9}
+\item Completes with walking aid \ra \timefield
+\item Completes without walking aid \ra \timefield
+\vsublistend
+\vlistend
+
+\iftoggle{scripts}{%
+\vlist{}\item \textbf{Trial 2}
+\vlistend
+}
+
+\vlist{8.}\item{}
+\vsublist
+\item Participant Refused \skipto{9}
+\item Not attempted, unable to walk \skipto{9}
+\item Completes with walking aid \ra \timefield
+\item Completes without walking aid \ra \timefield
+\vsublistend
+\vlistend
+
+\markright{\bf C.~\FetchTextForHeader{CHRS0.}}
+\section*{C.~\FetchText{CHRS0.}}
+
+\subsubsection*{\large I.~\FetchText{CHRS1.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item\FetchText{CHRS0.1}
+\vlistend
+}
+
+\vlist{9.}\item{}
+\vsublist
+\item Participant Refused \skipto{11} 
+\item Not attempted, unable \skipto{11} 
+\item Attempted, unable to stand \skipto{11} 
+\item Rises using arms \skipto{11} 
+\item Stands without using arms \skipto{10} 
+\vsublistend
+\vlistend
+
+\subsubsection*{\large II.~\FetchText{CHRS2.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item\FetchText{CHRS0.2}
+\vlistend
+
+\vlist{}\item Demonstrate. With the next instruction, cross your arms over your chest and then rise while emphasizing ``full standing position,'' and sit while emphasizing ``all the way down'':
+\vlistend
+
+\vlist{}\item\FetchText{CHRS0.3}
+\vlistend
+
+\vlist{}\item Do two chair stands \uline{quickly; count} as you \uline{stand} each time. Then begin the test.
+\vlistend
+
+\vlist{}\item\FetchText{CHRS0.4}
+\vlistend
+
+\vlist{}\item Start timing with ``Go'' and stop with the last stand or maximum of 1 minute. 
+\vlistend
+}
+
+\vlist{10.}\item{}
+\vsublist
+\item Participant Refused \skipto{11}
+\item Not attempted, unable \skipto{11}
+\item Attempted, unable to complete 5 stands \ra Number completed: \x (0-4)
+\item Completes 5 stands \ra Enter time for 5 stands: \timefield
+%\par \ElementPlusText{\x\x}{seconds}\ElementPlusText{\x\x}{hundredths}
+\vsublistend
+\vlistend
+
+
+\markright{\bf D.~\FetchText{GRPS0.}}
+\section*{D.~\FetchText{GRPS0.}}
+
+\iftoggle{scripts}{%
+\vlist{}\item \FetchText{GRPS0.1}
+\vlistend
+}
+
+\hlist{11.}\item \FetchText{GRPS1.}
+\hsublist
+\item \FetchText{GRPS1.1}
+\setc{-1}
+\item \FetchText{GRPS1.2} \skipto{12}
+\hsublistend
+\hlistend
+
+\tablist{a.}\item \FetchText{GRPS2.}
+\hsublist
+\item \FetchText{GRPS2.1}
+\item \FetchText{GRPS2.2}
+\item \FetchText{GRPS2.3}
+\hsublistend
+\hlistend
+
+\tablist{b.}\item \FetchText{GRPS3.}
+\hsublist
+\item \FetchText{GRPS3.1}
+\setc{-1}
+\item \FetchText{GRPS3.2}
+\hsublistend
+\hlistend
+
+
+\tablist{c.}\item \FetchText{GRPS4.}
+\vsublist
+\item \FetchText{GRPS4.1} \ra \textbf{Do not test}
+\setc{-1}
+\item \FetchText{GRPS4.2}
+\vsublistend
+\vlistend
+
+\hlist{12.}\item \FetchText{GRPS5.}
+\hsublist
+\item \FetchText{GRPS5.1}
+\setc{-1}
+\item \FetchText{GRPS5.2} \ra \textbf{Go to test}
+\hsublistend
+\hlistend
+
+\tablist{a.}\item \FetchText{GRPS6.}
+\vsublist
+\item \FetchText{GRPS6.1}  \ra \textbf{Test left side only}
+\item \FetchText{GRPS6.2} \ra \textbf{Test right side only}
+\item \FetchText{GRPS6.3} \ra \textbf{Do not test}
+\vsublistend
+\vlistend
+
+\iftoggle{scripts}{%}
+\vlist{}\item \FetchText{GRPS0.2}
+\vlistend
+
+\vlist{}\item \uline{Dominant hand should be used unless this side was excluded in the previous screening questions; in this case, non-dominant hand can be used.} Record response.
+\vlistend
+
+\vlist{}\item \FetchText{GRPS0.3}
+\vlistend
+
+\vlist{}\item Demonstrate proper positioning of the dynamometer and assist with positioning participant's arm correctly, as needed. Adjust the grip until correct position attained (this will usually be the second setting). If the handle hits the participant's hand distal to the second knuckle, the grip size should be smaller. If the participant's natural fingernails are hitting their palm, the grip size needs to be larger. Allow one practice trial where participant does not exert full strength, to determine if the participant understands the procedure and that the grip size is appropriate.
+\vlistend
+
+\vlist{}\item \FetchText{GRPS0.4}
+\vlistend
+
+\vlist{}\item Show dial to participant then \uline{reset to zero.}
+\vlistend
+
+\vlist{}\item \FetchText{GRPS0.5}
+\vlistend
+}
+
+\hlist{13a.}\item Hand used:
+\hsublist
+\item Right
+\item Left
+\hsublistend
+\hlistend
+
+\vlist{13b.}\item Trial 1
+\vsublist
+\item[] \x\x kg
+\vsublistend
+\vlistend
+
+\iftoggle{scripts}{%
+\vlist{}\item Allow 15 to 20 sec rest in between trials. \uline{Reset to zero.}
+\vlistend
+
+\vlist{}\item \FetchText{GRPS0.6}
+\vlistend
+}
+
+\vlist{13c.}\item Trial 2
+\vsublist
+\item[] \x\x kg
+\vsublistend
+\vlistend
+
+
+\vlist{13d.}\item Completion Status:
+\vsublist
+\item Did 1 trial 		 
+\item Did 2 trials		 
+\item Excluded 		 
+\item Unable to do
+\vsublistend
+\vlistend
+
+
+\end{document}

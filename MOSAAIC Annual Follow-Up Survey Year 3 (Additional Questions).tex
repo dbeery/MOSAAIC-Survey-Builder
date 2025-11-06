@@ -1,0 +1,325 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Annual Follow-Up Survey Year 3 (Additional Questions)}
+
+\begin{document}
+
+\input{Tex Files/TikzOff.tex}
+
+\noindent
+\obeylines
+
+\markright{\FetchText{COM0.}}
+\section*{MOSAAIC Annual Follow-Up Survey Year 3 (Additional Questions)}\setcounter{page}{1}
+
+\input{Tex Files/MOSAAIC Commuting.tex}
+\input{Tex Files/MOSAAIC Occupational Exposures (Adulthood).tex}
+\input{Tex Files/MOSAAIC Shift Work.tex}
+\input{Tex Files/MOSAAIC Occupational Exposures (Adolescence and Young Adulthood).tex}
+\input{Tex Files/MOSAAIC Your Environment.tex}
+
+
+\label{myLastPage}
+\fancyfoot[C]{\newline\hspace{1em}\FetchFooterText{endsurvey}}
+
+\end{document}
+
+
+% \subsectionmarkright{COM0.}
+% \label{subsec:COM}
+
+% \FetchText{COM0.1}
+
+% \vlist{\FetchNumber{COM1.}}\item \FetchText{COM1.}
+% \vsublist
+% \item \FetchText{COM1.1}\setc{-1}
+% \item \FetchText{COM1.2}\setc{1}
+% \item \FetchText{COM1.3}
+% \vsublistend
+% \vlistend
+
+% \tablist{\FetchNumber{COM1a.}}\item \FetchText{COM1a.}
+% \vsublist
+% \item \FetchText{COM1a.1}
+% \item \FetchText{COM1a.2}
+% \item \FetchText{COM1a.3}
+% \item \FetchText{COM1a.4}
+% \item \FetchText{COM1a.5}
+% \item \FetchText{COM1a.6}
+% \vsublistend
+% \vlistend
+
+% \tablist{\FetchNumber{COM1b.}}\item \FetchText{COM1b.}
+% \vsublist
+% \item \FetchText{COM1b.1}
+% \item \FetchText{COM1b.2}
+% \item \FetchText{COM1b.3}
+% \item \FetchText{COM1b.4}
+% \item \FetchText{COM1b.5}
+% \vsublistend
+% \vlistend
+
+% \subsectionmarkright{OCA0.}
+% \label{subsec:OCA}
+
+% \FetchText{OCA0.1}
+
+% \begin{enumerate}[label = \FetchNumber{OCA1.}]\item \FetchText{OCA1.}
+% \vsublist
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.1}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.2}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.3}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.4}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.5}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.6}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.7}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.8}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.9}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.10}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.11}\emp
+% \begin{minipage}{.9\textwidth}\item \FetchText{OCA1.12}\emp
+% \begin{minipage}{.9\textwidth}\item \TextPlusHRuleFill{OCA1.13}\emp
+% \end{enumerate}
+% \end{enumerate}
+
+% \vlist{\FetchNumber{OCA2.}}\item \FetchText{OCA2.}
+% \vsublist
+% \ice \ElementPlusText{\x\x}{OCA2.1} \ElementPlusText{\x\x}{OCA2.2}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{OCA3.}}\item \FetchText{OCA3.}
+% \vsublist
+% \item \FetchText{OCA3.1}
+% \item \FetchText{OCA3.2}
+% \item \FetchText{OCA3.3}
+% \item \FetchText{OCA3.4}
+% \item \FetchText{OCA3.5}
+% \item \FetchText{OCA3.6}
+% \item \FetchText{OCA3.7}
+% \item \FetchText{OCA3.8}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{OCA4.}}\item \FetchText{OCA4.}
+% \vsublist
+% \item \FetchText{OCA4.1}
+% \item \FetchText{OCA4.2}
+% \item \FetchText{OCA4.3}
+% \item \FetchText{OCA4.4}
+% \item \FetchText{OCA4.5}
+% \item \FetchText{OCA4.6}
+% \item \FetchText{OCA4.7}
+% \item \FetchText{OCA4.8}
+% \item \FetchText{OCA4.9}
+% \vsublistend
+% \vlistend
+
+% \subsectionmarkright{OSH0.}
+% \label{subsec:OSH}
+
+% % \foreach \i in {1,2}{%
+% % \edef\ia{\i a}
+% % \hlist{\FetchNumber{OSH\i.}}\item \FetchText{OSH\i.}
+% % \hsublist
+% % \item \FetchText{OSH\i.1}\setc{-1}
+% % \item \FetchText{OSH\i.2}
+% % \hsublistend
+% % \hlistend
+
+% % \tablist{\FetchNumber{OSH\ia.}}\item \FetchText{OSH\ia.}
+% % \vsublist
+% % \item \FetchText{OSH\ia.1}
+% % \item \FetchText{OSH\ia.2} 
+% % \item \FetchText{OSH\ia.3}
+% % \item \FetchText{OSH\ia.4}
+% % \item \FetchText{OSH\ia.5}
+% % \item \FetchText{OSH\ia.6}
+% % \item \FetchText{OSH\ia.7}
+% % \item \FetchText{OSH\ia.8}
+% % \vsublistend
+% % \vlistend
+% % }
+
+% % % \hlist{\FetchNumber{OSH1.}}\item \FetchText{OSH1.}
+% % % \hsublist
+% % % \item \FetchText{OSH1.1}\setc{-1}
+% % % \item \FetchText{OSH1.2}
+% % % \hsublistend
+% % % \hlistend
+
+% % % \tablist{\FetchNumber{OSH1a.}}\item \FetchText{OSH1a.}
+% % % \vsublist
+% % % \item \FetchText{OSH1a.1}
+% % % \item \FetchText{OSH1a.2} 
+% % % \item \FetchText{OSH1a.3}
+% % % \item \FetchText{OSH1a.4}
+% % % \item \FetchText{OSH1a.5}
+% % % \item \FetchText{OSH1a.6}
+% % % \item \FetchText{OSH1a.7}
+% % % \item \FetchText{OSH1a.8}
+% % % \vsublistend
+% % % \vlistend
+
+% % % \hlist{\FetchNumber{OSH2.}}\item \FetchText{OSH2.}
+% % % \hsublist
+% % % \item \FetchText{OSH2.1}\setc{-1}
+% % % \item \FetchText{OSH2.2} 
+% % % \hsublistend
+% % % \hlistend
+
+% % % \tablist{\FetchNumber{OSH2a.}}\item \FetchText{OSH2a.}
+% % % \vsublist
+% % % \item \FetchText{OSH2a.1}
+% % % \item \FetchText{OSH2a.2} 
+% % % \item \FetchText{OSH2a.3}
+% % % \item \FetchText{OSH2a.4}
+% % % \item \FetchText{OSH2a.5}
+% % % \item \FetchText{OSH2a.6}
+% % % \item \FetchText{OSH2a.7}
+% % % \item \FetchText{OSH2a.8}
+% % % \vsublistend
+% % % \vlist
+
+% \subsectionmarkright{OEY0.}
+% \label{subsec:OEY}
+
+% \FetchText{OEY0.1}
+
+% \hlist{\FetchNumber{OEY1.}}\item \FetchText{OEY1.}
+% \hsublist
+% \item \FetchText{OEY1.1}\setc{-1}
+% \item \FetchText{OEY1.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{OEY1a.}}\item \FetchText{OEY1a.}
+% \vsublist
+% \item \FetchText{OEY1a.1}\setc{-1}
+% \item \FetchText{OEY1a.2}  
+% \vsublistend
+% \vlistend
+
+% % \vlist{\FetchNumber{OEY2.}}\item \FetchText{OEY2.}
+% \begin{enumerate}[label = \FetchNumber{OEY2.}]\item \FetchText{OEY2.}
+% \vsublist
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.1}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.2}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.3}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.4}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.5}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.6}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.7}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.8}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.9}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.10}\emp
+% % \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.11}\emp
+% \foreach \i in {1,...,11}{%
+% \begin{minipage}{.9\textwidth}\item \FetchText{OEY2.\i}\emp
+% }
+% \begin{minipage}{.9\textwidth}\item \TextPlusHRuleFill{OEY2.12}\emp
+% \end{enumerate}
+% \end{enumerate}
+
+% \vlist{\FetchNumber{OEY3.}}\item \FetchText{OEY3.}
+% \vsublist
+% \ice \ElementPlusText{\x\x}{OEY3.1} \ElementPlusText{\x\x}{OEY3.2}
+% \vsublistend
+% \vlistend
+
+
+% \forcesubsectionmarkright{ENV0.}
+% \label{subsec:ENV}
+
+% \vlist{\FetchNumber{ENV1.}}\item \FetchText{ENV1.}
+% \vsublist
+% \item \FetchText{ENV1.1}
+% \item \FetchText{ENV1.2}
+% \item \FetchText{ENV1.3}
+% \item \FetchText{ENV1.4}
+% \item \FetchText{ENV1.5}
+% \vsublistend
+% \vlistend
+
+% \newcommand{\flooringresponses}{%
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \vspace{.5\baselineskip}\end{enumerate}
+% }
+
+% \vspace{-\baselineskip}
+% \renewcommand\arraystretch{2}
+% \begin{longtable}{@{} >{\rrr} p{.4 cm} >{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+% \FetchNumber{ENV2.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{ENV2.}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{ENV2.}}}}\endhead
+% & \multicolumn{2}{r}{\continue{ENV2.}}\endfoot
+% \endlastfoot
+% a. & \FetchText{ENV2.1} & \flooringresponses\\
+% b. & \FetchText{ENV2.2} & \flooringresponses\\
+% c. & \FetchText{ENV2.3} & \flooringresponses\\
+% d. & \FetchText{ENV2.4} & \flooringresponses\\
+% e. & \FetchText{ENV2.5} & \flooringresponses\\
+% f. & \FetchText{ENV2.6} & \flooringresponses\\
+% g. & \FetchText{ENV2.7} & \flooringresponses\end{longtable}
+% \vspace{-2\baselineskip}
+
+% \hlist{\FetchNumber{ENV3.}}\item \FetchText{ENV3.}
+% \YN
+
+% \hlist{\FetchNumber{ENV4.}}\item \FetchText{ENV4.}
+% \YN
+
+% \newcommand{\careproductsresponses}{%
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV5.1}
+% \item \FetchText{ENV5.2}
+% \item \FetchText{ENV5.3}
+% \item \FetchText{ENV5.4}
+% \vspace{.5\baselineskip}\end{enumerate}
+% }
+% \vspace{-\baselineskip}
+% \renewcommand\arraystretch{2}
+% \begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+% \FetchNumber{ENV5.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{ENV5.}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{ENV5.}}}}\endhead
+% a. & \FetchText{ENV5a.} & \careproductsresponses\\
+% b. & \FetchText{ENV5b.} & \careproductsresponses\\
+% c. & \FetchText{ENV5c.} & \careproductsresponses\\
+% d. & \FetchText{ENV5d.} & \careproductsresponses\\\end{longtable}
+
+% \hlist{\FetchNumber{ENV6.}}\item \FetchText{ENV6.}
+% \YN
+
+% \newcommand{\neighborhoodresponses}{%
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV0.4}
+% \item \FetchText{ENV0.5}
+% \item \FetchText{ENV0.6}
+% \item \FetchText{ENV0.7}
+% \item \FetchText{ENV0.8}
+% \vspace{.5\baselineskip}\end{enumerate}}
+
+% \renewcommand\arraystretch{2}
+% \vspace{-\baselineskip}
+% \begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8 cm} >{\rrr} p{7.6 cm}}
+% \FetchNumber{ENV0.3} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{ENV0.3}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{ENV0.3}}}}\endhead
+% & \multicolumn{2}{r}{\continue{ENV0.3}}\endfoot
+% \endlastfoot
+% \FetchNumber{ENV7.} &\FetchText{ENV7.} & \neighborhoodresponses\\ 
+% \FetchNumber{ENV8.} &\FetchText{ENV8.} & \neighborhoodresponses\\ 
+% \FetchNumber{ENV9.} &\FetchText{ENV9.} & \neighborhoodresponses\\ 
+% \FetchNumber{ENV10.} &\FetchText{ENV10.} & \neighborhoodresponses\\ 
+% \FetchNumber{ENV11.} &\FetchText{ENV11.} & \neighborhoodresponses\\\end{longtable}
+% \vspace{-3\baselineskip}

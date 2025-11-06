@@ -1,0 +1,39 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{ENGLISH}
+\input{Variables.tex}
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\WriteHeader{MOSAAIC Social Security Number Form}
+
+\begin{document}
+
+\noindent
+\obeylines
+
+\markright{\FetchTextForHeader{SSN1.}}
+\section*{\FetchText{SSN1.}}
+\setcounter{page}{1}
+
+\fancyfoot[R]{Page \thepage \ of \pageref{LastPageSSN}}
+\markright{\FetchText{SSN1.}}
+
+\fancyfoot[C]{}
+
+\FetchText{SSN2.}
+
+\bmp
+\FetchText{SSN3.}
+\emp
+
+\vspace{\baselineskip}
+\vlist{\FetchNumber{SSN4.}}\item \TextPlusElement{\x\x\x-\x\x-\x\x\x\x}{SSN4.} 
+\vlistend
+
+\label{LastPageSSN}
+
+\end{document}

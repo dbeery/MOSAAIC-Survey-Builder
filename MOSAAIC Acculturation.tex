@@ -1,0 +1,40 @@
+
+\forcesubsectionmarkright{ACC0.}
+\label{subsec:ACC1}
+
+\FetchText{ACC0.1}
+
+\foreach \i in {1,..., 11}{%
+\vlist{\FetchNumber{ACC\i.}}\item \FetchText{ACC\i.}
+\vsublist
+\item \FetchText{ACC\i.1}
+\item \FetchText{ACC\i.2}
+\item \FetchText{ACC\i.3}
+\item \FetchText{ACC\i.4}
+\ifnum\i=10\else\item \FetchText{ACC\i.5}\fi
+\vsublistend
+\vlistend
+}
+
+\newpage
+\FetchText{ACC0.2}
+\label{subsec:ACC2}
+
+\columnratio{0.585,0.415}
+
+\foreach \i in {12,...,19}{%
+\bmp
+  \begin{minipage}[t]{.585\textwidth}%
+    \begin{enumerate}[label=\FetchNumber{ACC\i.}]\item \FetchText{ACC\i.}%
+    \end{enumerate}%
+  \end{minipage}%
+  \begin{minipage}[t]{.415\textwidth}
+  \begin{enumerate}[label=\labeltwo, topsep=0em]%
+    \item \FetchText{ACC\i.1}%
+    \item \FetchText{ACC\i.2}%
+    \item \FetchText{ACC\i.3}%
+    \item \FetchText{ACC\i.4}%
+    \item \FetchText{ACC\i.5}%
+  \vlistend
+\emp
+}

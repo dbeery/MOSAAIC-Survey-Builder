@@ -1,0 +1,83 @@
+\newcommand{\y}{\hspace*{.05 cm}\rule{.3 cm}{.25 mm}\hspace*{.05cm}} 
+\renewcommand{\vlist}[1]{\raggedright\raggedbottom\begin{enumerate}[label =#1, start = 1, itemsep=.5em, topsep=.5em, left=0em, labelsep=.25em, align = left]}
+\renewcommand{\hlist}[1]{\bmp\begin{enumerate}[label =#1]\raggedright\raggedbottom} %non-indented horizontal lists
+\renewcommand{\vsublist}{\begin{enumerate}[left = 1em, start = 1, itemsep=.5em, topsep=.5em, left=0em, labelsep=.25em, align = left]}
+\renewcommand{\hsublist}{\vspace{.75em}\begin{enumerate*}[label = \hspace{.4em}\arabox, labelsep=.25 em, start = 1, topsep=.75em, align = parleft, itemjoin=\hspace{1.1em}]}
+\newcommand{\bmptwo}{\bmp
+\setlength{\parskip}{7.25ptplus2.0pt}
+\setlength{\itemsep}{6pt}
+\setlength{\topsep}{6pt}
+}
+\newcommand{\emptwo}{\emp\vspace{.5em}
+}
+\renewcommand{\sectionbreak}{}
+\renewcommand{\subsectionbreak}{}
+
+
+\noindent
+\obeylines
+
+\markright{\ratch{SFT0.}}
+\section{\touch{SFT0.}}
+
+\vspace{-2\baselineskip}
+\renewcommand{\arraystretch}{1.5}
+\begin{longtable}{ @{} >{\rrr} p{.75 cm}  >{\rrr} p{11.85 cm}  >{\llslash} p{1 cm}  >{\ccc} p{1.5 cm}}
+&&{\bf\makecell[b]{\punch{Yes}}} & {\bf\makecell[b]{\punch{No}}}\\
+SAF1. & \fetch{SAF1.}\twobox
+SAF2. & \fetch{SAF2.}\twobox 
+SAF3. & \fetch{SAF3.}\twobox
+SAF4. & \fetch{SAF4.}\twobox
+SAF5. & \fetch{SAF6.}\twobox
+SAF6. & \fetch{SAF10.}*\twobox
+SAF7. & \fetch{SAF11.}*\twobox
+\\\end{longtable}
+\vspace{-2\baselineskip}
+*If a participant checked either condition above, s/he will not be eligible for bronchodilator administration (post test), but can still be eligible for pre-spirometry test.
+\begin{longtable}{ @{} >{\rrr} p{.3 cm} >{\rrr} p{.5 cm} @{} >{\rrr} p{12.0 cm}  >{\llslash} p{1 cm}  >{\ccc} p{1.5 cm}}
+SAF8. && \fetch{SAF14.} &{\bf\makecell[t]{\punch{Yes}}} & {\bf\makecell[t]{\punch{No}}}\endfirsthead
+% &a. & \fetch{SAF14.13}\twobox
+&a. & \fetch{SAF14.1}\twobox
+&b. & \fetch{SAF14.2}\twobox 
+&c. & \fetch{SAF14.3}\twobox
+&d. & \fetch{SAF14.4}*\twobox
+&e. & \fetch{SAF14.5}**\twobox
+&f. & \fetch{SAF14.6}**\twobox 
+&g. & \fetch{SAF14.7}**\twobox
+&h. & \fetch{SAF14.8}\twobox
+&i. & \fetch{SAF14.14}**\twobox
+&j. & \fetch{SAF14.9}\twobox
+&k. & \fetch{SAF14.10}\twobox
+&l. & \fetch{SAF14.11}\twobox
+&m. & \fetch{SAF14.12}*\twobox\end{longtable}
+\vspace{-1\baselineskip}
+\begin{minipage}{\textwidth}
+If a participant checked any condition listed above, s/he will not be eligible for spirometry testing. However, testing can be rescheduled for conditions marked with * or **, \textcolor{red}{if no other conditions marked:}
+\begin{enumerate}[label = $\bullet$, left = 2em, align = left, itemsep = .1 em, topsep = .25em]
+              \item[*] Pulmonary testing can be rescheduled for a date as early as one week later
+              \item[**] Pulmonary testing can be rescheduled for a date as early as four weeks later
+\end{enumerate}
+\end{minipage}
+% \vspace{-.75\baselineskip}
+\bmp
+\vlist{SAF9.}\item \fetch{SAF5.} 
+\vsublist
+\item \hatch{SAF5.1} %\hrulefill
+\setc{-1}
+\item \fetch{SAF5.2}
+\end{enumerate}\end{enumerate}
+\emp
+\hlist{SAF10.}\item \fetch{SAF12.}
+
+\hsublist
+\item \fetch{SAF12.1}
+\item \fetch{SAF12.2}
+\pop
+
+\vlist{SAF11.}\item \fetch{SAF13.}
+\vsublist
+\ice \triple{\x\x:\x\x}{SAF13.1}
+\end{enumerate}
+\end{enumerate}
+
+\label{myLastPage}

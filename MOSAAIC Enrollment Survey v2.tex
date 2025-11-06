@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Enrollment Survey}
+
+
+\begin{document}
+\input{Tex Files/MARKING INSTRUCTIONS v2.tex}
+\input{Tex Files/TikzOff.tex}
+
+\noindent
+\obeylines
+
+\markright{\raggedleft \FetchText{PER0.}}
+\section*{\FetchTitle{ENROLLMENT}}
+
+\input{Tex Files/MOSAAIC Personal Information}
+\input{Tex Files/MOSAAIC Safety Screening Questions.tex}
+\input{Tex Files/MOSAAIC Disability.tex}
+
+\label{myLastPage}
+
+\fancyfoot[C]{\newline\FetchFooterText{endsurvey}}
+
+\end{document}

@@ -1,0 +1,25 @@
+\forcesubsectionmarkright{QLF0.}
+\label{subsec:DIS}
+
+\foreach \i in {1,...,8}{%
+
+\bmp
+  \begin{minipage}[t]{.6\textwidth}%
+    \begin{enumerate}[label=\FetchNumber{QLF\i.}]\item \FetchText{QLF\i.}
+    \end{enumerate}%
+  \end{minipage}%
+  \begin{minipage}[t]{.4\textwidth}
+  \begin{enumerate}[label=\labeltwo,  start = 1, topsep=0em, left=1em, labelsep=.25em, align = left]%
+    \item \FetchText{QLF\i.1}
+    \item \FetchText{QLF\i.2}
+    \item \FetchText{QLF\i.3}
+    \item \FetchText{QLF\i.4}
+    \item \FetchText{QLF\i.5}
+    \ifnum\i=1
+      \item \FetchText{QLF\i.6}
+    \else\ifnum\i=4
+      \item \FetchText{QLF\i.6}
+    \fi\fi
+  \vlistend
+\emp
+}

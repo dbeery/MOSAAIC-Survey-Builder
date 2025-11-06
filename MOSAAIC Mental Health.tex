@@ -1,0 +1,146 @@
+\noindent
+\obeylines
+
+% \setlength{\LTpre}{0pt}
+% \setlength{\LTpost}{0pt}
+
+\markright{\FetchTextForHeader{MNT0.}}
+\forcesubsectionmarkright{MNT0.}
+\label{subsec:MNT}
+\setcounter{page}{1}
+
+\fancyfoot[R]{Page \thepage \ of \pageref{LastPage8}}
+\markright{\FetchText{MNT0.}}
+
+\newcommand{\MNTmoodheader}[1]{%
+\begin{longtable}{@{} >{\rrr}p{.25 cm}>{\rrr} p{8 cm} >{\rrr} p{7 cm}} 
+\FetchNumber{MNT#1.}    &   \multicolumn{2}{l}{\parbox[t]{15.75 cm}{\raggedright \FetchText{MNT#1.}}}\endfirsthead
+                        &   \multicolumn{2}{l}{\parbox[t]{15.75 cm}{\raggedright \textcolor{darkgray}{\FetchText{MNT#1.}}}}\endhead
+                        &   \multicolumn{2}{r}{\raggedleft\continue{MNT#1.}}\endfoot%
+\endlastfoot%
+}
+
+%1: Question Number
+%2: Question Letter
+%3: # of responses
+%4. # of subquestions
+
+% #1. & \FetchText{MNT#}
+% \foreach \i in {1,...,#3}{%
+% \item \FetchText{MNT#1#2.#3}
+% }
+
+% \MNTallresponses{1}}{4}
+
+
+
+\newcommand{\MNTmoodresponses}[2]{%
+#2. & \FetchText{MNT#1#2.} &
+\vspace{-\baselineskip}\vsublist
+\setch{-1}
+\item \FetchText{MNT#1.1}
+\item \FetchText{MNT#1.2}
+\item \FetchText{MNT#1.3}
+\item \FetchText{MNT#1.4}
+\vspace{.75\baselineskip}\end{enumerate}\\}
+
+\newcommand{\MNTfourresponses}[1]{%
+#1. & \FetchText{MNT4#1.} &
+\vspace{-\baselineskip}\vsublist
+\setch{-1}
+\item \FetchText{MNT4#1.1}
+\item \FetchText{MNT4#1.2}
+\item \FetchText{MNT4#1.3}
+\item \FetchText{MNT4#1.4}
+\item \FetchText{MNT4#1.5}
+\vspace{.75\baselineskip}\end{enumerate}\\
+}
+
+\newcommand{\MNTfiveresponses}[1]{%
+#1. & \FetchText{MNT5#1.} & 
+\vspace{-\baselineskip}\vsublist
+\setc{-1}
+\item \FetchText{MNT5.1}
+\item \FetchText{MNT5.2}
+\item \FetchText{MNT5.3}
+\vspace{.75\baselineskip}\end{enumerate}\\
+}
+
+\newcommand{\MNTsixresponses}[2]{%
+#1. & \FetchText{MNT6#2.} &
+\vspace{-\baselineskip}\vsublist
+\setch{4}
+\item \FetchText{MNT6#2.1}\setch{3}
+\item \FetchText{MNT6#2.2}\setch{2}
+\item \FetchText{MNT6#2.3}\setch{1}
+\item \FetchText{MNT6#2.4}\setch{0}
+\item \FetchText{MNT6#2.5}
+\vspace{.75\baselineskip}\end{enumerate}\\%
+}
+
+\vspace{-\baselineskip}
+\foreach \i in {1,2}{%
+\MNTmoodheader{\i}
+\MNTmoodresponses{\i}{a}
+\MNTmoodresponses{\i}{b}
+\MNTmoodresponses{\i}{c}
+\MNTmoodresponses{\i}{d}
+\MNTmoodresponses{\i}{e}
+\MNTmoodresponses{\i}{f}
+\MNTmoodresponses{\i}{g}
+\ifnum\i=1
+\MNTmoodresponses{\i}{h}
+\MNTmoodresponses{\i}{i}%
+\fi%
+\end{longtable}%
+\vspace{-2\baselineskip}
+}
+
+\bmp
+\vlist{\FetchNumber{MNT3.}}\item \FetchText{MNT3.}
+\begin{itemize}[itemsep = .25em, topsep = .75em]
+    \item \FetchText{MNT3.1}
+    \item \FetchText{MNT3.2}
+    \item \FetchText{MNT3.3}
+    \item \FetchText{MNT3.4} 
+    \item \FetchText{MNT3.5}
+    \item \FetchText{MNT3.6}
+\end{itemize}
+\vlistend
+\vspace{.75\baselineskip}
+
+\vlist{}\item \FetchText{MNT3.7}
+\vsublist
+    \item \FetchText{MNT3.8}\setc{-1}
+    \item \FetchText{MNT3.9}\setc{98}
+    \item \FetchText{MNT3.10}
+\vsublistend
+\vlistend
+\emp
+
+\newpage
+\renewcommand\arraystretch{1.5}
+\MNTmoodheader{4}
+\MNTfourresponses{a}
+\MNTfourresponses{b}
+\MNTfourresponses{c}
+\MNTfourresponses{d}%
+\end{longtable}
+
+\newpage%
+
+\label{pseudo:MNT5}
+\MNTmoodheader{5}
+\MNTfiveresponses{a}
+\MNTfiveresponses{b}
+\MNTfiveresponses{c}
+\MNTsixresponses{d}{a}
+\MNTsixresponses{e}{b}
+\MNTsixresponses{f}{c}
+\MNTsixresponses{g}{d}
+\MNTsixresponses{h}{e}
+\MNTsixresponses{i}{f}
+\MNTsixresponses{j}{g}\end{longtable}
+
+\clearpage
+

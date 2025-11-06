@@ -1,0 +1,47 @@
+
+\clearpage
+\markright{\FetchTextForHeader{SUB0.}}
+\section*{\FetchText{SUB0.}}
+\label{subsec:SUB}
+\FetchText{SUB0.1}
+
+\fancyfoot[R]{Page \thepage \ of \pageref{LastPage8}}
+\markright{\FetchTextForHeader{SUB0.}}
+\renewcommand{\headrulewidth}{0pt}
+
+\foreach \i in {1, ..., 5}{%
+\edef\ia{\i a}
+\vlist{\FetchNumber{SUB\i.}}\item \FetchText{SUB\i.}
+\vsublist
+    \item \FetchText{SUB\i.1}\setc{-1}
+    \item \FetchText{SUB\i.2}\setc{98}
+    \item \FetchText{SUB\i.3}
+\vsublistend
+\vlistend
+
+\bmp
+\tablist{\FetchNumber{SUB\ia.}}\item \FetchText{SUB\ia.}
+\vlistend
+\vspace{-1.5\baselineskip}\begin{tabular}{ p{0em} p{2in} p{3in}}
+&
+\tabsublist
+    \item \FetchText{SUB\ia.1}
+    \item \FetchText{SUB\ia.2} 
+    \item \FetchText{SUB\ia.3}
+    \item \FetchText{SUB\ia.4}
+\vsublistend
+&
+\tabsublist
+\setch{4}
+    \item \FetchText{SUB\ia.5}
+    \item \FetchText{SUB\ia.6}
+    \item \FetchText{SUB\ia.7}\setch{98}
+    \item \FetchText{SUB\ia.8}
+\vsublistend\end{tabular}
+\emp
+}
+
+
+
+
+\clearpage

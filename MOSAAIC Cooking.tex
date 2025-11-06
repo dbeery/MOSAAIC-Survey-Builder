@@ -1,0 +1,41 @@
+\vlist{\FetchNumber{RES10.}}\item \FetchText{RES10.}
+\vsublist
+\item \FetchText{RES10.1}
+\item \FetchText{RES10.2}
+\vsublistend
+\vlistend
+
+\tablist{\FetchNumber{RES10a.}}\item \FetchText{RES10a.}
+\vsublist
+\item \FetchText{RES10a.1}
+\item \FetchText{RES10a.2}
+\item \FetchText{RES10a.3}
+\item \FetchText{RES10a.4}
+\item \FetchText{RES10a.5}
+\item \FetchText{RES10a.6}
+\item \FetchText{RES10a.7}
+\vsublistend
+\vlistend
+
+\newcommand{\RESresponses}{
+\vspace{-\baselineskip}\vsublist%
+\item \FetchText{RES10b.1}
+\item \FetchText{RES10b.2}
+\item \FetchText{RES10b.3}
+\vspace{.75\baselineskip}\end{enumerate}
+}
+
+\renewcommand\arraystretch{1.5}
+\vspace{-\baselineskip}
+\begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+\FetchNumber{RES10b.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{RES10b.}}}\endfirsthead
+& \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{RES10b.}}}}\endhead
+& \multicolumn{2}{r}{\continue{RES10b.}}\endfoot
+\endlastfoot
+\FetchNumber{RES10b.4} & \FetchText{RES10b.4} & \RESresponses\\ 
+\FetchNumber{RES10b.5} & \FetchText{RES10b.5} & \RESresponses\\ 
+\FetchNumber{RES10b.6} & \FetchText{RES10b.6} & \RESresponses\\ 
+\FetchNumber{RES10b.7} & \FetchText{RES10b.7} & \RESresponses\\ 
+\FetchNumber{RES10b.8} & \FetchText{RES10b.8} & \RESresponses\\ 
+\FetchNumber{RES10b.9} & \FetchText{RES10b.9} & \RESresponses\\ 
+\end{longtable}

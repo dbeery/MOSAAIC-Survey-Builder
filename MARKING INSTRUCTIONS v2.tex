@@ -1,0 +1,52 @@
+\obeylines
+
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyfoot[R]{\raisebox{1\height}\rightmark}
+% \fancyhead[L]{\parbox[b]{1in}{\vspace{-1.5\baselineskip}\includegraphics[width= .88 in, height = .7 in]{/Users/danny/Documents/MOSAAIC/Logos/MOSAAICLogo.png}}}
+% \fancyfoot[R]{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+% \renewcommand{\headrulewidth}{0pt}
+
+\begin{tcolorbox}[colback = white]
+\begin{center}
+    \textbf{\FetchFooterText{MRK0.}}
+    \vspace{\baselineskip}
+\end{center}
+\begin{enumerate}[label = \textbullet]
+    \item \FetchText{MRK1.}
+    \item \FetchText{MRK2.}
+        \begin{enumerate}[label = $\textopenbullet$]
+            \item \TextPlusElement{\correctmarks}{MRK2.1} %
+            \item \TextPlusElement{\incorrectmarks}{MRK2.2} %
+        \end{enumerate}
+    \item \FetchText{MRK3.}
+        \begin{enumerate}[label = $\textopenbullet$]
+            \item \FetchText{MRK3.1}
+            \item \FetchText{MRK3.2}
+        \end{enumerate}
+\end{enumerate}
+\end{tcolorbox}
+
+\vfill
+
+\begin{tcolorbox}[colback = white]
+    \textbf{\large Office Use Only}
+    \vspace{\baselineskip}
+    \hfill Participant ID: \dbox\dbox\dbox\dbox\dbox 
+    Staff Name: \hrulefill\ Staff ID: \dbox\dbox\dbox\dbox\dbox
+    \vspace{\baselineskip}
+    \begin{flushright}
+    \begin{tcolorbox}[height = 1 in, width = 2.625 in]
+    \vspace{2.5\baselineskip}
+    \begin{center}
+    LABEL
+    \end{center}
+    \vspace{2.5\baselineskip}
+    \end{tcolorbox}
+    \end{flushright}
+    \vspace{\baselineskip}
+    Date received: \x\x/\x\x/\x\x\x\x (MM/DD/YYYY)
+\end{tcolorbox}
+    
+
+\newpage

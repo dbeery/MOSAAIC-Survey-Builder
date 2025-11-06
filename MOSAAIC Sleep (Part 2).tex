@@ -1,0 +1,59 @@
+\subsectionmarkright{SLP0.3}
+\addtocounter{page}{-1}
+
+% \section*{\FetchTitle{SIXMONTH}}\setcounter{page}{1}
+% \subsectionmarkright{SLP0.3}
+% \label{subsec:SLP2}
+
+\FetchText{SLP0.1} 
+
+\FetchText{SLP0.2}
+
+\newcommand{\SLPresponses}{%
+\vspace{-\baselineskip}\vsublist
+\item \FetchText{SLP5.1}
+\item \FetchText{SLP5.2}
+\item \FetchText{SLP5.3}
+\item \FetchText{SLP5.4}
+\vspace{.75\baselineskip}\end{enumerate}
+}
+
+\vspace{-\baselineskip}
+\renewcommand\arraystretch{1.5}
+\begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+\FetchNumber{SLP5.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{SLP5.}}}\endfirsthead
+& \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{SLP5.}}}}\endhead
+& \multicolumn{2}{r}{\continue{SLP5.}}\endfoot
+\endlastfoot
+a. & \FetchText{SLP5a.} & \SLPresponses\\
+b. & \FetchText{SLP5b.} & \SLPresponses\\
+c. & \FetchText{SLP5c.} & \SLPresponses\\
+d. & \FetchText{SLP5d.} & \SLPresponses\\
+e. & \FetchText{SLP5e.} & \SLPresponses\\
+f. & \FetchText{SLP5f.} & \SLPresponses\\
+g. & \FetchText{SLP5g.} & \SLPresponses\\
+h. & \FetchText{SLP5h.} & \SLPresponses\\
+i. & \FetchText{SLP5i.} & \SLPresponses\\\end{longtable}
+\vspace{-3\baselineskip}
+
+\foreach \i in {6,...,9}{%
+\vlist{\FetchNumber{SLP\i.}}\item \FetchText{SLP\i.}
+\vsublist
+\setc{-1}
+\item \FetchText{SLP\i.1}
+\item \FetchText{SLP\i.2}
+\item \FetchText{SLP\i.3}
+\item \FetchText{SLP\i.4}
+\vsublistend
+\vlistend
+}
+
+\vlist{\FetchNumber{SLP10.}}\item \FetchText{SLP10.}
+\vsublist
+\item \FetchText{SLP10.1}
+\item \FetchText{SLP10.2}
+\item \FetchText{SLP10.3}
+\item \FetchText{SLP10.4}\setc{98}
+\item \FetchText{SLP10.5}
+\vsublistend
+\vlistend

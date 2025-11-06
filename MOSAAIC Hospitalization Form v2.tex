@@ -1,0 +1,155 @@
+
+\noindent
+\obeylines
+
+\definecolor{myblue}{RGB}{230,240,250}
+\pagecolor{myblue}
+
+\subsection*{Myocardial Infarction and CAD Form}
+\setcounter{counter}{0}
+\label{Hospitalization Form}
+\label{Heart attack or myocardial infarction}
+
+You answered that you had a \textbf{heart attack (myocardial infarction), chest pain, angina, or coronary artery disease} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+% \ConditionHospitalizationOnly
+\ConditionHospitalizationOnlySpecific{heart attack (myocardial infarction), chest pain, angina, or coronary artery disease}
+
+% \subsection*{CAD Form}
+% \setcounter{counter}{0}
+% \label{CAD}
+
+% You answered that you had \textbf{chest pain, coronary artery disease, or angina} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+% % \ConditionHospitalizationOnly
+% \ConditionHospitalizationOnlySpecific{coronary artery disease (CAD) or angina}
+
+\newpage
+
+\subsection*{Heart Failure Form}
+\setcounter{counter}{0}
+\label{Heart failure}
+
+You answered that you had \textbf{heart failure} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+
+% \OutpatientOrHospitalization{diagnosis}{condition}
+\OutpatientOrHospitalizationSpecific{diagnosis}{heart failure}{}
+
+\newpage
+
+\subsection*{Atrial Fibrillation Form}
+\setcounter{counter}{0}
+\label{Atrial fibrillation}
+
+You answered that you had \textbf{atrial fibrillation or atrial flutter} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+
+% \OutpatientOrHospitalization{diagnosis}{condition}
+\OutpatientOrHospitalizationSpecific{diagnosis}{atrial fibrillation or atrial flutter}{}
+
+\newpage
+
+\subsection*{Stroke Form}
+\setcounter{counter}{0}
+\label{Stroke}
+
+You answered that you had a \textbf{stroke} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+% \ConditionHospitalizationOnly
+\ConditionHospitalizationOnlySpecific{stroke}
+
+\subsection*{TIA Form}
+\setcounter{counter}{0}
+\label{Transient Ischemic Attack}
+
+You answered that you had a \textbf{mini-stroke or transient ischemic attack (TIA)} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+% \ConditionHospitalizationOnly
+\ConditionHospitalizationOnlySpecific{mini-stroke or transient ischemic attack (TIA)}
+
+\newpage
+
+\subsection*{PE/DVT Procedure Form}
+\setcounter{counter}{0}
+\label{Pulmonary embolism/DVT}
+
+You answered that you had a \textbf{blood clot in your leg or lung requiring blood thinning medicine (pulmonary embolism [PE]/deep vein thrombosis [DVT])} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+\setcounter{counter}{0}
+
+ %blood clot in leg vein or lung
+\vcounterlist\item \FetchText{HCP17.}
+\vsublist
+\item \FetchText{HCP17.1}
+\item \FetchText{HCP17.2}
+\item \FetchText{HCP17.3}
+\item \FetchText{HCP17.4}\setc{-1}
+% \item \FetchText{HCP17.5}
+\vsublistend
+\vlistend
+
+\vcounterlist\item \FetchText{HCP17b.}
+\YN
+
+
+\OutpatientOrHospitalizationPulmonary{diagnosis}{pulmonary embolism (PE)/DVT (deep vein thrombosis)}
+% \BloodFlowProcedure
+
+
+
+\newpage
+
+\subsection*{Heart Procedure Form}
+\setcounter{counter}{0}
+\label{Procedure to Increase Blood Flow to Heart}
+
+You answered that you had a \textbf{procedure to increase blood flow to your heart (e.g., CABG, and stent)} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+ 
+\BloodFlowProcedure
+
+\newpage
+
+\subsection*{Brain Procedure Form}
+\setcounter{counter}{0}
+\label{Procedure to Increase Blood Flow to Brain}
+
+You answered that you had a \textbf{procedure to increase blood flow to your brain} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+ 
+\BloodFlowProcedure
+
+\newpage
+
+\subsection*{Vascular Procedure Form}
+\setcounter{counter}{0}
+\label{Procedure to Increase Blood Flow to Legs}
+
+You answered that you had a \textbf{procedure to increase blood flow to the legs} since the date of your in-person MOSAAIC exam. We have some follow-up questions. 
+
+\BloodFlowProcedure
+
+\newpage
+
+\subsection*{Additional Hospitalizations Form}
+\label{Additional Hospitalizations}
+
+\newcommand{\AdditionalHospitalizationBox}[1]{%
+\begin{minipage}{.49\textwidth}
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\begin{center}{\textbf{Hospitalization #1:}}\end{center}\raggedright
+
+\smallskip
+\HospitalName[nocounter]
+\HospitalLocation[nocounter]
+\HospitalDateNoCounter
+\MainCondition
+
+\end{tcolorbox}%
+\end{minipage}%
+}
+
+\AdditionalHospitalizationBox{1}%
+\AdditionalHospitalizationBox{2}%
+
+\AdditionalHospitalizationBox{3}%
+\AdditionalHospitalizationBox{4}%

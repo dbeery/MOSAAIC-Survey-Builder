@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+\input{Tex Files/MOSAAIC Hospitalization Preamble.tex}
+
+\usetikzlibrary{positioning}
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\toggletrue{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Health Conditions and Procedures Form (Cover Letter)}
+
+
+\begin{document}
+
+\noindent
+\obeylines
+\raggedright 
+\setlength{\parskip}{12pt}
+% \section*{MOSAAIC Health Conditions and Procedures Form (Cover~Letter)}
+
+% The MOSAAIC Health Conditions and Procedures Form ask about health conditions and procedures that you had in the past. The form has two parts. Part 1 asks about health conditions and procedures that you had since the date of your MOSAAIC in-person exam. For these health conditions, please complete additional forms to provide details about your diagnosis and hospitalizations. Part 2 asks about cancer diagnoses, falls, and other hospitalizations that you had since the date of your MOSAAIC in-person exam, as well as health conditions that you had at any point in your life.
+
+% Please return both completed forms in an enclosed pre-stamped envelope. 
+
+% Thank you for your participation in MOSAAIC!
+
+\section*{\FetchText{HCPC1.}}
+
+\FetchText{HCPC2.}
+
+\FetchText{HCPC3.}
+
+\FetchText{HCPC4.}
+
+\vspace{\baselineskip}
+\input{Tex Files/MARKING INSTRUCTIONS v2.tex}
+\end{document}
+

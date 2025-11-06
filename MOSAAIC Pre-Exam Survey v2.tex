@@ -1,0 +1,38 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Pre-Exam Survey}
+
+\begin{document}
+
+\input{Tex Files/MARKING INSTRUCTIONS v2.tex}
+\input{Tex Files/TikzOff.tex}
+
+\noindent
+\obeylines
+
+\markright{\raggedleft \FetchText{PC0.}}
+\section*{\FetchTitle{PRE-VISIT}}
+
+\input{Tex Files/MOSAAIC Personal Healthcare Information.tex}
+\input{Tex Files/MOSAAIC Demographics Information.tex}
+\input{Tex Files/MOSAAIC Medical History.tex}
+\input{Tex Files/MOSAAIC Tobacco and Alcohol Use.tex}
+\input{Tex Files/MOSAAIC Acculturation.tex}
+\input{Tex Files/MOSAAIC Quality of Life.tex}
+\input{Tex Files/MOSAAIC Sleep (Part 1).tex}
+\input{Tex Files/MOSAAIC Early-Life Socioeconomic Status}
+
+\label{myLastPage}
+
+\fancyfoot[C]{\newline\FetchFooterText{endsurvey}}
+
+\end{document}

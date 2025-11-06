@@ -1,0 +1,842 @@
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\togglefalse{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC 6-month Survey}
+
+\begin{document}
+
+\input{Tex Files/TikzOff.tex}
+
+\noindent
+\obeylines
+
+\subsectionmarkright{SLP0.3}
+
+\AtBeginShipoutNext{\AtBeginShipoutDiscard}
+\clearpage
+\markright{~\FetchTextForHeader{SLP0.3}}
+
+\section*{\FetchTitle{SIXMONTH}}
+\input{Tex Files/MOSAAIC Sleep (Part 2).tex}
+
+\input{Tex Files/MOSAAIC Social Networks.tex}
+
+\input{Tex Files/MOSAAIC Secondhand Smoke.tex}
+
+\input{Tex Files/MOSAAIC Alcohol Flushing.tex}
+
+\input{Tex Files/MOSAAIC Drinking Water.tex}
+
+\markright{\FetchTextForHeader{RES0.3}}
+\forcesubsectionmarkright{RES0.3}
+\markright{\FetchTextForHeader{RES0.3}}
+\label{subsec:RES}
+
+\input{Tex Files/MOSAAIC Cooking.tex}
+\label{myLastPage}
+
+\fancyfoot[C]{\hspace{1em}\FetchFooterText{endsurvey}}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+% \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{FDI0.}} 
+% \label{subsec:FDI}
+
+% \fancyfoot[C]{}
+
+% \FetchText{FDI0.1}
+
+% \FetchText{FDI0.2}
+
+% \vlist{\FetchNumber{FDI1.}}\item \FetchText{FDI1.}
+% \vsublist
+% \item \FetchText{FDI1.1}
+% \item \FetchText{FDI1.2}
+% \item \FetchText{FDI1.3}
+% \setc{98}
+% \item \FetchText{FDI1.4}
+% \hax
+
+% \vlist{\FetchNumber{FDI2.}}\item \FetchText{FDI2.}
+% \vsublist
+% \item \FetchText{FDI2.1}
+% \item \FetchText{FDI2.2}
+% \item \FetchText{FDI2.3}
+% \setc{98}
+% \item \FetchText{FDI2.4}
+% \hax
+
+% \vlist{\FetchNumber{FDI3.}}\item \FetchText{FDI3.}
+% \vsublist
+% \item \FetchText{FDI3.1}
+% \setc{-1}
+% \item \FetchText{FDI3.2}
+% \setc{98}
+% \item \FetchText{FDI3.3}
+% \hax
+
+% \tablist{\FetchNumber{FDI4.}}\item \FetchText{FDI4.}
+% \vsublist
+% \item \FetchText{FDI4.1}
+% \item \FetchText{FDI4.2}
+% \item \FetchText{FDI4.3}
+% \setc{98}
+% \item \FetchText{FDI4.4}
+% \hax
+
+% \hlist{\FetchNumber{FDI5.}}\item \FetchText{FDI5.}
+% \yonder
+
+% \hlist{\FetchNumber{FDI6.}}\item \FetchText{FDI6.}
+% \yonder
+
+% \vspace{\baselineskip}
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{FDA0.}}
+% \label{subsec:FDA}
+% \fancyfoot[C]{}
+
+% \FetchText{FDA0.1}
+
+% \hlist{\FetchNumber{FDA1.}}\item \FetchText{FDA1.}
+% \yonder
+
+% \hlist{\FetchNumber{FDA2.}}\item \FetchText{FDA2.}
+% \yonder
+
+% \hlist{\FetchNumber{FDA3.}}\item \FetchText{FDA3.}
+% \yonder
+
+% \hlist{\FetchNumber{FDA4.}}\item \FetchText{FDA4.}
+% \yonder
+
+% \vlist{\FetchNumber{FDA5.}}\item \FetchText{FDA5.}
+% \vsublist
+% \item \FetchText{FDA5.1}
+% \item \FetchText{FDA5.2}
+% \item \FetchText{FDA5.3}
+% \item \FetchText{FDA5.4}
+% \item \FetchText{FDA5.5}
+% \item \FetchText{FDA5.6}
+% \setc{98}
+% \item \FetchText{FDA5.7}
+% \hax
+
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{HOU0.}} 
+% \label{subsec:HOU}
+
+% \vlist{\FetchNumber{HOU1.}}\item \FetchText{HOU1.}
+% \vsublist
+% \item \FetchText{HOU1.1}
+% \item \FetchText{HOU1.2}
+% \setc{-1}
+% \item \FetchText{HOU1.3}
+% \setc{98}
+% \item \FetchText{HOU1.4}
+% \hax
+
+% \tablist{\FetchNumber{HOU1a.}}\item \FetchText{HOU1a.}
+% \vsublist
+% \item \FetchText{HOU1a.1}
+% \item \FetchText{HOU1a.2}
+% \item \FetchText{HOU1a.3}
+% \item \FetchText{HOU1a.4}
+% \setc{98}
+% \item \FetchText{HOU1a.5}
+% \hax
+
+% \vlist{\FetchNumber{HOU2.}}\item \FetchText{HOU2.}
+% \vsublist
+% \item \FetchText{HOU2.1}
+% \setc{-1}
+% \item \FetchText{HOU2.2}
+% \setc{98}
+% \item \FetchText{HOU2.3}
+% \hax
+
+% \tablist{\FetchNumber{HOU2a.}}\item \FetchText{HOU2a.}
+% \vsublist
+% \item \FetchText{HOU2a.1}
+% \item \FetchText{HOU2a.2}
+% \item \FetchText{HOU2a.3}
+% \item \FetchText{HOU2a.4}
+% \setc{98}
+% \item \FetchText{HOU2a.5}
+% \hax
+
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{COM0.}}  
+% \label{subsec:COM}
+
+% \fancyfoot[C]{}
+
+% \FetchText{COM0.1}
+
+% \vlist{\FetchNumber{COM1.}}\item \FetchText{COM1.}
+% \vsublist
+% \item \FetchText{COM1.1}
+% \setc{-1}
+% \item \FetchText{COM1.2}
+% \setc{1}
+% \item \FetchText{COM1.3}
+% \hax
+
+% \tablist{\FetchNumber{COM1a.}}\item \FetchText{COM1a.}
+% \vsublist
+% \item \FetchText{COM1a.1}
+% \item \FetchText{COM1a.2}
+% \item \FetchText{COM1a.3}
+% \item \FetchText{COM1a.4}
+% \item \FetchText{COM1a.5}
+% \item \FetchText{COM1a.6}
+% \hax
+
+% \tablist{\FetchNumber{COM1b.}}\item \FetchText{COM1b.}
+% \vsublist
+% \item \FetchText{COM1b.1}
+% \item \FetchText{COM1b.2}
+% \item \FetchText{COM1b.3}
+% \item \FetchText{COM1b.4}
+% \item \FetchText{COM1b.5}
+% \hax
+
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{OCA0.}}
+% \label{subsec:OCA}
+
+% \fancyfoot[C]{}
+
+% \FetchText{OCA0.1}
+
+% \vlist{\FetchNumber{OCA1.}}\item \FetchText{OCA1.}
+% \vsublist
+% \item \FetchText{OCA1.1}
+% \item \FetchText{OCA1.2}
+% \item \FetchText{OCA1.3}
+% \item \FetchText{OCA1.4}
+% \item \FetchText{OCA1.5}
+% \item \FetchText{OCA1.6}
+% \item \FetchText{OCA1.7}
+% \item \FetchText{OCA1.8}
+% \item \FetchText{OCA1.9}
+% \item \FetchText{OCA1.10}
+% \item \FetchText{OCA1.11}
+% \item \FetchText{OCA1.12}
+% \item \FetchText{OCA1.13} \hrulefill 
+% \hax
+
+% \vlist{\FetchNumber{OCA2.}}\item \FetchText{OCA2.}
+% \vsublist
+% \ice \FetchText{OCA2.1}
+% \hax
+
+% \vlist{\FetchNumber{OCA3.}}\item \FetchText{OCA3.}
+% \vsublist
+% \item \FetchText{OCA3.1}
+% \item \FetchText{OCA3.2}
+% \item \FetchText{OCA3.3}
+% \item \FetchText{OCA3.4}
+% \item \FetchText{OCA3.5}
+% \item \FetchText{OCA3.6}
+% \item \FetchText{OCA3.7}
+% \item \FetchText{OCA3.8}
+% \hax
+
+% \vlist{\FetchNumber{OCA4.}}\item \FetchText{OCA4.}
+% \vsublist
+% \item \FetchText{OCA4.1}
+% \item \FetchText{OCA4.2}
+% \item \FetchText{OCA4.3}
+% \item \FetchText{OCA4.4}
+% \item \FetchText{OCA4.5}
+% \item \FetchText{OCA4.6}
+% \item \FetchText{OCA4.7}
+% \item \FetchText{OCA4.8}
+% \item \FetchText{OCA4.9}
+% \hax
+
+% \forcesubsectionmarkright{\FetchText{OSH0.}} 
+% \label{subsec:OSH}
+
+% \hlist{\FetchNumber{OSH1.}}\item \FetchText{OSH1.}
+% \hsublist
+% \item \FetchText{OSH1.1}  
+% \setc{-1}
+% \item \FetchText{OSH1.2}
+% \pop
+
+% \tablist{\FetchNumber{OSH1a.}}\item \FetchText{OSH1a.}
+% \vsublist
+% \item \FetchText{OSH1a.1}
+% \item \FetchText{OSH1a.2} 
+% \item \FetchText{OSH1a.3}
+% \item \FetchText{OSH1a.4}
+% \item \FetchText{OSH1a.5}
+% \item \FetchText{OSH1a.6}
+% \item \FetchText{OSH1a.7}
+% \item \FetchText{OSH1a.8}
+% \hax
+
+% \hlist{\FetchNumber{OSH2.}}\item \FetchText{OSH2.}
+% \hsublist
+% \item \FetchText{OSH2.1}
+% \setc{-1}
+% \item \FetchText{OSH2.2} 
+% \pop
+
+% \tablist{\FetchNumber{OSH2a.}}\item \FetchText{OSH2a.}
+% \vsublist
+% \item \FetchText{OSH2a.1}
+% \item \FetchText{OSH2a.2} 
+% \item \FetchText{OSH2a.3}
+% \item \FetchText{OSH2a.4}
+% \item \FetchText{OSH2a.5}
+% \item \FetchText{OSH2a.6}
+% \item \FetchText{OSH2a.7}
+% \item \FetchText{OSH2a.8}
+% \hax
+
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{OEY0.}}
+% \label{subsec:OEY}
+
+% \FetchText{OEY0.1}
+
+% \hlist{\FetchNumber{OEY1.}}\item \FetchText{OEY1.}
+% \hsublist
+% \item \FetchText{OEY1.1}  
+% \setc{-1}
+% \item \FetchText{OEY1.2}
+% \pop
+
+% \tablist{\FetchNumber{OEY1a.}}\item \FetchText{OEY1a.}
+% \vsublist
+% \item \FetchText{OEY1a.1}
+% \setc{-1}
+% \item \FetchText{OEY1a.2}  
+% \hax
+
+% \vlist{\FetchNumber{OEY2.}}\item \FetchText{OEY2.}
+% \vsublist
+% \item \FetchText{OEY2.1}
+% \item \FetchText{OEY2.2}
+% \item \FetchText{OEY2.3}
+% \item \FetchText{OEY2.4}
+% \item \FetchText{OEY2.5}
+% \item \FetchText{OEY2.6}
+% \item \FetchText{OEY2.7}
+% \item \FetchText{OEY2.8}
+% \item \FetchText{OEY2.9}
+% \item \FetchText{OEY2.10}
+% \item \FetchText{OEY2.11}
+% \item \FetchText{OEY2.12} \hrulefill
+% \hax
+
+% \vlist{\FetchNumber{OEY3.}}\item \FetchText{OEY3.}
+% \vsublist
+% \ice\FetchText{OEY3.1}
+% \hax
+
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \fancyhf{}
+
+% \forcesubsectionmarkright{\FetchText{PRB0.}} 
+% \label{subsec:PRB}
+
+% \fancyfoot[C]{}
+
+% \FetchText{PRB0.1}
+
+% \FetchText{PRB0.2}
+
+% % \renewcommand\arraystretch{1}
+% \begin{tabular}{| >{\rrr} p{5 cm} | >{\ccc}p{5cm} | >{\ccc}p{5cm} |}\hline
+% \FetchText{PRB0.3} & a. \FetchText{PRB0.4} & b. \FetchText{PRB0.5}\\\hline
+% \FetchNumber{PRB1.} \FetchText{PRB1.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline
+% \FetchNumber{PRB2.} \FetchText{PRB2.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline
+% \FetchNumber{PRB3.} \FetchText{PRB3.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline
+% \FetchNumber{PRB4.} \FetchText{PRB4.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline\end{tabular}
+
+% \vlist{\FetchNumber{PRB5.}}\item \FetchText{PRB5.}
+% \vsublist
+% \item  \FetchText{PRB5.1}
+% \setc{-1}
+% \item  \FetchText{PRB5.2}  
+% \hax
+
+% \FetchText{PRB0.6}
+
+% \begin{tabular}{| >{\rrr} p{5 cm} | >{\ccc} p{5cm} | >{\ccc}p{5cm} |}\hline
+% \FetchText{PRB0.7} & a. \FetchText{PRB0.8}& b. \FetchText{PRB0.9}\\\hline
+% \FetchNumber{PRB6.} \FetchText{PRB6.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline
+% \FetchNumber{PRB7.} \FetchText{PRB7.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline
+% \FetchNumber{PRB8.} \FetchText{PRB8.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline
+% \FetchNumber{PRB9.} \FetchText{PRB9.} & \x\x \FetchText{PRB0.10} & \x\x \FetchText{PRB0.10}\\\hline\end{tabular} 
+
+% \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{ENV0.}}
+% \label{subsec:ENV}
+% \fancyfoot[C]{}
+
+% \vlist{\FetchNumber{ENV1.}}\item \FetchText{ENV1.}
+% \vsublist
+% \item \FetchText{ENV1.1}
+% \item \FetchText{ENV1.2}
+% \item \FetchText{ENV1.3}
+% \item \FetchText{ENV1.4}
+% \item \FetchText{ENV1.5}
+% \hax
+
+% \vspace{-\baselineskip}
+% \renewcommand\arraystretch{2}
+% \begin{longtable}{@{} >{\rrr} p{.4 cm} >{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+% \FetchNumber{ENV2.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{ENV2.}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{ENV2.}}}}\endhead
+% & \multicolumn{2}{r}{\continue{ENV2.}}\endfoot
+% \endlastfoot
+% a. & \FetchText{ENV2.1} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\\
+% b. & \FetchText{ENV2.2} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\\
+% c. & \FetchText{ENV2.3} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\\
+% d. & \FetchText{ENV2.4} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\\
+% e. & \FetchText{ENV2.5} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\\
+% f. & \FetchText{ENV2.6} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\\
+% g. & \FetchText{ENV2.7} &
+% \vspace{-\baselineskip}\vsublist
+% \item 0-30\%
+% \item 30-60\%
+% \item 60-100\%
+% \end{enumerate}\end{longtable}
+% \vspace{-3\baselineskip}
+
+% \hlist{\FetchNumber{ENV3.}}\item \FetchText{ENV3.}
+% \YN
+
+% \hlist{\FetchNumber{ENV4.}}\item \FetchText{ENV4.}
+% \YN
+
+% \vspace{-\baselineskip}
+% %%Reverse coding??
+% \begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+% \FetchNumber{ENV5.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{ENV5.}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{ENV5.}}}}\endhead
+% a. & \FetchText{ENV5a.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV5.1}
+% \item \FetchText{ENV5.2}
+% \item \FetchText{ENV5.3}
+% \item \FetchText{ENV5.4}
+% \end{enumerate}\\
+% b. & \FetchText{ENV5b.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV5.1}
+% \item \FetchText{ENV5.2}
+% \item \FetchText{ENV5.3}
+% \item \FetchText{ENV5.4}
+% \end{enumerate}\\
+% c. & \FetchText{ENV5c.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV5.1}
+% \item \FetchText{ENV5.2}
+% \item \FetchText{ENV5.3}
+% \item \FetchText{ENV5.4}
+% \end{enumerate}\\
+% d. & \FetchText{ENV5d.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV5.1}
+% \item \FetchText{ENV5.2}
+% \item \FetchText{ENV5.3}
+% \item \FetchText{ENV5.4}
+% \end{enumerate}\\\end{longtable}
+
+% \hlist{\FetchNumber{ENV6.}}\item \FetchText{ENV6.}
+% \YN
+
+% \vspace{-\baselineskip}
+% \begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8 cm} >{\rrr} p{7.6 cm}}
+% \FetchNumber{ENV0.3} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{ENV0.3}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{ENV0.3}}}}\endhead
+% & \multicolumn{2}{r}{\continue{ENV0.3}}\endfoot
+% \endlastfoot
+% \FetchNumber{ENV7.} &\FetchText{ENV7.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV0.4}
+% \item \FetchText{ENV0.5}
+% \item \FetchText{ENV0.6}
+% \item \FetchText{ENV0.7}
+% \item \FetchText{ENV0.8}
+% \end{enumerate}\\ 
+% \FetchNumber{ENV8.} &\FetchText{ENV8.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV0.4}
+% \item \FetchText{ENV0.5}
+% \item \FetchText{ENV0.6}
+% \item \FetchText{ENV0.7}
+% \item \FetchText{ENV0.8}
+% \end{enumerate}\\ 
+% \FetchNumber{ENV9.} &\FetchText{ENV9.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV0.4}
+% \item \FetchText{ENV0.5}
+% \item \FetchText{ENV0.6}
+% \item \FetchText{ENV0.7}
+% \item \FetchText{ENV0.8}
+% \end{enumerate}\\ 
+% \FetchNumber{ENV10.} &\FetchText{ENV10.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV0.4}
+% \item \FetchText{ENV0.5}
+% \item \FetchText{ENV0.6}
+% \item \FetchText{ENV0.7}
+% \item \FetchText{ENV0.8}
+% \end{enumerate}\\ 
+% \FetchNumber{ENV11.} &\FetchText{ENV11.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{ENV0.4}
+% \item \FetchText{ENV0.5}
+% \item \FetchText{ENV0.6}
+% \item \FetchText{ENV0.7}
+% \item \FetchText{ENV0.8}
+% \end{enumerate}\\\end{longtable}
+% \vspace{-3\baselineskip}
+
+
+% \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{DSC0.}}
+% \label{subsec:DSC}
+% \fancyfoot[C]{}
+
+% \vspace{-\baselineskip}
+% \begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+% \FetchNumber{DSC0.1} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{DSC0.1}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{DSC0.1}}}}\endhead
+% & \multicolumn{2}{r}{\continue{DSC0.1}}\endfoot
+% \endlastfoot
+% \FetchNumber{DSC1.} & \FetchText{DSC1.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC2.} & \FetchText{DSC2.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC3.} & \FetchText{DSC3.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC4.} & \FetchText{DSC4.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC5.} & \FetchText{DSC5.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC6.} & \FetchText{DSC6.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC7.} & \FetchText{DSC7.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC8.} & \FetchText{DSC8.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\ 
+% \FetchNumber{DSC9.} & \FetchText{DSC9.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{DSC0.2}
+% \item \FetchText{DSC0.3}
+% \item \FetchText{DSC0.4}
+% \item \FetchText{DSC0.5}
+% \item \FetchText{DSC0.6}
+% \end{enumerate}\\\end{longtable}
+% \vspace{-2\baselineskip}
+
+% \vlist{\FetchNumber{DSC10.}}\item \FetchText{DSC10.}
+% \vsublist
+% \item \FetchText{DSC10.1}
+% \item \FetchText{DSC10.2}
+% \item \FetchText{DSC10.3} 
+% \item \FetchText{DSC10.4} 
+% \item \FetchText{DSC10.5} 
+% \item \FetchText{DSC10.6}
+% \item \FetchText{DSC10.7}
+% \item \FetchText{DSC10.8}
+% \item \FetchText{DSC10.9}
+% \item \FetchText{DSC10.10}
+% \setc{98}
+% \item \FetchText{DSC10.11}
+% \hax
+
+% % \fancyfoot[C]{\large \textbf{END OF SECTION}}
+
+% \forcesubsectionmarkright{\FetchText{OPP0.}} 
+% \label{subsec:OPP}
+% \fancyfoot[C]{}
+
+% \vspace{-\baselineskip}
+% \begin{longtable}{@{}>{\rrr}p{.4 cm}>{\rrr} p{8.6 cm} >{\rrr} p{7 cm}}
+% \FetchNumber{OPP1.} & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \FetchText{OPP1.}}}\endfirsthead
+% & \multicolumn{2}{l}{\parbox[t]{15 cm}{\raggedright \textcolor{darkgray}{\FetchText{OPP1.}}}}\endhead
+% & \multicolumn{2}{r}{\continue{OPP1.}}\endfoot
+% \endlastfoot
+% a. & \FetchText{OPP1a.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% b. & \FetchText{OPP1b.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% c. & \FetchText{OPP1c.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% d. & \FetchText{OPP1d.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% e. & \FetchText{OPP1e.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% f. & \FetchText{OPP1f.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% g. & \FetchText{OPP1g.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% h. & \FetchText{OPP1h.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% i. & \FetchText{OPP1i.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\ 
+% j. & \FetchText{OPP1a.} &
+% \vspace{-\baselineskip}\vsublist
+% \item \FetchText{OPP1.1}
+% \item \FetchText{OPP1.2}
+% \item \FetchText{OPP1.3}
+% \item \FetchText{OPP1.4}
+% \end{enumerate}\\\end{longtable}
+% \vspace{-3\baselineskip}
+% \fancyfoot[C]{\large \textbf{END OF SURVEY}}
+
+
+
+
+
+
+
+
+% \vlist{\FetchNumber{SLP6.}}\item \FetchText{SLP6.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{SLP6.1}
+% \item \FetchText{SLP6.2}
+% \item \FetchText{SLP6.3}
+% \item \FetchText{SLP6.4}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{SLP7.}}\item \FetchText{SLP7.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{SLP7.1}
+% \item \FetchText{SLP7.2}
+% \item \FetchText{SLP7.3}
+% \item \FetchText{SLP7.4}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{SLP8.}}\item \FetchText{SLP8.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{SLP8.1}
+% \item \FetchText{SLP8.2}
+% \item \FetchText{SLP8.3}
+% \item \FetchText{SLP8.4}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{SLP9.}}\item \FetchText{SLP9.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{SLP9.1}
+% \item \FetchText{SLP9.2}
+% \item \FetchText{SLP9.3}
+% \item \FetchText{SLP9.4}
+% \vsublistend
+% \vlistend
+
+
+
+
+
+% \vlist{\FetchNumber{SOC1.}}\item \FetchText{SOC1.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{SOC1.1}
+% \item \FetchEnglish{SOC1.2}
+% \item \FetchEnglish{SOC1.3}
+% \item \FetchEnglish{SOC1.4}
+% \item \FetchEnglish{SOC1.5}
+% \item \FetchEnglish{SOC1.6}
+% \item \FetchEnglish{SOC1.7}
+% \item \FetchText{SOC1.8}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{SOC2.}}\item \FetchText{SOC2.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{SOC2.1}
+% \item \FetchEnglish{SOC2.2}
+% \item \FetchEnglish{SOC2.3}
+% \item \FetchEnglish{SOC2.4}
+% \item \FetchEnglish{SOC2.5}
+% \item \FetchEnglish{SOC2.6}
+% \item \FetchEnglish{SOC2.7}
+% \item \FetchText{SOC2.8}
+% \vsublistend
+% \vlistend
+
+
+% \vlist{\FetchNumber{AFL1.}}\item \FetchText{AFL1.}
+% \vsublist
+% \item \FetchText{AFL1.1}\setc{-1}
+% \item \FetchText{AFL1.2}\setc{1}
+% \item \FetchText{AFL1.3}\setc{98}
+% \item \FetchText{AFL1.4}
+% \vsublistend
+% \vlistend
+
+% \vlist{\FetchNumber{AFL2.}}\item \FetchText{AFL2.}
+% \vsublist
+% \item \FetchText{AFL2.1}\setc{-1}
+% \item \FetchText{AFL2.2}\setc{1}
+% \item \FetchText{AFL2.3}\setc{98}
+% \item \FetchText{AFL2.4}
+% \vsublistend
+% \vlistend

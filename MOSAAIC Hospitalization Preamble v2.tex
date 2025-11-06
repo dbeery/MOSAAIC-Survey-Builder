@@ -1,0 +1,128 @@
+\newcommand{\smallskipline}{\smallskip\newline}
+\newcommand{\smallskiphrulefill}{\smallskipline\phantom{}\hrulefill\phantom{}}
+
+\newcommand{\vcounterlist}{\stepcounter{counter}\vlist{\thecounter{}.}}
+\newcommand{\hcounterlist}{\stepcounter{counter}\hlist{\thecounter{}.}}
+
+\newcommand{\BloodFlowProcedure}[1]{
+
+
+\subsectionmarkright{#10.}
+\label{#1}
+
+\vlist{}\item \FetchText{#10.1}
+\vlistend
+
+\vlist{\FetchNumber{#11.}} \item \TextPlusHRuleFill{#11.}
+\vlistend
+
+\vlist{\FetchNumber{#12.}}\item \FetchText{#12.}%
+\vsublist
+\item[a.] \TextPlusHRuleFill{#12.1}
+\item[b.] \TextPlusHRuleFill{#12.2}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{#13.}} \item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{#13.}
+\vlistend
+
+\vlist{\FetchNumber{#14.}} \item \TextPlusHRuleFill{#14.}
+\vlistend
+}
+
+\newcommand{\oneblock}[1]{%
+\subsectionmarkright{#10.}
+\label{#1}
+
+\vlist{}\item \FetchText{#10.1}
+\vlistend
+
+\IfStrEq{#1}{DVT}{%
+\vlist{\FetchNumber{HCP17.}}\item \FetchText{HCP17.}
+\vsublist
+\item \FetchText{HCP17.1}
+\item \FetchText{HCP17.2}
+\item \FetchText{HCP17.3}
+\item \FetchText{HCP17.4}\setc{-1}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{HCP17b.}}\item \FetchText{HCP17b.}
+\vsublist
+\item \FetchText{HCP17b.1}
+\item \FetchText{HCP17b.2}
+\vsublistend
+\vlistend
+}{}
+
+\vlist{\FetchNumber{#11.}} \item \FetchText{#11.}
+\vsublist
+\itemnode \FetchText{#11.1}
+\setc{-1}
+\item \FetchText{#11.2}
+\vsublistend
+\vlistend
+
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+
+\vlist{\FetchNumber{#12.}}\item \TextPlusHRuleFill{#12.}
+\vlistend
+
+\vlist{\FetchNumber{#13.}}\item \FetchText{#13.}%
+\vsublist
+\item[a.] \TextPlusHRuleFill{#13.1}
+\item[b.] \TextPlusHRuleFill{#13.2}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{#14.}} \item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{#14.}
+\vlistend
+
+\vlist{\FetchNumber{#15.}} \item \FetchText{#15.}
+\vsublist
+\item \FetchText{#15.1}
+\setc{-1}
+\item \FetchText{#15.2}
+\vsublistend
+\vlistend
+\end{tcolorbox}
+}
+
+
+\newcommand{\twoblock}[1]{%
+\oneblock{#1}
+
+\IfStrEq{#1}{DVT}{\newpage}{}
+
+\vlist{\FetchNumber{#16.}} \item \FetchText{#16.}
+\vsublist
+\itemnode \FetchText{#16.1}
+\setc{-1}
+\item \FetchText{#16.2}
+\vsublistend
+\vlistend
+
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\enodetwo
+
+\IfStrEq{#1}{DVT}{\label{DVT2}}{}
+
+\vlist{\FetchNumber{#17.}} \item \TextPlusHRuleFill{#17.}
+\vlistend
+
+\vlist{\FetchNumber{#18.}}\item \FetchText{#18.}%
+\vsublist
+\item[a.] \TextPlusHRuleFill{#18.1}
+\item[b.] \TextPlusHRuleFill{#18.2}
+\vsublistend
+\vlistend
+
+\vlist{\FetchNumber{#19.}} \item \TextPlusElement{\MMDDYYYY~(MM/DD/YYYY)}{#19.}
+\vlistend
+
+\end{tcolorbox}
+% \end{tcolorbox}
+}
+
+

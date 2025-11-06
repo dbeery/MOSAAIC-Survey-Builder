@@ -1,0 +1,46 @@
+
+\noindent
+\obeylines
+
+\definecolor{myblue}{RGB}{230,240,250}
+\pagecolor{myblue}
+
+\oneblock{MYO}\label{Hospitalization Form}
+\twoblock{HFA}
+\twoblock{AFIB}
+\oneblock{STRK}
+\oneblock{TIA}
+\twoblock{DVT}
+\BloodFlowProcedure{HPRO}
+\BloodFlowProcedure{BPRO}
+\BloodFlowProcedure{VPRO}
+
+\subsectionmarkright{ADDH0.}
+\label{Additional Hospitalizations}
+
+\foreach \i in {1,2,3,4}{%
+\begin{minipage}{.49\textwidth}
+\begin{tcolorbox}[width = \textwidth, boxsep = 0pt]
+\begin{center}\textbf{\FetchText{ADDH0.\i}}\end{center}\raggedright
+
+\smallskip
+\vlist{}\item \TextPlusHRuleFill{ADDH1.}
+\vlistend
+
+\vlist{}\item \FetchText{ADDH2.}
+\vsublist
+\item[a.] \TextPlusHRuleFill{ADDH2.1}
+\item[b.] \TextPlusHRuleFill{ADDH2.2}
+\vsublistend
+\vlistend
+
+\vlist{}\item \TextPlusElement{\MMDDYYYY~\smallskip\newline(MM/DD/YYYY)}{ADDH3.}
+\vlistend
+
+\vlist{}\item \TextPlusHRuleFill{ADDH4.}
+\vlistend
+
+\end{tcolorbox}%
+\end{minipage}%
+\IfStrEq{\i}{1}{\hfill}{\IfStrEq{\i}{3}{\hfill}{\newline}}%
+}

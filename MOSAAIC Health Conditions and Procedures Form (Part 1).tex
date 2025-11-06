@@ -1,0 +1,472 @@
+
+\documentclass[12pt]{article}
+
+\newcommand{\langgg}{English}
+
+\input{Preambles/Preamble.tex}
+\input{Tex Files/MOSAAIC Hospitalization Preamble.tex}
+
+\usetikzlibrary{positioning}
+\togglefalse{bilingual}
+\togglefalse{changelog}
+\toggletrue{tikz}
+
+\input{Variables.tex}
+\WriteHeader{MOSAAIC Health Conditions and Procedures Form (Part 1)}
+
+\newcommand{\sboxnode}{\tikz[remember picture, baseline]{\node[anchor=base west,inner sep=0pt](start)at(0ex, 0ex){$\square_{\arabic{enumii}}$};}}
+\newcommand{\itemnode}{\refstepcounter{enumii}\item[\sboxnode]}
+
+\newcommand{\dateofdiagnosis}{\ra Date of event or diagnosis: \hxdate}
+
+\newcommand{\diagnosisdate}{%
+\vspace{-.25\baselineskip}
+\par\begin{flushright}\begin{tcolorbox}[colback = white, width = .95\textwidth]\hspace{-.3cm}\enode%
+\raggedright Date of event or diagnosis: \hxdate
+\end{tcolorbox}\end{flushright}
+}
+
+\renewcommand{\snode}{\tikz[remember picture, baseline]{\node (start) at (0, .5ex) {};}}
+ 
+\renewcommand{\enode}{\tikz[remember picture, baseline]{\node (end) {};}\begin{tikzpicture}[remember picture, overlay]\draw[->, ultra thick] (start) |- (end);\end{tikzpicture}}
+
+\newcommand{\enodetwo}{\tikz[remember picture, baseline]{\node (end) {};}\begin{tikzpicture}[remember picture, overlay]\draw[->, ultra thick] (start) -| (end);\end{tikzpicture}}
+
+\renewcommand{\tablist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1, labelsep = .25em, left = 2em, align = left]} %indented vertical and horizontal lists
+
+\newcommand{\hxdate}{\MMDDYYYY~(MM/DD/YYYY)}
+
+\newcommand{\hxdatebox}{%
+\begin{center}
+  \begin{tcolorbox}[colback = white, width = 1.2\datelength]
+  \hxdate
+  \end{tcolorbox}
+\end{center}
+}
+
+\newlength{\datelength}
+\settowidth{\datelength}{\hxdate}
+
+
+\begin{document}
+
+\newcounter{counter}
+\setcounter{counter}{0}
+
+\iftoggle{tikz}{\input{Tex Files/TikzOn.tex}}{\input{Tex Files/TikzOff.tex}}
+
+
+
+
+
+\noindent
+\obeylines
+\raggedright
+
+\subsection*{\FetchText{HCP0.}}
+\label{subsec:HCP1}
+\FetchText{HCP0.1}%
+
+
+
+
+\vlist{1.} \item Since the date of your in-person MOSAAIC exam, has a health care provider said that you had any of the following health conditions? \textit{(Select all that apply)}
+    \begin{enumerate}[left = 0 em, align = parleft]
+    \item Heart attack (also called ``myocardial infarction'') \ra \textbf{Complete Myocardial Infarction and CAD Form on page~\pageref{Heart attack or myocardial infarction}}
+    \item Chest pain, angina, or coronary artery disease \ra \textbf{Complete Myocardial Infarction and CAD Form on page~\pageref{Heart attack or myocardial infarction}}
+    \item Heart Failure \ra \textbf{Complete Heart Failure Form on page~\pageref{Heart failure}}
+    % \par\begin{flushright}\begin{tcolorbox}[colback = white, width = .7\textwidth]\hspace{-.3cm}\enode%
+    % If yes, on what date did you receive your diagnosis? \newline\hxdate\end{tcolorbox}\end{flushright}
+    % %~\ra Date of Diagnosis:\vspace{.5\baselineskip}
+    % % \par \begin{flushright}\MMDDYYYY (MM/DD/YYYY)\end{flushright}
+    \item Atrial fibrillation or atrial flutter \ra \textbf{Complete Atrial Fibrillation Form on page~\pageref{Atrial fibrillation}}
+    % \itemnode Atrial flutter \diagnosisdate
+    %\item Other heart disease %\diagnosisdate
+    \item Stroke \ra \textbf{Complete Stroke Form on page~\pageref{Stroke}}
+    \item Mini-stroke or transient ischemic attack \ra \textbf{Complete TIA Form on page~\pageref{Transient Ischemic Attack}} %\diagnosisdate
+    \item Blood clot in your leg or lung requiring blood thinning medicine~\ra~\textbf{Complete PE/DVT Procedure Form on page~\pageref{Pulmonary embolism/DVT}}
+    %\item COPD, emphysema, asthma, or other lung disease %\diagnosisdate
+    %\item Infection or sepsis %\diagnosisdate
+    \item None of the above
+  \vsublistend
+\vlistend
+
+\vlist{2.} \item Since the date of your in-person MOSAAIC exam, have you had any of the following procedures? \textit{(Select all that apply)}
+\begin{enumerate}[left = 0 em, align = parleft]
+    \item Procedure to improve blood flow to the heart (a coronary artery bypass surgery (CABG) or placing a stent in the heart arteries) \ra \textbf{Complete Heart Procedure Form on page~\pageref{Procedure to Increase Blood Flow to Heart}}
+    \item Procedure to improve blood flow to the brain \ra \textbf{Complete Brain Procedure Form on page~\pageref{Procedure to Increase Blood Flow to Brain}}
+    \item Procedure to improve blood flow to the legs \ra \textbf{Complete Vascular Procedure Form on page~\pageref{Procedure to Increase Blood Flow to Legs}}
+    %\item Other surgery (specify:) \hrulefill %\diagnosisdate
+    \item None of the above
+\vsublistend
+\vlistend
+
+If you answered ``None of the above'' to questions 1 and 2, you are finished with Part 1. \textbf{Go to the Health Conditions and Procedures Form (Part 2)}
+
+\newpage
+\input{Tex Files/MOSAAIC Hospitalization Form v2.tex}
+
+
+
+
+\end{document}
+% Test
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \renewcommand{\tablist}[1]{\begin{minipage}{\textwidth}\raggedright\raggedbottom\begin{enumerate}[label =#1, labelsep = .25em, left = 2em, align = left]} %indented vertical and horizontal lists
+
+% \noindent
+% \obeylines
+
+% \subsection*{\FetchText{HCP0.}}
+% \label{subsec:HCP1}
+% \FetchText{HCP0.1}
+
+% \hlist{\FetchNumber{HCP1.}}\item \FetchText{HCP1.}
+% \hsublist
+% \item \FetchText{HCP1.1}\setc{-1}
+% \item \FetchText{HCP1.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP1a.}}\item \FetchText{HCP1a.}
+% \hsublist
+% \item \FetchText{HCP1a.1}\setc{-1}
+% \item \FetchText{HCP1a.2}
+% % \setc{1}
+% % \item \FetchText{HCP1a.3}
+% \hsublistend
+% \hlistend
+
+% % \tablist{\FetchNumber{HCP1b.}}\item \FetchText{HCP1b.}
+% % \YN
+
+% \tablist{\FetchNumber{HCP1b.}}\item \FetchText{HCP1b.}
+% \hsublist
+% \item \FetchText{HCP1b.1}\setc{-1}
+% \item \FetchText{HCP1b.2}\setc{1}
+% \item \FetchText{HCP1b.3}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP1c.}}\item \FetchText{HCP1c.}
+% \hsublist
+% \setc{-1}
+% \item \FetchText{HCP1c.1}
+% \item \FetchText{HCP1c.2}
+% \hsublistend
+% \hlistend
+
+
+% \hlist{\FetchNumber{HCP2.}}\item \FetchText{HCP2.}
+% \hsublist
+% \item \FetchText{HCP2.1}
+% \setc{-1}
+% \item \FetchText{HCP2.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP2a.}}\item \FetchText{HCP2a.}
+% \YN
+
+% \hlist{\FetchNumber{HCP3.}}\item \FetchText{HCP3.}
+% \hsublist
+% \item \FetchText{HCP3.1}\setc{-1}
+% \item \FetchText{HCP3.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP3a.}}\item \FetchText{HCP3a.}
+% \hsublist
+% \item \FetchText{HCP3a.1}\setc{-1}
+% \item \FetchText{HCP3a.2}
+% % \item \FetchText{HCP3a.3}
+% \hsublistend
+% \halt
+
+
+% \tablist{\FetchNumber{HCP3b.}}\item \FetchText{HCP3b.}
+% \hsublist
+% \item \FetchText{HCP3b.1}\setc{-1}
+% \item \FetchText{HCP3b.2}\setc{1}
+% \item \FetchText{HCP3b.3}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP3c.}}\item \FetchText{HCP3c.}
+% \vsublist
+% \setc{-1}
+% \item \FetchText{HCP3c.1}
+% \item \FetchText{HCP3c.2}
+% \item \FetchText{HCP3c.3}
+% \vsublistend
+% \vlistend
+
+% \hlist{\FetchNumber{HCP4.}}\item \FetchText{HCP4.}
+% \hsublist
+% \item \FetchText{HCP4.1}\setc{-1}
+% \item \FetchText{HCP4.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP4a.}}\item \FetchText{HCP4a.}
+% \YN
+
+% \hlist{\FetchNumber{HCP5.}}\item \FetchText{HCP5.}
+% \hsublist
+% \item \FetchText{HCP5.1}\setc{-1}
+% \item \FetchText{HCP5.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP5a.}}\item \FetchText{HCP5a.}
+% \YN
+
+% \vlist{\FetchNumber{HCP6.}}\item \FetchText{HCP6.}
+% \vsublist
+% \item \quatro{\MMDDYYYY~(MM/DD/YYYY)}{HCP6.1}\setc{-1}
+% \item \FetchText{HCP6.2}
+% \vsublistend
+% \vlistend
+
+% \tablist{\FetchNumber{HCP6a.}}\item \FetchText{HCP6a.}
+% \hsublist
+% \item \FetchText{HCP6a.1}\setc{-1}
+% \item \FetchText{HCP6a.2}
+% \hsublistend
+% \hlistend
+
+% \vlist{\FetchNumber{HCP7.}}\item \FetchText{HCP7.}
+% \vsublist
+% \item \quatro{\MMDDYYYY~(MM/DD/YYYY)}{HCP7.1}\setc{-1}
+% \item \FetchText{HCP7.2}
+% \vsublistend
+% \vlistend
+
+% \tablist{\FetchNumber{HCP7a.}}\item \FetchText{HCP7a.}
+% \vsublist
+% \item \TextPlusHRuleFill{HCP7a.1}\setc{-1}
+% \item \FetchText{HCP7a.2}
+% \vsublistend
+% \vlistend
+
+% \hlist{\FetchNumber{HCP8.}}\item \FetchText{HCP8.}
+% \hsublist
+% \item \FetchText{HCP8.1}\setc{-1}
+% \item \FetchText{HCP8.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP8a.}}\item \FetchText{HCP8a.}
+% \YN
+
+% \hlist{\FetchNumber{HCP9.}}\item \FetchText{HCP9.}
+% \hsublist
+% \item \FetchText{HCP9.1}\setc{-1}
+% \item \FetchText{HCP9.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP9a.}}\item \FetchText{HCP9a.}
+% \YN
+
+% \hlist{\FetchNumber{HCP10.}}\item \FetchText{HCP10.}
+% \hsublist
+% \item \FetchText{HCP10.1}\setc{-1}
+% \item \FetchText{HCP10.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP10a.}}\item \FetchText{HCP10a.}
+% \YN
+
+% \vlist{\FetchNumber{HCP11.}}\item \FetchText{HCP11.}
+% \vsublist
+% \item \quatro{\MMDDYYYY~(MM/DD/YYYY)}{HCP11.1}\setc{-1}
+% \item \FetchText{HCP11.2}
+% \vsublistend
+% \vlistend
+
+% \tablist{\FetchNumber{HCP11a.}}\item \FetchText{HCP11a.}
+% \YN
+
+
+
+% \vlist{\FetchNumber{HCP13.}}\item \FetchText{HCP13.}
+% \vsublist
+% \item \quatro{\MMDDYYYY~(MM/DD/YYYY)}{HCP13.1}\setc{-1}
+% \item \FetchText{HCP13.2}
+% \vsublistend
+% \vlistend
+
+% \hlist{\FetchNumber{HCP14.}}\item \FetchText{HCP14.}
+% \YN
+
+% \hlist{\FetchNumber{HCP15.}}\item \FetchText{HCP15.}
+% \hsublist
+% \item \FetchText{HCP15.1}\setc{-1}
+% \item \FetchText{HCP15.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP15a.}}\item \FetchText{HCP15a.}
+% \hsublist
+% \item \FetchText{HCP15a.1}\setc{-1}
+% \item \FetchText{HCP15a.2}
+% \hsublistend
+% \hlistend
+
+% \hlist{\FetchNumber{HCP16.}}\item \FetchText{HCP16.}
+% \hsublist
+% \item \FetchText{HCP16.1}\setc{-1}
+% \item \FetchText{HCP16.2}
+% \hsublistend
+% \hlistend
+
+% \tablist{\FetchNumber{HCP16a.}}\item \FetchText{HCP16a.}
+% \YN
+
+% \vlist{\FetchNumber{HCP17.}}\item \FetchText{HCP17.}
+% \vsublist
+% \item \FetchText{HCP17.1}
+% \item \FetchText{HCP17.2}
+% \item \FetchText{HCP17.3}
+% \item \FetchText{HCP17.4}\setc{-1}
+% \item \FetchText{HCP17.5}
+% \vsublistend
+% \vlistend
+
+% \tablist{\FetchNumber{HCP17a.}}\item \FetchText{HCP17a.}
+% \YN
+
+% \tablist{\FetchNumber{HCP17b.}}\item \FetchText{HCP17b.}
+% \YN
+
+% \hlist{\FetchNumber{HCP18.}}\item \FetchText{HCP18.}
+% \hsublist
+% \item \FetchText{HCP18.1}
+% \setc{-1}
+% \item \FetchText{HCP18.2}
+% \hsublistend
+% \hlistend
+
+% \bmp
+% \tablist{\FetchNumber{HCP18a.}}\item \FetchText{HCP18a.}
+% \vlistend
+% \vspace{-1\baselineskip}\begin{tabular}{ >{\rrr} p{.45cm}@{} >{\rrr} p{2.5in} >{\rrr} p{4in}}
+% &
+% \vsublist
+% \item \FetchText{HCP18a.1}
+% \item \FetchText{HCP18a.2} 
+% \item \FetchText{HCP18a.3}
+% \item \FetchText{HCP18a.4}
+% \item \FetchText{HCP18a.5}
+% \item \FetchText{HCP18a.6}
+% \item \FetchText{HCP18a.7}
+% \item \FetchText{HCP18a.8}
+% \item \FetchText{HCP18a.9}
+% \item \FetchText{HCP18a.10}
+% \end{enumerate}
+% &
+% \vsublist
+% \setch{10}
+% \item \FetchText{HCP18a.11}
+% \item \FetchText{HCP18a.12}
+% \item \FetchText{HCP18a.13}
+% \item \FetchText{HCP18a.14}
+% \item \FetchText{HCP18a.15}
+% \item \FetchText{HCP18a.16}
+% \item \FetchText{HCP18a.17}
+% \item \TextPlusHRuleFill{HCP18a.18}\setch{98}
+% \item \FetchText{HCP18a.19}
+% \end{enumerate}\end{tabular}
+% \emp
+
+% % \vlist{\FetchNumber{HCP18b.}}\item \FetchText{HCP18b.}
+% % \YN
+
+% \hlist{\FetchNumber{HCP19.}}\item \FetchText{HCP19.}
+% \YN
+
+% \bmp
+% \vlist{\FetchNumber{HCP20.}}\item \FetchText{HCP20.}
+% \vsublist
+% \item \TextPlusHRuleFill{HCP20.1}\setc{-1}
+% \item \FetchText{HCP20.2}
+% \vsublistend
+% \vlistend
+
+% \bmp
+% \FetchText{HCP0.3}
+% \vspace{\baselineskip}
+% \FetchText{HCP0.4}
+% \emp
+
+% \vspace{\baselineskip}
+% \hlist{\FetchNumber{HCP21.}}\item \FetchText{HCP21.}
+% \YN
+% \emp
+
+% \vlist{\FetchNumber{HCP22.}}\item \FetchText{HCP22.}
+% \vsublist
+% \item \FetchText{HCP22.1}
+% \item \FetchText{HCP22.2}
+% \item \FetchText{HCP22.3}
+% \vsublistend
+% \vlistend
+
+% \hlist{\FetchNumber{HCP23.}}\item \FetchText{HCP23.}
+% \YN\label{myLastPage}
+
+
+% % Test
+
